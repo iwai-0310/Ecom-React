@@ -66,7 +66,7 @@ const NavItems = () => {
             <div className="logo-search-acte">
               <div className="logo">
                 <Link to={"/"}>
-                  <img src="" alt="" />
+                  <img src={logo} alt="logo" className="w-20 h-20" />
                 </Link>
               </div>
             </div>
