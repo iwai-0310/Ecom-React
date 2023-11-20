@@ -70,6 +70,88 @@ const NavItems = () => {
                 </Link>
               </div>
             </div>
+            {/* menu area */}
+            <div className="menu-area">
+              <div className="menu">
+                <ul className="">
+                  <li className="custom-list-item">
+                    <Link to="/">
+                      <a href="#_" class="relative inline-block text-lg group">
+                        <span class="list-item-custom-css-span1">
+                          <span class="list-item-custom-css-span1-1"></span>
+                          <span class="list-item-custom-css-span1-2"></span>
+                          <span class="relative">Home</span>
+                        </span>
+                        <span
+                          class="list-item-custom-css-span2"
+                          data-rounded="rounded-lg"
+                        ></span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/shop">
+                      <a href="#_" class="relative inline-block text-lg group">
+                        <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+                          <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                          <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                          <span class="relative">Shop</span>
+                        </span>
+                        <span
+                          class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+                          data-rounded="rounded-lg"
+                        ></span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">
+                      <a href="#_" class="relative inline-block text-lg group">
+                        <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+                          <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                          <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                          <span class="relative">Blog</span>
+                        </span>
+                        <span
+                          class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+                          data-rounded="rounded-lg"
+                        ></span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about">
+                      <a href="#_" class="relative inline-block text-lg group">
+                        <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+                          <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                          <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                          <span class="relative">About</span>
+                        </span>
+                        <span
+                          class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+                          data-rounded="rounded-lg"
+                        ></span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact">
+                      <a href="#_" class="relative inline-block text-lg group">
+                        <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+                          <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                          <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                          <span class="relative">Contact</span>
+                        </span>
+                        <span
+                          class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+                          data-rounded="rounded-lg"
+                        ></span>
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
