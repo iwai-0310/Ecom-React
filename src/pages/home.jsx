@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export const home = () => {
-  return (
-    <div>home</div>
-  )
-}
+  return <div className="bg-slate-900 text-slate-50">home</div>;
+};
 
-export default home
+export default home;

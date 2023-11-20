@@ -19,7 +19,7 @@ const NavItems = () => {
   return (
     <header
       // For this div if headerFixed is true add header-fixed fadeInUp from animate css to the header className
-      className={`header-section style-4 ${
+      className={`bg-red-200 header-section style-4 ${
         headerFixed ? "header-fixed fadeInUp" : ""
       } `}
     >
