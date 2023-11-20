@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/nav-logo.png";
 
-const NavItems = () => {
+export const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
@@ -25,8 +25,8 @@ const NavItems = () => {
     >
       {/* nav top starts here */}
 
-      {/* Make the div hidden and for bigger screens make the element block so you can 
-      see the element again. */}
+      {/* Make the div hidden and for bigger screens make the element block so you can
+            see the element again. */}
       <div className={`nav-top hidden md:block ${socialToggle ? "open" : ""}`}>
         <div className="nav-top-header">
           <div className="nav-top-header-area">
@@ -73,9 +73,13 @@ const NavItems = () => {
             {/* menu area */}
             <div className="menu-area">
               <div className="menu">
-                <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
+                <ul
+                  className={`custom-list-item lab-ul ${
+                    menuToggle ? "active" : ""
+                  }`}
+                >
                   {/* Home in menu */}
-                  <li className="custom-list-item">
+                  <li>
                     <Link to="/">
                       <a href="#_" class="relative inline-block text-lg group">
                         <span class="list-item-custom-css-span1">
@@ -156,6 +160,7 @@ const NavItems = () => {
                   </li>
                 </ul>
               </div>
+              {/* sign in and create accounts */}
               <Link to="/signup" className="nav-header-btn hidden md:block">
                 <a
                   href="#_"
@@ -180,6 +185,8 @@ const NavItems = () => {
                   </span>
                 </a>
               </Link>
+
+              {/* menu toggler */}
             </div>
           </div>
         </div>
@@ -187,5 +194,3 @@ const NavItems = () => {
     </header>
   );
 };
-
-export default NavItems;
