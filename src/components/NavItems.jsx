@@ -156,6 +156,8 @@ const NavItems = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Sign-in and create account */}
               <Link to="/signup" className="nav-header-btn hidden md:block">
                 <a
                   href="#_"
@@ -180,6 +182,16 @@ const NavItems = () => {
                   </span>
                 </a>
               </Link>
+
+              {/* menu toggler */}
+              <div
+                onClick={() => setMenuToggle(!menuToggle)}
+                className={`header-bar lg:hidden ${menuToggle ? "active" : ""}`}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </div>
