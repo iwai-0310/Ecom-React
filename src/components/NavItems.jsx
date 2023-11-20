@@ -30,7 +30,7 @@ const NavItems = () => {
       <div className={`nav-top hidden md:block ${socialToggle ? "open" : ""}`}>
         <div className="nav-top-header">
           <div className="nav-top-header-area">
-            {/* <Link to="/signup" className="nav-header-btn">
+            <Link to="/signup" className="nav-header-btn">
               <a
                 href="#_"
                 class="relative inline-block px-4 py-2 font-medium group"
@@ -53,7 +53,7 @@ const NavItems = () => {
                   Log in
                 </span>
               </a>
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
@@ -191,6 +191,13 @@ const NavItems = () => {
                 <span></span>
                 <span></span>
                 <span></span>
+              </div>
+              {/* social toggler */}
+              <div
+                className="sm:block md:hidden lg:hidden"
+                onClick={() => setSocialToggle(!socialToggle)}
+              >
+                <i class="icofont-info-square"></i>
               </div>
             </div>
           </div>
