@@ -63,8 +63,8 @@ const Banner = () => {
               value={searchInput}
               onChange={handleSearch}
             />
-            <button type="submit" className="w-12 h-12 bg-blue-500 text-white">
-              <i class="icofont-search"></i>
+            <button type="submit">
+              <i className="icofont-search "></i>
             </button>
           </form>
           {/* description */}
