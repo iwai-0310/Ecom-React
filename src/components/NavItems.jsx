@@ -19,7 +19,7 @@ const NavItems = () => {
   return (
     <header
       // For this div if headerFixed is true add header-fixed fadeInUp from animate css to the header className
-      className={`bg-red-200 header-section style-4 ${
+      className={`header-section style-4 ${
         headerFixed ? "header-fixed fadeInUp" : ""
       } `}
     >
@@ -27,7 +27,11 @@ const NavItems = () => {
 
       {/* Make the div hidden and for bigger screens make the element block so you can 
       see the element again. */}
-      <div className={`nav-top hidden md:block ${socialToggle ? "open" : ""}`}>
+      <div
+        className={`nav-top hidden  md:hidden  ${
+          socialToggle ? "open block" : ""
+        }`}
+      >
         <div className="nav-top-header">
           <div className="nav-top-header-area">
             <Link to="/signup" className="nav-header-btn">
@@ -61,7 +65,7 @@ const NavItems = () => {
       {/* nav bottom starts here */}
       <div className="nav-bottom">
         <div className="nav-bottom-header">
-          <div className="header-wrapper">
+          <div className="header-wrapper flex-auto ">
             {/* logo */}
             <div className="logo-search-acte">
               <div className="logo">
@@ -186,7 +190,9 @@ const NavItems = () => {
               {/* menu toggler */}
               <div
                 onClick={() => setMenuToggle(!menuToggle)}
-                className={`header-bar lg:hidden ${menuToggle ? "active" : ""}`}
+                className={`mx-12 header-bar block lg:hidden ${
+                  menuToggle ? "active" : ""
+                }`}
               >
                 <span></span>
                 <span></span>
@@ -194,10 +200,14 @@ const NavItems = () => {
               </div>
               {/* social toggler */}
               <div
-                className="sm:block md:hidden lg:hidden"
-                onClick={() => setSocialToggle(!socialToggle)}
+                className="mx-5 ellipsis-bar block md:hidden"
+                onClick={() => {
+                  console.log("social toggler clicked");
+                  console.log(socialToggle);
+                  setSocialToggle(!socialToggle);
+                }}
               >
-                <i class="icofont-info-square"></i>
+                <i className="icofont-info-square w-100 h-100"></i>
               </div>
             </div>
           </div>
