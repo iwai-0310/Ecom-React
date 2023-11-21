@@ -61,12 +61,23 @@ const HomeCategory = () => {
               <div key={i} className="col">
                 <Link to="/shop" className="category-item">
                   <div className="category-inner ">
+                    {/* image thumbnail */}
                     <div className="category-thumb">
                       <img
-                        className="border-solid border-2 border-sky-800 "
+                        className="border-solid border-2 border-gray-200  "
                         src={val.imgUrl}
                         alt={val.imgAlt}
                       />
+                    </div>
+
+                    {/* content */}
+                    <div className="category-content">
+                      <div className="cate-icon">
+                        <i className={`${val.iconName}`}></i>
+                      </div>
+                      <Link>
+                        <h6>{val.title}</h6>
+                      </Link>
                     </div>
                   </div>
                 </Link>
