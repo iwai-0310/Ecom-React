@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import productData from "../../products.json";
 
 // title for banner
@@ -35,7 +36,16 @@ const Banner = () => {
 
   //function handleSearch
   const handleSearch = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
+    const searchTerm = event.target.value;
+    setSearchInput(searchTerm);
+
+    //filtering product based on search
+    const filtered = productData.filter((product) =>
+      product.name.toLowerCase.includes(searchTerm.toLowerCase)
+    );
+
+    setFilterProducts(filtered);
   };
   return (
     <div className="banner-section style-4">
@@ -54,6 +64,17 @@ const Banner = () => {
               onChange={handleSearch}
             />
           </form>
+          {/* description */}
+          <p>{desc}</p>
+          {/* show filtered products here */}
+          <ul className="lab-ul">
+            {searchInput &&
+              filterProducts.map((product, i) => (
+                <li key={i}>
+                  <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
     </div>
