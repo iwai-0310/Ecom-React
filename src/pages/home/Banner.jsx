@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import productData from "../../products.json";
 
 // title for banner
 const title = (
@@ -27,10 +28,24 @@ const bannerList = [
 ];
 
 const Banner = () => {
+  //use states for the banner
+  const [searchInput, setSearchInput] = useState("");
+  const [filterProducts, setFilterProducts] = useState("");
+  console.log(productData);
   return (
     <div className="banner-section style-4">
       <div className="container">
-        <div className="banner-content">{title}</div>
+        <div className="banner-content">
+          {title}
+          <form>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search product"
+            />
+          </form>
+        </div>
       </div>
     </div>
   );
