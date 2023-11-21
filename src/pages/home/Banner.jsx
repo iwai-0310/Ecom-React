@@ -42,7 +42,7 @@ const Banner = () => {
 
     //filtering product based on search
     const filtered = productData.filter((product) =>
-      product.name.toLowerCase.includes(searchTerm.toLowerCase)
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setFilterProducts(filtered);
@@ -54,7 +54,7 @@ const Banner = () => {
           {/* title */}
           {title}
           {/* search input */}
-          <form>
+          <form className="flex items-center">
             <input
               type="text"
               name="search"
@@ -63,6 +63,9 @@ const Banner = () => {
               value={searchInput}
               onChange={handleSearch}
             />
+            <button type="submit" className="w-12 h-12 bg-blue-500 text-white">
+              <i class="icofont-search"></i>
+            </button>
           </form>
           {/* description */}
           <p>{desc}</p>
