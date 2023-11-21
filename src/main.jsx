@@ -9,7 +9,7 @@ import "swiper/css";
 import "././assets/css/icofont.min.css";
 import "././assets/css/animate.css";
 import "././assets/css/style.min.css";
-import Home from "./pages/home.jsx";
+import Home from "./pages/home/home.jsx";
 import Blog from "./pages/Blog.jsx";
 
 const router = createBrowserRouter([

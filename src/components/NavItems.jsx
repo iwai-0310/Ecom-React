@@ -27,11 +27,7 @@ const NavItems = () => {
 
       {/* Make the div hidden and for bigger screens make the element block so you can 
       see the element again. */}
-      <div
-        className={`nav-top hidden  md:hidden  ${
-          socialToggle ? "open block" : ""
-        }`}
-      >
+      <div className={`nav-top md:hidden  ${socialToggle ? "open " : ""}`}>
         <div className="nav-top-header">
           <div className="nav-top-header-area">
             <Link to="/signup" className="nav-header-btn">
@@ -207,7 +203,9 @@ const NavItems = () => {
                   setSocialToggle(!socialToggle);
                 }}
               >
-                <i className="icofont-info-square w-100 h-100"></i>
+                <button className="w-8 h-8 bg-red-800 flex items-center ">
+                  <i className="icofont-info-square w-100 h-100"></i>
+                </button>
               </div>
             </div>
           </div>
