@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
+import SelectedCategory from "../../components/SelectedCategory";
 
 // title for banner
 const title = (
@@ -55,6 +56,7 @@ const Banner = () => {
           {title}
           {/* search input */}
           <form className="flex items-center">
+            <SelectedCategory select={"all"} />
             <input
               type="text"
               name="search"
