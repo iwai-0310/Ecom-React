@@ -149,9 +149,9 @@ const Footer = () => {
     <footer className="style-2">
       <div className="footer-top dark-view py-8">
         <div className="container">
-          <div className="flex">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 justify-center">
             {/* about section */}
-            <div className="flex-auto">
+            <div className="col-span-1">
               <div className="footer-item our-address">
                 <div className="footer-inner">
                   <div className="footer-content">
@@ -181,8 +181,29 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-            <div className="flex-auto">
+            {/* Categories */}
+            <div className="col-span-1">
+              <div className="footer-item our-address">
+                <div className="footer-inner">
+                  <div className="footer-content">
+                    <div className="title">
+                      <h4>{ItemTitle}</h4>
+                    </div>
+                    <div className="content">
+                      <ul className="lab-ul office-address">
+                        {ItemList.map((val, i) => (
+                          <li key={i}>
+                            <a href="#">{val.text}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Quick Links */}
+            <div className="col-span-1">
               <div className="footer-item our-address">
                 <div className="footer-inner">
                   <div className="footer-content">
@@ -194,6 +215,28 @@ const Footer = () => {
                         {quickList.map((val, i) => (
                           <li key={i}>
                             <a href="#">{val.text}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*Tweets*/}
+            <div className="col-span-1">
+              <div className="footer-item our-address">
+                <div className="footer-inner">
+                  <div className="footer-content">
+                    <div className="title">
+                      <h4>{tweetTitle}</h4>
+                    </div>
+                    <div className="content">
+                      <ul className="lab-ul office-address">
+                        {tweetList.map((val, i) => (
+                          <li key={i}>
+                            <i className={val.iconName}></i>
+                            {val.desc}
                           </li>
                         ))}
                       </ul>
