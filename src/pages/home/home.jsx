@@ -5,6 +5,7 @@ import CategoryShowcase from "./CategoryShowcase";
 import Register from "./Register";
 import Locationspread from "./Locationspread";
 import AboutUs from "./AboutUs";
+import AppSection from "./AppSection";
 
 export const home = () => {
   return (
@@ -15,6 +16,7 @@ export const home = () => {
       <Register />
       <Locationspread />
       <AboutUs />
+      <AppSection />
     </div>
   );
 };
