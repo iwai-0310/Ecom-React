@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 import HomeCategory from "./HomeCategory";
 import CategoryShowcase from "./CategoryShowcase";
+import Register from "./Register";
 
 export const home = () => {
   return (
@@ -9,6 +10,7 @@ export const home = () => {
       <Banner />
       <HomeCategory />
       <CategoryShowcase />
+      <Register />
     </div>
   );
 };
