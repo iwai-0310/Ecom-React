@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const title = "More Then 10,000 Customers";
 
 const desc =
@@ -44,7 +44,32 @@ const clientsList = [
 ];
 
 const Locationspread = () => {
-  return <div>Locationspread</div>;
+  return (
+    <div className="clients-section style-2 py-5">
+      <div className="container">
+        <div className="section-header text-center">
+          <h2 className="title">{title}</h2>
+          <p>{desc}</p>
+        </div>
+
+        {/* main content */}
+        <div className="section-wrapper">
+          <div className="clients">
+            {clientsList.map((val, i) => (
+              <div key={i} className="client-list">
+                <Link to="/signup" className="client-content">
+                  <span>{val.text}</span>
+                </Link>
+                <div className="client-thumb">
+                  <img src={val.imgUrl} alt="" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Locationspread;
