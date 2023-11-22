@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const title = "Our Products";
 
@@ -77,7 +77,15 @@ const ProductData = [
   },
 ];
 const CategoryShowcase = () => {
-  return <div>CategoryShowcase</div>;
+  const [items, setItems] = useState(ProductData);
+  return (
+    <div className="course-section style-3 py-8">
+      <div>
+        <img src="/src/assets/images/shape-img/icon/01.png" alt="" />
+        <img src="/src/assets/images/shape-img/icon/02.png" alt="" />
+      </div>
+    </div>
+  );
 };
 
 export default CategoryShowcase;
