@@ -104,10 +104,10 @@ const CategoryShowcase = () => {
           <h2 className="title">{title}</h2>
           <div className="course-filter-group">
             <ul className="lab-ul">
-              <li onClick={() => filterItem("All")}>All</li>
+              <li onClick={() => setItems(ProductData)}>All</li>
               <li onClick={() => filterItem("Shoes")}>Shoes</li>
               <li onClick={() => filterItem("Bags")}>Bags</li>
-              <li onClick={() => filterItem("Phone")}>Phone</li>
+              <li onClick={() => filterItem("Phones")}>Phones</li>
               <li onClick={() => filterItem("Beauty")}>Beauty</li>
             </ul>
           </div>
