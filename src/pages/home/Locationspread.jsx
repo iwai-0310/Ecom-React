@@ -8,37 +8,37 @@ const desc =
 const clientsList = [
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 1",
+    text: "Best place to order mapple syrup",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 2",
+    text: "My fav site to order clothes from.",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 3",
+    text: "I love all the choice here.",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 4",
+    text: "Wakanada Forever",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 6",
+    text: "Made by love and code",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    imgAlt: "education purpose icon 7",
+    text: "Hope I can swim this ocean",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
-    imgAlt: "education thumb rajibraj91 rajibraj",
+    imgAlt: "education purpose icon 8",
     text: "Join with Us",
   },
 ];
@@ -61,7 +61,7 @@ const Locationspread = () => {
                   <span>{val.text}</span>
                 </Link>
                 <div className="client-thumb">
-                  <img src={val.imgUrl} alt="" />
+                  <img src={val.imgUrl} alt={val.imgAlt} />
                 </div>
               </div>
             ))}
