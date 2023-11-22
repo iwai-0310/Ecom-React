@@ -17,11 +17,13 @@ const AppSection = () => {
         </div>
         <div className="section-wrapper">
           <ul className="lab-ul">
+            {/* list item for appstore */}
             <li>
               <a href="#">
                 <img src="/src/assets/images/app/01.jpg" alt="" />
               </a>
             </li>
+            {/* list item for playstore */}
             <li>
               <a href="#">
                 <img src="/src/assets/images/app/02.jpg" alt="" />
