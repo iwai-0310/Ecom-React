@@ -15,11 +15,40 @@ const Register = () => {
       <section className="register-section py-8 pb-0">
         <div className="container">
           <div className="grid gap-4 lg:grid-cols-2 grid-cols-1 items-center">
-            <div>
+            <div className="col">
               <div className="section-header">
                 <span className="subtitle">{subTitle}</span>
                 {Title}
                 <p>{desc}</p>
+              </div>
+            </div>
+
+            <div>
+              <div className="section-wrapper">
+                <h4>Register Now</h4>
+                <form className="register-form">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Username"
+                    className="reg-input"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className="reg-input"
+                  />
+                  <input
+                    type="number"
+                    name="numer"
+                    placeholder="Phone no."
+                    className="reg-input"
+                  />
+                  <button type="submit" className="lab-btn">
+                    Register
+                  </button>
+                </form>
               </div>
             </div>
           </div>
