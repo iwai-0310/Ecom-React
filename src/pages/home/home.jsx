@@ -7,6 +7,7 @@ import Locationspread from "./Locationspread";
 import AboutUs from "./AboutUs";
 import AppSection from "./AppSection";
 import Sponsor from "./Sponsor";
+import Footer from "../../components/Footer";
 
 export const home = () => {
   return (
