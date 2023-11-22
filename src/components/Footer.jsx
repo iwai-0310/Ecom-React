@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const title = "About ShopCart";
 const desc =
   "Eduaid theme number one world class university in the world There are student are studing always in this university for all time.";
@@ -147,6 +147,7 @@ const footerbottomList = [
 const Footer = () => {
   return (
     <footer className="style-2">
+      {/* footer top */}
       <div className="footer-top dark-view py-8">
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 justify-center">
@@ -244,6 +245,26 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* footer bottom */}
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="section-wrapper">
+            <p>
+              &copy; 2023 <Link to="/">Shop Cart</Link> Designed By{" "}
+              <a href="/" target="_blank">
+                Chaze
+              </a>
+            </p>
+            <div className="footer-bottom-list">
+              {footerbottomList.map((val, i) => (
+                <a href="#" key={i}>
+                  {val.text}
+                </a>
+              ))}
             </div>
           </div>
         </div>
