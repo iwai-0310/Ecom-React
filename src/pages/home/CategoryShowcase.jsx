@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Rating from "../../components/Rating";
 
 const title = "Our Products";
 
@@ -115,13 +116,16 @@ const CategoryShowcase = () => {
               <div key={product.id} className="col">
                 <div className="course-item style-4">
                   <div className="course-inner">
-                    <div className="course-thumb">
+                    <div className="course-thubm">
                       <img src={product.imgUrl} alt="" />
                       <div className="course-category">
                         <div className="course-cate">
                           <a href="#">{product.cate}</a>
                         </div>
-                        <div className="course-review"></div>
+                        {/* add rating now */}
+                        <div className="course-review">
+                          <Rating />
+                        </div>
                       </div>
                     </div>
                   </div>
