@@ -2,7 +2,7 @@ import React from "react";
 
 const subTitle = "Save Your Day";
 const Title = (
-  <h2>
+  <h2 className="title">
     Join us on our day Long Free Workshop for <b>Advance </b>{" "}
     <span>Mastering </span> on Sales
   </h2>
