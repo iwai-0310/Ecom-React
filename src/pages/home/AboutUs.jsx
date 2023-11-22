@@ -30,30 +30,30 @@ const AboutUs = () => {
     <div className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 style-2 py-12 ">
       <div className="container">
         <div className="section-wrapper">
-          <div className="flex">
-            <div className="flex-auto">
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex">
               {countList.map((val, i) => (
-                <div key={i} className="count-item">
+                <div key={i} className="count-item flex items-center">
                   <div className="count-inner">
                     {/* icons here */}
                     <div className="count-icon">
                       <i className={val.iconName}></i>
                     </div>
 
-                    <div className="count-content">
-                      <h2>
+                    <div className="count-content ml-2">
+                      <h2 className="flex items-center">
                         <span className="count">
                           <CountUp end={val.count} />
                         </span>
-                        <span>+</span>
-                        <p>{val.text}</p>
+                        <span className="ml-1">+</span>
+                        <p className="ml-1">{val.text}</p>
                       </h2>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="flex-auto">
+            <div className="flex-autp md:w-1/2 align-center">
               <div className="instructor-content">
                 <span className="subtitle">{subTitle}</span>
                 <h2>{title}</h2>
@@ -61,6 +61,11 @@ const AboutUs = () => {
                 <Link to="/signup" className="lab-btn">
                   {btnText}
                 </Link>
+              </div>
+            </div>
+            <div className="flex-auto md:w-1/2">
+              <div className="instructor-thumb">
+                <img src="/src/assets/images/instructor/01.png" alt="" />
               </div>
             </div>
           </div>
