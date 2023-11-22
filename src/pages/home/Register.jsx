@@ -40,8 +40,10 @@ const Register = () => {
                     className="reg-input"
                   />
                   <input
-                    type="number"
+                    type="text"
                     name="numer"
+                    pattern="[0-9]*"
+                    inputmode="numberic"
                     placeholder="Phone no."
                     className="reg-input"
                   />
