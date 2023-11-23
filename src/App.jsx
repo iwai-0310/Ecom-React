@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <NavItems />
-      <div className="min-h-full">
+      <div className="min-h-screen">
         <Outlet />
       </div>
 
