@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import Data from "../products.json";
 import ProductCard from "./ProductCard";
+import Pagination from "./Pagination";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
@@ -43,6 +44,7 @@ const shop = () => {
                 <div>
                   <ProductCard GridList={GridList} product={product} />
                 </div>
+                <Pagination />
               </article>
             </div>
             {/* right-section for sort and other functionalities */}
