@@ -21,7 +21,7 @@ const shop = () => {
   );
 
   //function to change the current page
-  const pageinate = (pageNumber) => {
+  const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
@@ -60,7 +60,12 @@ const shop = () => {
                 <div>
                   <ProductCard GridList={GridList} product={product} />
                 </div>
-                <Pagination />
+                <Pagination
+                  productsPerPage={productsPerPage}
+                  totalProducts={product.length}
+                  paginate={paginate}
+                  activePage={currentPage}
+                />
               </article>
             </div>
             {/* right-section for sort and other functionalities */}
