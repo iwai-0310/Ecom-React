@@ -39,6 +39,7 @@ const ProductCard = ({ GridList, product }) => {
               <p className="product-rating">
                 <Rating />
               </p>
+              <h6>$ {product.price}</h6>
             </div>
           </div>
         </div>
