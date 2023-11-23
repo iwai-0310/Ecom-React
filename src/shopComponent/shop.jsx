@@ -9,6 +9,22 @@ const showResults = "Showing 01 - 12 of 139 Results";
 const shop = () => {
   const [GridList, setGridList] = useState(true);
   const [product, setproducts] = useState(Data);
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 12;
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = product.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  //function to change the current page
+  const pageinate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="">
       <PageHeader title="Our Shop page" curPage="Shop" />
