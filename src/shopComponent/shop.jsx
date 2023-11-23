@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import Data from "../products.json";
+import ProductCard from "./ProductCard";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
@@ -39,7 +40,9 @@ const shop = () => {
                   </div>
                 </div>
                 {/* product cards */}
-                <div></div>
+                <div>
+                  <ProductCard GridList={GridList} product={product} />
+                </div>
               </article>
             </div>
             {/* right-section for sort and other functionalities */}
