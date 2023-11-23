@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Rating from "../components/Rating";
 
 const ProductCard = ({ GridList, product }) => {
   return (
@@ -28,6 +29,16 @@ const ProductCard = ({ GridList, product }) => {
                   <i className="icofont-cart-alt"></i>
                 </Link>
               </div>
+            </div>
+
+            {/* product details */}
+            <div className="product-content">
+              <h5>
+                <Link to={`/shop/${product.id}`}>{product.name}</Link>
+              </h5>
+              <p className="product-rating">
+                <Rating />
+              </p>
             </div>
           </div>
         </div>
