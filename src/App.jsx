@@ -12,7 +12,10 @@ function App() {
   return (
     <>
       <NavItems />
-      <Outlet />
+      <div className="min-h-full">
+        <Outlet />
+      </div>
+
       <Footer />
     </>
   );
