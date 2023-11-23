@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
+import Data from "../products.json";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
 const shop = () => {
   const [GridList, setGridList] = useState(true);
+  const [product, setproducts] = useState(Data);
   return (
     <div className="">
       <PageHeader title="Our Shop page" curPage="Shop" />
@@ -36,6 +38,8 @@ const shop = () => {
                     </button>
                   </div>
                 </div>
+                {/* product cards */}
+                <div></div>
               </article>
             </div>
             {/* right-section for sort and other functionalities */}
