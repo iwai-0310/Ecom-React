@@ -11,10 +11,17 @@ const Pagination = ({
     pageNumbers.push(i);
   }
   return (
-    <ul>
+    <ul className="default-pagination lab-ul">
       {pageNumbers.map((number) => (
-        <li key={number}>
-          <a href="#">{number}</a>
+        <li
+          key={number}
+          className={`page-item ${
+            number === activePage ? "bg-orange-500" : ""
+          }`}
+        >
+          <button onClick={() => paginate(number)} className="bg-transparent">
+            {number}
+          </button>
         </li>
       ))}
     </ul>
