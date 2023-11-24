@@ -3,6 +3,7 @@ import PageHeader from "../components/PageHeader";
 import Data from "../products.json";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
+import Search from "./Search";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
@@ -58,7 +59,7 @@ const shop = () => {
                 </div>
                 {/* product cards */}
                 <div>
-                  <ProductCard GridList={GridList} product={product} />
+                  <ProductCard GridList={GridList} product={currentProducts} />
                 </div>
                 <Pagination
                   productsPerPage={productsPerPage}
@@ -69,7 +70,11 @@ const shop = () => {
               </article>
             </div>
             {/* right-section for sort and other functionalities */}
-            <div className="lg:w-4/12 w-full">right side</div>
+            <div className="lg:w-4/12 w-full">
+              <aside>
+                <Search product={product} GridList={GridList} />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
