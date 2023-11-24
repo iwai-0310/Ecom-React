@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Search = ({ product, GridList }) => {
   const [searchTerm, setSearchTerm] = useState(" ");
@@ -21,6 +22,30 @@ const Search = ({ product, GridList }) => {
           <i className="icofont-search-2"></i>
         </button>
       </form>
+
+      {/* show the search results now */}
+      <div>
+        {searchTerm &&
+          filteredProducts.map((item) => (
+            <Link key={item.id} to={`/shop/${item.id}`}>
+              <div className="flex gap-3 p-2">
+                <div className="pro-thumb h-24">
+                  <img
+                    src={item.img}
+                    alt=""
+                    width={70}
+                    className="flex-{grow|shrink}-0"
+                  />
+                </div>
+                <div className="product-content">
+                  <p>
+                    <Link to={`/shop/${item.id}`}>{item.name}</Link>
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+      </div>
     </div>
   );
 };
