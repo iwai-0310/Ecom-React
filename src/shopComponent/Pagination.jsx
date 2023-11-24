@@ -12,6 +12,19 @@ const Pagination = ({
   }
   return (
     <ul className="default-pagination lab-ul">
+      {/* left arrow and func */}
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            if (activePage < pageNumbers.length) {
+              paginate(activePage - 1);
+            }
+          }}
+        >
+          <i className="icofont-rounded-left"></i>
+        </a>
+      </li>
       {pageNumbers.map((number) => (
         <li
           key={number}
@@ -24,6 +37,20 @@ const Pagination = ({
           </button>
         </li>
       ))}
+      {/* right arrow and func */}
+
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            if (activePage < pageNumbers.length) {
+              paginate(activePage + 1);
+            }
+          }}
+        >
+          <i className="icofont-rounded-right"></i>
+        </a>
+      </li>
     </ul>
   );
 };
