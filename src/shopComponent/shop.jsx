@@ -26,7 +26,18 @@ const shop = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+  //filter product based on some category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const menuItems = [...new Set(Data.map((Val) => Val.category))];
 
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    });
+
+    setSelectedCategory(curcat);
+    setproducts(newItem);
+  };
   return (
     <div className="">
       <PageHeader title="Our Shop page" curPage="Shop" />
