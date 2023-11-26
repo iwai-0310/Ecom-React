@@ -12,6 +12,7 @@ import "././assets/css/style.min.css";
 import Home from "./pages/home/home.jsx";
 import Blog from "./pages/Blog.jsx";
 import Shop from "./shopComponent/shop.jsx";
+import SingleProductView from "./shopComponent/SIngleProductView.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/blog", element: <Blog /> },
       { path: "/shop", element: <Shop /> },
+      { path: "/shop/:id", element: <SingleProductView /> },
     ],
   },
 ]);
