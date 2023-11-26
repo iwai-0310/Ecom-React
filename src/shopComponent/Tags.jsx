@@ -1,6 +1,6 @@
 import React from "react";
 
-const title = "Our Popular Tags";
+const title = "Popular Tags";
 
 const tagsList = [
   {
@@ -42,7 +42,20 @@ const tagsList = [
 ];
 
 const Tags = () => {
-  return <div>Tags</div>;
+  return (
+    <div className="widget widget-tags">
+      <div className="widget-header">
+        <h5 className="title">{title}</h5>
+      </div>
+      <ul className="widget-wrapper">
+        {tagsList.map((val, i) => (
+          <li key={i} c>
+            <a href={val.link}>{val.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Tags;
