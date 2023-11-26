@@ -40,15 +40,15 @@ const PopularPost = () => {
         <h5 className="title">{title}</h5>
       </div>
       <ul className="widget-wrapper">
-        {postList.map((blog, i) => {
+        {postList.map((blog, i) => (
           <li key={i}>
             <div className="post-thumb">
               <Link to={`/blog/${blog.id}`}>
-                <img src={blog.imgUrl} alt={blog.imgAlt} />
+                <img src={blog.imgUrl} alt="" />
               </Link>
             </div>
-          </li>;
-        })}
+          </li>
+        ))}
       </ul>
     </div>
   );
