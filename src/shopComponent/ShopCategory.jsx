@@ -16,7 +16,7 @@ const ShopCategory = ({
       <div>
         <button
           onClick={() => setProducts(Data)}
-          className={`m-2 ${selectedCategory === "All" ? "bg-ornage-500" : ""}`}
+          className={`m-2 ${selectedCategory === "All" ? "bg-orange-500" : ""}`}
         >
           All
         </button>

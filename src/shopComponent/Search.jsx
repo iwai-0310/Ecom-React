@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Search = ({ product, GridList }) => {
-  const [searchTerm, setSearchTerm] = useState(" ");
+  const [searchTerm, setSearchTerm] = useState("");
   const filteredProducts = product.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
