@@ -22,7 +22,22 @@ const SIngleProductView = () => {
       <div className="shop-single py-8 aside-bg">
         <div className="container">
           <div className="flex justify-center">
-            <div className="lg:w-8/12 w-12">Left</div>
+            {/* left-side */}
+            <div className="lg:w-8/12 w-12">
+              <article>
+                <div className="product-details">
+                  <div className="flex items-center">
+                    {/* Image here */}
+                    <div className="md:w-6/12 w-12">Image</div>
+                    {/* Details for product here */}
+                    <div className="md:w-6/12 w-12">Details</div>
+                  </div>
+                </div>
+                {/* review here */}
+                <div className="review"></div>
+              </article>
+            </div>
+            {/* right-side */}
             <div className="lg:w-4/12 w-12">Right</div>
           </div>
         </div>
