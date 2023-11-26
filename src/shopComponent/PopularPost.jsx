@@ -41,11 +41,19 @@ const PopularPost = () => {
       </div>
       <ul className="widget-wrapper">
         {postList.map((blog, i) => (
-          <li key={i}>
+          <li key={i} className="flex flex-wrap justify-between">
+            {/* post images */}
             <div className="post-thumb">
               <Link to={`/blog/${blog.id}`}>
                 <img src={blog.imgUrl} alt="" />
               </Link>
+            </div>
+            {/* post data */}
+            <div className="post-content">
+              <Link to={`blog/${blog.id}`}>
+                <h5>{blog.title}</h5>
+              </Link>
+              <p>{blog.date}</p>
             </div>
           </li>
         ))}
