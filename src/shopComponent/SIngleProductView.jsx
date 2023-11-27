@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import Review from "./Review";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -83,7 +84,9 @@ const SIngleProductView = () => {
                   </div>
                 </div>
                 {/* review here */}
-                <div className="review"></div>
+                <div className="review">
+                  <Review />
+                </div>
               </article>
             </div>
             {/* right-side */}

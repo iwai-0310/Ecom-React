@@ -62,7 +62,7 @@ const ProductDisplay = ({ item }) => {
     setCoupon("");
   };
   return (
-    <div>
+    <div className="ml-5">
       <div>
         <h4>{name}</h4>
         <p className="rating">
