@@ -89,28 +89,47 @@ const Review = () => {
           </div>
         </div>
         {/* description content */}
-        <form action="action" className="flex">
-          <div className="md:w-4/12 w-full mx-2">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full name *"
-            />
-          </div>
-          <div className="md:w-4/12 w-full mx-2">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your Email *"
-            />
-          </div>
-          <div className="md:w-4/12 w-full mx-2">
-            <div className="rating">
-              <span>Your ratings</span>
-              <Rating />
+        <form action="action">
+          <div className="flex">
+            <div className="md:w-4/12 w-full mx-2">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Full name *"
+              />
             </div>
+            <div className="md:w-4/12 w-full mx-2">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your Email *"
+              />
+            </div>
+            <div className="md:w-4/12 w-full mx-2">
+              <div className="rating">
+                <span>Your ratings</span>
+                <Rating />
+              </div>
+            </div>
+          </div>
+          <div className="md:w-11/12 w-full my-2 mx-2">
+            <textarea
+              name="message"
+              id="message"
+              cols=""
+              rows="8"
+              placeholder="Type Review Here ..."
+            ></textarea>
+          </div>
+          <div className="w-full">
+            <button
+              type="submit"
+              className="default-button bg-orange-500 text-gray-900 font-bold"
+            >
+              <span>Submit Review</span>
+            </button>
           </div>
         </form>
       </div>
