@@ -11,6 +11,9 @@ const ProductDisplay = ({ item }) => {
   const handleSizeChange = (event) => {
     setSize(event.target.value);
   };
+  const handleColorChange = (event) => {
+    setColor(event.target.value);
+  };
   return (
     <div>
       <div>
@@ -29,8 +32,9 @@ const ProductDisplay = ({ item }) => {
       </div>
       {/* cart component */}
       <div>
-        <form>
-          <div className="select-product Size">
+        <form className="flex justify-between">
+          {/* dropdown for size */}
+          <div className="select-product size">
             <select value={size} onChange={handleSizeChange}>
               <option value="NaN">select size</option>
               <option value="XS">XS</option>
@@ -39,6 +43,19 @@ const ProductDisplay = ({ item }) => {
               <option value="L">L</option>
               <option value="XL">XL</option>
             </select>
+            <i className="icofont-rounder-down"></i>
+          </div>
+          {/* dropdown for color */}
+          <div className="select-product color">
+            <select value={color} onChange={handleColorChange}>
+              <option value="Violet">Violet</option>
+              <option value="Indigo">Indigo</option>
+              <option value="Blue">Blue</option>
+              <option value="Green">Green</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+            </select>
+            <i className="icofont-rounder-down"></i>
           </div>
         </form>
       </div>
