@@ -72,21 +72,32 @@ const ProductDisplay = ({ item }) => {
               <i className="icofont-rounder-down"></i>
             </div>
           </div>
-          {/* cart quantity */}
-          <div className="cart-plus-minus">
-            <div className="dec qtybutton" onClick={handleDecrease}>
-              -
+          <div className="flex justify-evenly">
+            {/* cart quantity */}
+            <div className="cart-plus-minus w-5/12">
+              <div className="dec qtybutton" onClick={handleDecrease}>
+                -
+              </div>
+              <input
+                onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
+                className="cart-plus-minus-box"
+                type="text"
+                name="qtybutton"
+                id="qtybutton"
+                value={preQuantity}
+              />
+              <div className="inc qtybutton" onClick={handleIncrease}>
+                +
+              </div>
             </div>
-            <input
-              onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
-              className="cart-plus-minus-box"
-              type="text"
-              name="qtybutton"
-              id="qtybutton"
-              value={preQuantity}
-            />
-            <div className="inc qtybutton" onClick={handleIncrease}>
-              +
+            {/* coupon field */}
+            <div className="discount-code mb-2 w-6/12">
+              <input
+                type="text"
+                placeholder="Enter code"
+                value={coupon}
+                onChange={(e) => setCoupon(e.target.value)}
+              />
             </div>
           </div>
         </form>
