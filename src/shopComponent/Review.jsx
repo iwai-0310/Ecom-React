@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Rating from "../components/Rating";
 
 const reviewtitle = "Add a Review";
 
@@ -83,10 +84,35 @@ const Review = () => {
               <div className="review-title">
                 <h5>{reviewtitle}</h5>
               </div>
+              {/* add the review form here */}
             </div>
           </div>
         </div>
         {/* description content */}
+        <form action="action" className="flex">
+          <div className="md:w-4/12 w-full mx-2">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full name *"
+            />
+          </div>
+          <div className="md:w-4/12 w-full mx-2">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email *"
+            />
+          </div>
+          <div className="md:w-4/12 w-full mx-2">
+            <div className="rating">
+              <span>Your ratings</span>
+              <Rating />
+            </div>
+          </div>
+        </form>
       </div>
     </>
   );
