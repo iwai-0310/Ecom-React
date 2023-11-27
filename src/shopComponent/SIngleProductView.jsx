@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 const SIngleProductView = () => {
   const [product, setProduct] = useState([]);
   //access the product id
@@ -28,7 +35,23 @@ const SIngleProductView = () => {
                 <div className="product-details">
                   <div className="flex items-center">
                     {/* Image here */}
-                    <div className="md:w-6/12 w-12">Image</div>
+                    <div className="md:w-6/12 w-12">
+                      <div className="product-thumb">
+                        <div className="swipe-container pro-single-top">
+                          <Swiper className="mySwiper">
+                            <SwiperSlide>Slide 1</SwiperSlide>
+                            <SwiperSlide>Slide 2</SwiperSlide>
+                            <SwiperSlide>Slide 3</SwiperSlide>
+                            <SwiperSlide>Slide 4</SwiperSlide>
+                            <SwiperSlide>Slide 5</SwiperSlide>
+                            <SwiperSlide>Slide 6</SwiperSlide>
+                            <SwiperSlide>Slide 7</SwiperSlide>
+                            <SwiperSlide>Slide 8</SwiperSlide>
+                            <SwiperSlide>Slide 9</SwiperSlide>
+                          </Swiper>
+                        </div>
+                      </div>
+                    </div>
                     {/* Details for product here */}
                     <div className="md:w-6/12 w-12">Details</div>
                   </div>
