@@ -7,7 +7,7 @@ const ProductDisplay = ({ item }) => {
   const [preQuantity, setQuantity] = useState(quantity);
   const [coupon, setCoupon] = useState("");
   const [size, setSize] = useState("Select Size");
-  const [color, setColor] = useState("Black");
+  const [color, setColor] = useState("Select Color");
 
   // function for size change
   const handleSizeChange = (event) => {
@@ -40,7 +40,26 @@ const ProductDisplay = ({ item }) => {
       color: color,
       coupon: coupon,
     };
-    console.log(product);
+    // console.log(product);
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProjectIndex = existingCart.findIndex(
+      (item) => item.id === id
+    );
+
+    if (existingProjectIndex !== -1) {
+      existingCart[existingProjectIndex].quantity += preQuantity;
+    } else {
+      existingCart.push(product);
+    }
+
+    // update local storage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    //reset the form field
+    setQuantity(1);
+    setSize("select Size");
+    setColor("select Color");
+    setCoupon("");
   };
   return (
     <div>
