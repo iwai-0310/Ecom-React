@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const reviwtitle = "Add a Review";
+const reviewtitle = "Add a Review";
 
 let ReviewList = [
   {
@@ -77,6 +77,14 @@ const Review = () => {
               </li>
             ))}
           </ul>
+          {/* add review fields for entry here */}
+          <div className="client-review">
+            <div className="review-form">
+              <div className="review-title">
+                <h5>{reviewtitle}</h5>
+              </div>
+            </div>
+          </div>
         </div>
         {/* description content */}
       </div>
