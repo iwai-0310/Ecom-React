@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const reviwtitle = "Add a Review";
 
@@ -34,7 +34,23 @@ let ReviewList = [
 ];
 
 const Review = () => {
-  return <div>Review</div>;
+  const [reviewShow, setReviewShow] = useState(true);
+  return (
+    <>
+      <ul
+        className={`review-nav lab-ul ${
+          reviewShow ? "RevActive" : "DescActive"
+        }`}
+      >
+        <li className="desc" onClick={() => setReviewShow(!reviewShow)}>
+          Description
+        </li>
+        <li className="rev" onClick={() => setReviewShow(!reviewShow)}>
+          Reviews 4
+        </li>
+      </ul>
+    </>
+  );
 };
 
 export default Review;
