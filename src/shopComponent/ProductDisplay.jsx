@@ -8,12 +8,25 @@ const ProductDisplay = ({ item }) => {
   const [size, setSize] = useState("Select Sizes");
   const [color, setColor] = useState("Select Color");
 
+  // function for size change
   const handleSizeChange = (event) => {
     setSize(event.target.value);
   };
+  // function for  color change
   const handleColorChange = (event) => {
     setColor(event.target.value);
   };
+  // functin for decreasing the quantity
+  const handleDecrease = () => {
+    if (preQuantity > 1) {
+      setQuantity(preQuantity - 1);
+    }
+  };
+  // functin for increase the quantity
+  const handleIncrease = () => {
+    setQuantity(preQuantity + 1);
+  };
+
   return (
     <div>
       <div>
@@ -49,27 +62,32 @@ const ProductDisplay = ({ item }) => {
             {/* dropdown for color */}
             <div className="select-product color w-6/12">
               <select value={color} onChange={handleColorChange}>
-                <option value="Violet">Violet</option>
+                <option value="Black">Black</option>
                 <option value="Indigo">Indigo</option>
                 <option value="Blue">Blue</option>
                 <option value="Green">Green</option>
                 <option value="White">White</option>
-                <option value="Black">Black</option>
+                <option value="Violet">Violet</option>
               </select>
               <i className="icofont-rounder-down"></i>
             </div>
           </div>
           {/* cart quantity */}
           <div className="cart-plus-minus">
-            <div className="dec qtybutton">-</div>
+            <div className="dec qtybutton" onClick={handleDecrease}>
+              -
+            </div>
             <input
+              onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
               className="cart-plus-minus-box"
               type="text"
               name="qtybutton"
               id="qtybutton"
               value={preQuantity}
             />
-            <div className="inc qtybutton">+</div>
+            <div className="inc qtybutton" onClick={handleIncrease}>
+              +
+            </div>
           </div>
         </form>
       </div>
