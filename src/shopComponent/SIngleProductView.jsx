@@ -38,7 +38,20 @@ const SIngleProductView = () => {
                     <div className="md:w-6/12 w-12">
                       <div className="product-thumb">
                         <div className="swipe-container pro-single-top">
-                          <Swiper className="mySwiper">
+                          <Swiper
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            autoplay={{
+                              delay: 2000,
+                              disableOnInteraction: false,
+                            }}
+                            modules={[Autoplay]}
+                            navigation={{
+                              prevEl: ".pro-single-prev",
+                              nextEl: ".pro-single-next",
+                            }}
+                            className="mySwiper"
+                          >
                             {result.map((item, i) => (
                               <SwiperSlide key={i}>
                                 <div className="single-thumb">
@@ -47,6 +60,12 @@ const SIngleProductView = () => {
                               </SwiperSlide>
                             ))}
                           </Swiper>
+                          <div className="pro-single-next">
+                            <i className="icofont-rounded-left"></i>
+                          </div>
+                          <div className="pro-single-prev">
+                            <i className="icofont-rounded-right"></i>
+                          </div>
                         </div>
                       </div>
                     </div>
