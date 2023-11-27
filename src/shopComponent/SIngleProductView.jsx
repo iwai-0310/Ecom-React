@@ -75,7 +75,7 @@ const SIngleProductView = () => {
                       <div className="post-cotent">
                         <div>
                           {result.map((item) => (
-                            <ProductDisplay key={item.key} />
+                            <ProductDisplay key={item.key} item={item} />
                           ))}
                         </div>
                       </div>
