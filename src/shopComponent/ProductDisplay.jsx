@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProductDisplay = ({ item }) => {
-  const { name, id, price, seller, ratingsCount, quantity } = item;
+  const { name, id, price, seller, ratingsCount, quantity, img } = item;
 
   const [preQuantity, setQuantity] = useState(quantity);
   const [coupon, setCoupon] = useState("");
-  const [size, setSize] = useState("Select Sizes");
-  const [color, setColor] = useState("Select Color");
+  const [size, setSize] = useState("Select Size");
+  const [color, setColor] = useState("Black");
 
   // function for size change
   const handleSizeChange = (event) => {
@@ -27,7 +27,21 @@ const ProductDisplay = ({ item }) => {
   const handleIncrease = () => {
     setQuantity(preQuantity + 1);
   };
-
+  // function to handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const product = {
+      id: id,
+      img: img,
+      name: name,
+      quantity: preQuantity,
+      price: price,
+      size: size,
+      color: color,
+      coupon: coupon,
+    };
+    console.log(product);
+  };
   return (
     <div>
       <div>
@@ -46,7 +60,7 @@ const ProductDisplay = ({ item }) => {
       </div>
       {/* cart component */}
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="flex justify-between my-4">
             {/* dropdown for size */}
             <div className="select-product size w-5/12">

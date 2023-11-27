@@ -22,7 +22,7 @@ const SIngleProductView = () => {
   }, []);
   //filter out the data with product.id
   const result = product.filter((p) => p.id === id);
-  console.log(result);
+  // console.log(result);
 
   return (
     <div>
