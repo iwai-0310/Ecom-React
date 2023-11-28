@@ -130,6 +130,23 @@ const CartPage = () => {
               </table>
             </div>
             {/* cart top ends */}
+            {/* cart bottom */}
+            <div className="cart-bottom">
+              {/* checkout box */}
+              <div className="cart-checkout-box">
+                <form className="coupon">
+                  <input
+                    type="text"
+                    name="coupon"
+                    placeholder="coupon code .."
+                    id="coupon"
+                    className="cart-page-input-text"
+                  />
+                </form>
+              </div>
+              {/* checkout box ends */}
+            </div>
+            {/* cart bottom ends */}
           </div>
         </div>
       </div>
