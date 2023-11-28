@@ -150,6 +150,31 @@ const CartPage = () => {
                 </form>
               </div>
               {/* checkout box ends */}
+
+              {/* shoping box */}
+              <div className="shiping-box">
+                <div className="flex">
+                  <div className="md:w-6/12 w-full">
+                    <div className="calculate-shiping">
+                      <h3>Calculate Shiping</h3>
+                      <div className="outline-select">
+                        <select>
+                          <option value="uk">United Kingdom (UK)</option>
+                          <option value="us">
+                            United State of America (US)
+                          </option>
+                          <option value="bz">Brazil (BZ)</option>
+                          <option value="mx">Mexico (MX)</option>
+                          <option value="ch">China (CH)</option>
+                          <option value="ru">Russia (RU)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:w-6/12 w-full">right side</div>
+                </div>
+              </div>
+              {/* shop box ends */}
             </div>
             {/* cart bottom ends */}
           </div>
