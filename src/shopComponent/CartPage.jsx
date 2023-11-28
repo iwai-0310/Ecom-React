@@ -140,8 +140,13 @@ const CartPage = () => {
                     name="coupon"
                     placeholder="coupon code .."
                     id="coupon"
-                    className="cart-page-input-text"
+                    className="cart-page-input-text w-3/4"
                   />
+                  <input type="submit" value="Apply" className="w-2/4" />
+                </form>
+                <form className="cart-checkout">
+                  <input type="submit" value="Update Cart" />
+                  <div> render Checkout here </div>
                 </form>
               </div>
               {/* checkout box ends */}
