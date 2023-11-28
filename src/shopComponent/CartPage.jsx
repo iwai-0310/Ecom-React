@@ -168,7 +168,29 @@ const CartPage = () => {
                           <option value="ch">China (CH)</option>
                           <option value="ru">Russia (RU)</option>
                         </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
                       </div>
+                      <div className="flex justify-between">
+                        <div className="outline-select w-6/12">
+                          <input
+                            type="text"
+                            name="city"
+                            placeholder="City"
+                            id="city"
+                          />
+                        </div>
+                        <div className="outline-select w-4/12">
+                          <input
+                            type="text"
+                            name="postal-code"
+                            placeholder="Postal-code"
+                            id="postal-code"
+                          />
+                        </div>
+                      </div>
+                      <button type="submit">Update Address</button>
                     </div>
                   </div>
                   <div className="md:w-6/12 w-full">right side</div>
