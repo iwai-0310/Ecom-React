@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import Review from "./Review";
+import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -90,7 +92,12 @@ const SIngleProductView = () => {
               </article>
             </div>
             {/* right-side */}
-            <div className="lg:w-4/12 w-12">Right</div>
+            <div className="lg:w-4/12 w-12">
+              <aside className="pl-4">
+                <PopularPost />
+                <Tags />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
