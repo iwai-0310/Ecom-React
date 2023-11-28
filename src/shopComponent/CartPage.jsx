@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
+import { Link } from "react-router-dom";
+import delImgUtl from "../assets/images/shop/del.png";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -71,6 +73,60 @@ const CartPage = () => {
                     <th className="cat-edit">Edit</th>
                   </tr>
                 </thead>
+                {/* table body */}
+                <tbody>
+                  {cartItems.map((val, i) => (
+                    <tr key={i}>
+                      {/* td for product image and data */}
+                      <td className="product-item cat-product">
+                        <div className="p-thumb">
+                          <Link to="/shop">
+                            <img src={val.img} alt="" />
+                          </Link>
+                        </div>
+                        <div className="p-content">
+                          <Link to="/shop">{val.name}</Link>
+                        </div>
+                      </td>
+                      {/* td to show item price */}
+                      <td className="cat-price">$ {val.price}</td>
+                      {/* td for quantity with its inc and desc function */}
+                      <td className="cat-quantity">
+                        <div className="cart-plus-minus">
+                          <div
+                            className="dec qtybutton"
+                            onClick={() => handleDecrease(val)}
+                          >
+                            -
+                          </div>
+                          <input
+                            type="text"
+                            className="cart-plus-minus-box"
+                            name="qtybutton"
+                            value={val.quantity}
+                          />
+                          <div
+                            className="inc qtybutton"
+                            onClick={() => handleIncrease(val)}
+                          >
+                            +
+                          </div>
+                        </div>
+                      </td>
+                      {/* td for total price */}
+                      <td className="cat-toprice">$ {calcTotalPrice(val)}</td>
+                      {/* td for Edit or delete */}
+                      <td
+                        className="cat-edit"
+                        onClick={() => handleRemoveItem(val)}
+                      >
+                        <a href="#">
+                          <img src={delImgUtl} alt="" />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
             </div>
             {/* cart top ends */}
