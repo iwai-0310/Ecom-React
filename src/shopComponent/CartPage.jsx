@@ -153,7 +153,7 @@ const CartPage = () => {
 
               {/* shoping box */}
               <div className="shiping-box">
-                <div className="flex">
+                <div className="flex gap-3">
                   <div className="md:w-6/12 w-full">
                     <div className="calculate-shiping">
                       <h3>Calculate Shiping</h3>
@@ -193,7 +193,29 @@ const CartPage = () => {
                       <button type="submit">Update Address</button>
                     </div>
                   </div>
-                  <div className="md:w-6/12 w-full">right side</div>
+                  <div className="md:w-6/12 w-full">
+                    <div className="cart-overview">
+                      <h3>Cart Total</h3>
+                      <ul className="lab-ul">
+                        <li>
+                          <span className="pull-left">Cart Subtotal</span>
+                          <p className="pull-right">$ {cartSubTotal}</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">
+                            Shiping and Handling
+                          </span>
+                          <p className="pull-right">Free Shipping</p>
+                        </li>
+                        <li>
+                          <span className="pull-left">Total</span>
+                          <p className="pull-right">
+                            $ {orderTotal.toFixed(2)}
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* shop box ends */}
