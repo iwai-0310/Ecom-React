@@ -87,51 +87,89 @@ const Review = () => {
               {/* add the review form here */}
             </div>
           </div>
-        </div>
-        {/* description content */}
-        <form action="action">
-          <div className="flex">
-            <div className="md:w-4/12 w-full mx-2">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Full name *"
-              />
-            </div>
-            <div className="md:w-4/12 w-full mx-2">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Your Email *"
-              />
-            </div>
-            <div className="md:w-4/12 w-full mx-2">
-              <div className="rating">
-                <span>Your ratings</span>
-                <Rating />
+          <form action="action">
+            <div className="flex">
+              <div className="md:w-4/12 w-full mx-2">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Full name *"
+                />
+              </div>
+              <div className="md:w-4/12 w-full mx-2">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email *"
+                />
+              </div>
+              <div className="md:w-4/12 w-full mx-2">
+                <div className="rating">
+                  <span>Your ratings</span>
+                  <Rating />
+                </div>
               </div>
             </div>
+            <div className="md:w-11/12 w-full my-2 mx-2">
+              <textarea
+                name="message"
+                id="message"
+                cols=""
+                rows="8"
+                placeholder="Type Review Here ..."
+              ></textarea>
+            </div>
+            <div className="w-full">
+              <button
+                type="submit"
+                className="default-button bg-orange-500 text-gray-900 font-bold"
+              >
+                <span>Submit Review</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        {/* description content */}
+        <div className="description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            asperiores dicta placeat velit saepe odit earum commodi excepturi ab
+            atque, quaerat voluptate. Modi in ipsam hic, repellat voluptas
+            placeat eum.
+          </p>
+          <div className="post-item">
+            <div className="post-thumb">
+              <img src="/src/assets/images/shop/01.jpg" alt="" />
+            </div>
+            <div className="post-content">
+              <ul className="lab-ul">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Quo magni molestiae explicabo accusantium, error facilis
+                  dolores.
+                </li>
+                <li>
+                  {" "}
+                  Quaerat, consequuntur veritatis vero autem fugiat nihil sit
+                  fuga. Neque repudiandae adipisci molestiae at.
+                </li>
+
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Quo magni molestiae explicabo accusantium, error facilis
+                  dolores.
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="md:w-11/12 w-full my-2 mx-2">
-            <textarea
-              name="message"
-              id="message"
-              cols=""
-              rows="8"
-              placeholder="Type Review Here ..."
-            ></textarea>
-          </div>
-          <div className="w-full">
-            <button
-              type="submit"
-              className="default-button bg-orange-500 text-gray-900 font-bold"
-            >
-              <span>Submit Review</span>
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </>
   );
