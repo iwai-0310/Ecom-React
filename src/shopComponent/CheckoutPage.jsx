@@ -12,6 +12,7 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CheckoutPage = () => {
   // state to show the pop up
@@ -29,7 +30,17 @@ const CheckoutPage = () => {
   const handleHide = () => {
     setShow(false);
   };
+  //direct to  home page
+  const location = useLocation();
+  const navigate = useNavigate();
+  //function to handle order confirmation
+  const handleOrderConfirmation = () => {
+    alert("Your order has been placed");
+    localStorage.removeItem("cart");
+    navigate(from, { replace: true });
+  };
 
+  const from = location.state?.from?.pathname || "/";
   return (
     <div>
       <Button onClick={handleShow} variant="gradient">
@@ -151,7 +162,11 @@ const CheckoutPage = () => {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="green" onClick="">
+          <Button
+            variant="gradient"
+            color="green"
+            onClick={handleOrderConfirmation}
+          >
             <span>Confirm</span>
           </Button>
         </DialogFooter>
