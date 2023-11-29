@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import "swiper/css";
+import { ThemeProvider } from "@material-tailwind/react";
 
 // fonts and icons
 import "././assets/css/icofont.min.css";
@@ -30,5 +31,8 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <ThemeProvider>
+    {" "}
+    <RouterProvider router={router} />
+  </ThemeProvider>
 );

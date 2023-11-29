@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@material-tailwind/react";
 
 const CheckoutPage = () => {
   // state to show the pop up
@@ -16,7 +17,7 @@ const CheckoutPage = () => {
   // const handleHide = () => {
   //   setShow(false);
   // };
-  return <div>CheckoutPage</div>;
+  return <Button>material tailwind</Button>;
 };
 
 export default CheckoutPage;
