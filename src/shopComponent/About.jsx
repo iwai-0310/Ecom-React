@@ -1,5 +1,6 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
+import { Link } from "react-router-dom";
 
 const subTitle = "About Our Brand";
 const title = "Good Qualification Services And Better Expriences";
@@ -37,6 +38,7 @@ const About = () => {
       <div className="about-section style-3 py-4 section-bg">
         <div className="container">
           <div className="grid justify-center lg:grid-cols-2 grid-cols-1 items-center">
+            {/* img here */}
             <div className="col-span-1">
               <div className="about-left">
                 <div className="about-thumb">
@@ -48,6 +50,32 @@ const About = () => {
                 <div className="about-left-content">
                   <h3>{year}</h3>
                   <p>{experience}</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-span-1">
+              {/* title and subtitle here */}
+              <div className="about-right ml-12">
+                <div className="section-header">
+                  <span className="subtitle">{subTitle}</span>
+                  <h2 className="title">{title}</h2>
+                  <p>{desc}</p>
+                </div>
+
+                <div className="section-wrapper">
+                  <ul className="lab-ul">
+                    {aboutList.map((val, i) => (
+                      <li key={i}>
+                        <div className="sr-left">
+                          <img src={val.imgUrl} alt="" />
+                        </div>
+                        <div className="sr-right">
+                          <h5>{val.title}</h5>
+                          <p>{val.desc}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
