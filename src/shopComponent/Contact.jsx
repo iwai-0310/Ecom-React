@@ -75,6 +75,65 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <div className="contact-section py-4 mb=12">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">{conSubTitle}</span>
+            <h2 className="title">{conTitle}</h2>
+          </div>
+          <div className="section-wrapper">
+            <form className="contact-form mb-12">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Full Name *"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email *"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="mobile"
+                  id="mobile"
+                  placeholder="Contact Number "
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="sub"
+                  id="sub"
+                  placeholder="Subject *"
+                />
+              </div>
+              <div className=" w-full">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="10"
+                  className="w-full block resize-y"
+                  placeholder="Your Message ..."
+                ></textarea>
+              </div>
+              <div className="form-group w-full text-center">
+                <button className="lab-btn">
+                  <span>{btnText}</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
