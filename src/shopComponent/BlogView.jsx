@@ -173,7 +173,15 @@ const BlogView = () => {
                                       <a href="#">Personal</a>
                                     </li>
                                   </ul>
-                                  <ul className="lab-ul social-icons">{}</ul>
+                                  <ul className="lab-ul social-icons">
+                                    {socialList.map((val, i) => (
+                                      <li key={i}>
+                                        <a href="#" className={val.className}>
+                                          <i className={val.iconName}></i>
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </div>
                               </div>
 
@@ -183,6 +191,27 @@ const BlogView = () => {
                         </div>
                       </div>
                     </div>
+                    {/* navigation starts here */}
+                    <div className="navigations-part">
+                      <div className="left">
+                        <a href="#" className="prev">
+                          <i className="icofont-double-left">Previous Blog</i>
+                        </a>
+                        <a href="#" className="title">
+                          title to prev one
+                        </a>
+                      </div>
+                      <div className="right">
+                        <a href="#" className="prev">
+                          <span className="font-light">Next Blog</span>
+                          <i className="icofont-double-right"></i>
+                        </a>
+                        <a href="#" className="title">
+                          title to next one
+                        </a>
+                      </div>
+                    </div>
+                    {/* navigation ends here */}
                   </div>
                 </div>
               </article>
