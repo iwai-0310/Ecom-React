@@ -48,7 +48,93 @@ const BlogView = () => {
                                     ))}
                                   </ul>
                                 </div>
+                                <p>
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipisicing elit. Voluptate enim animi quo,
+                                  sit consectetur tenetur repudiandae eaque
+                                  neque illo earum error deserunt officia id
+                                  sint alias, asperiores eum molestias. Ducimus.
+                                  In assumenda quaerat exercitationem, ab itaque
+                                  debitis explicabo ipsa inventore quod facilis
+                                  quas nisi tempore culpa velit voluptas
+                                  consectetur laboriosam necessitatibus fuga
+                                  eveniet! Molestias, suscipit! Sit dolor ipsum
+                                  harum. Nostrum. Soluta, iusto dolorum!
+                                  Veritatis minus delectus explicabo, autem
+                                  commodi doloribus quidem tenetur eaque quo
+                                  voluptatem impedit mollitia iusto architecto
+                                  sit cupiditate unde reprehenderit, libero ipsa
+                                  non placeat id dignissimos? Sed.
+                                </p>
+                                <blockquote>
+                                  <p>
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Blanditiis nemo laudantium
+                                    officia vero?
+                                  </p>
+                                  <cite>
+                                    <a href="#">...Mellisa Hunter</a>
+                                  </cite>
+                                </blockquote>
+                                <p>
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipisicing elit. Molestiae tenetur placeat
+                                  accusamus, enim id atque necessitatibus soluta
+                                  pariatur, explicabo voluptatum, laboriosam
+                                  impedit nemo tempore. Qui vel atque voluptate
+                                  natus consequatur. Odit eum reprehenderit at
+                                  nisi consequuntur itaque quaerat error ea
+                                  minus officia quas accusamus dolorum
+                                  asperiores dolor, sunt nulla iusto ab totam
+                                  unde. At officia ducimus voluptate, pariatur
+                                  delectus odio. Temporibus tenetur placeat
+                                  distinctio, aut blanditiis, optio quod
+                                  molestias in dolores nobis porro saepe,
+                                  suscipit aspernatur debitis incidunt magnam
+                                  iste. Vero pariatur laudantium nesciunt aut
+                                  sapiente voluptatibus voluptas ipsa.
+                                  Voluptates.
+                                </p>
+                                <img
+                                  src="/src/assets/images/blog/single/01.jpg"
+                                  alt=""
+                                />
+                                <p>
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipisicing elit. Quasi laboriosam voluptates
+                                  cupiditate quaerat, autem modi quidem, amet
+                                  sapiente pariatur nisi rem voluptatum hic cum
+                                  quas illo architecto dolorem repudiandae
+                                  placeat. Accusamus tempore fugiat quam
+                                  repellendus quasi non repellat voluptate
+                                  eligendi aliquid iure veniam voluptates
+                                  quisquam placeat dolorem esse nesciunt ea
+                                  consequuntur enim, deleniti quos autem,
+                                  pariatur suscipit veritatis perspiciatis?
+                                  Tenetur.
+                                </p>
+                                <div className="video-thumb">
+                                  <img
+                                    src="/src/assets/images/blog/single/02.jpg"
+                                    alt=""
+                                  />
+                                  <a
+                                    href="https://youtu.be/wnxO4AT2N4o?si=GdpN5DP3026hfuiw"
+                                    className="video-button popup"
+                                  >
+                                    <i className="icofont-ui-play"></i>
+                                  </a>
+                                </div>
+                                <p>
+                                  Lorem ipsum dolor sit amet consectetur
+                                  adipisicing elit. Labore distinctio quidem
+                                  unde facilis molestias magnam, quisquam
+                                  numquam libero ratione beatae expedita
+                                  cupiditate vel consectetur error explicabo
+                                  voluptatibus nesciunt itaque quaerat?
+                                </p>
                               </div>
+
                               {/* post content ends */}
                             </div>
                           ))}
