@@ -26,9 +26,30 @@ const BlogView = () => {
                         <div className="post-inner">
                           {result.map((item) => (
                             <div key={item.id}>
+                              {/* post thumb starts */}
                               <div className="post-thumb">
-                                <img src={item.imgUrl} alt="" />
+                                <img
+                                  src={item.imgUrl}
+                                  alt=""
+                                  className="w-100"
+                                />
                               </div>
+                              {/* post thumb ends */}
+                              {/* post content starts */}
+                              <div className="post-content">
+                                <h4>{item.title}</h4>
+                                <div className="meta-post">
+                                  <ul className="lab-ul">
+                                    {item.metaList.map((val, i) => (
+                                      <li key={i}>
+                                        <i className={val.iconName}></i>
+                                        {val.text}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+                              {/* post content ends */}
                             </div>
                           ))}
                         </div>
