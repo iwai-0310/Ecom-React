@@ -42,7 +42,28 @@ const Contact = () => {
       <div className="map-address-section py-3 section-bg">
         <div className="container">
           <div className="section-header text-center">
-            <span></span>
+            <span className="subtitle">{subTitle}</span>
+            <h2 className="title">{title}</h2>
+          </div>
+
+          <div className="section-wrapper">
+            <div className="flex flex-row-reverse">
+              <div className="col-span-12 lg:col-span-5 xl:col-span-4">
+                <div className="contact-wrapper">
+                  {contactList.map((val, i) => (
+                    <div key={i} className="contact-item">
+                      <div className="contact-thumb">
+                        <img src={val.imgUrl} alt="" />
+                      </div>
+                      <div className="contact-content">
+                        <h6 className="title">{val.title}</h6>
+                        <p>{val.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
