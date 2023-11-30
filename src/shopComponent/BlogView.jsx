@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import blogList from "../utilis/blogdata";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 const socialList = [
   {
@@ -149,6 +151,7 @@ const BlogView = () => {
                                   <a
                                     href="https://youtu.be/wnxO4AT2N4o?si=GdpN5DP3026hfuiw"
                                     className="video-button popup"
+                                    target="_blank"
                                   >
                                     <i className="icofont-ui-play"></i>
                                   </a>
@@ -218,7 +221,12 @@ const BlogView = () => {
             </div>
             {/* Left side ends */}
             {/* Right side starts */}
-            <div className="lg:w-4/12 w-12">right</div>
+            <div className="lg:w-4/12 w-12">
+              <aside className="pl-4">
+                <Tags />
+                <PopularPost />
+              </aside>
+            </div>
             {/* Right Side ends */}
           </div>
         </div>
