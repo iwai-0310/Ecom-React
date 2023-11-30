@@ -3,6 +3,34 @@ import blogList from "../utilis/blogdata";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 
+const socialList = [
+  {
+    link: "#",
+    iconName: "icofont-facebook",
+    className: "facebook",
+  },
+  {
+    link: "#",
+    iconName: "icofont-twitter",
+    className: "twitter",
+  },
+  {
+    link: "#",
+    iconName: "icofont-linkedin",
+    className: "linkedin",
+  },
+  {
+    link: "#",
+    iconName: "icofont-instagram",
+    className: "instagram",
+  },
+  {
+    link: "#",
+    iconName: "icofont-pinterest",
+    className: "pinterest",
+  },
+];
+
 const BlogView = () => {
   const [blog, setBlog] = useState(blogList);
   //get the id from url
@@ -133,6 +161,20 @@ const BlogView = () => {
                                   cupiditate vel consectetur error explicabo
                                   voluptatibus nesciunt itaque quaerat?
                                 </p>
+                                <div className="tags-section ">
+                                  <ul className="tags lab-ul ">
+                                    <li>
+                                      <a href="#">Agency</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Bussiness</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Personal</a>
+                                    </li>
+                                  </ul>
+                                  <ul className="lab-ul social-icons">{}</ul>
+                                </div>
                               </div>
 
                               {/* post content ends */}
