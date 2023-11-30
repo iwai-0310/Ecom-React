@@ -19,6 +19,44 @@ const Blog = () => {
                           <img src={data.imgUrl} alt="" />
                         </Link>
                       </div>
+                      {/* post-content starts */}
+                      <div className="post-content">
+                        <Link to={`/blog/${data.id}`}>
+                          <h4>{data.title}</h4>
+                        </Link>
+                        <div className="meta-post">
+                          <ul className="lab-ul">
+                            {data.metaList.map((val, i) => (
+                              <li key={i}>
+                                <i className={val.iconName}></i>
+                                {val.text}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <p>{data.desc}</p>
+                      </div>
+                      {/* post-content ends */}
+                      {/* post footer starts */}
+                      <div className="post-footer">
+                        <div className="pf-left">
+                          <Link
+                            to={`/blog/${data.id}`}
+                            className="lab-btn-text"
+                          >
+                            {data.btnText}{" "}
+                            <i className="icofont-external-link"></i>
+                          </Link>
+                        </div>
+                        <div className="pf-right">
+                          <i className="icofont-comment">
+                            <span className="comment-count">
+                              {data.commentCount}
+                            </span>
+                          </i>
+                        </div>
+                      </div>
+                      {/* post footer ends */}
                     </div>
                   </div>
                 </div>
