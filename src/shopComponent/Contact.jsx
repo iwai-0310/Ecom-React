@@ -1,5 +1,6 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
+import GoogleMaps from "../components/GoogleMaps";
 
 const subTitle = "Get in touch with us";
 const title = "We're Always Eager To Hear From You!";
@@ -63,6 +64,13 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
+
+              {/* intergration google map */}
+              {/* map starts here */}
+              <div className="xl:col-span-8 lg:col-span-7 col-12">
+                <GoogleMaps />
+              </div>
+              {/* map ends here */}
             </div>
           </div>
         </div>
