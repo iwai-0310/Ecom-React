@@ -19,6 +19,7 @@ import CartPage from "./shopComponent/CartPage.jsx";
 import BlogView from "./shopComponent/BlogView.jsx";
 import About from "./shopComponent/About.jsx";
 import Contact from "./shopComponent/Contact.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,14 @@ const router = createBrowserRouter([
       { path: "/blog/:id", element: <BlogView /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      { path: "cart-page", element: <CartPage /> },
+      {
+        path: "cart-page",
+        element: (
+          <PrivateRoute>
+            <CartPage />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
