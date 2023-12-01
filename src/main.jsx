@@ -20,6 +20,7 @@ import BlogView from "./shopComponent/BlogView.jsx";
 import About from "./shopComponent/About.jsx";
 import Contact from "./shopComponent/Contact.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
