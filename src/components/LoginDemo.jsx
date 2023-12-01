@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
+import app from "../firebase/firebase.config";
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -13,7 +14,7 @@ const LoginDemo = () => {
         const user = result.user;
         alert("Login Success Occured !");
       })
-      .catchError((error) => {
+      .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.meessage;
         console.log(error.message);
