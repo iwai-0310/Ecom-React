@@ -41,7 +41,25 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {};
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // console.log(form);
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email);
+    // console.log(password);
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        alert("Login success");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        setError("Please provided valid email & password");
+      });
+  };
   const handleRegister = () => {};
 
   const from = location.state?.from?.pathname || "/";
@@ -69,6 +87,12 @@ const Login = () => {
                   placeholder="Password here ..."
                   required
                 />
+              </div>
+              {/* showing messages here */}
+              <div>
+                {error && (
+                  <div className="error-message text-red-500">{error}</div>
+                )}
               </div>
               <div className="form-group">
                 <div
