@@ -10,7 +10,7 @@ const NavItems = () => {
 
   //authinfo
   const { user } = useContext(AuthContext);
-
+  console.log(user);
   //event Listeners
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
