@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import "swiper/css";
 import { ThemeProvider } from "@material-tailwind/react";
+import AuthProvider from "./contexts/AuthProvider.jsx";
 
 // fonts and icons
 import "././assets/css/icofont.min.css";
@@ -38,6 +39,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </ThemeProvider>
 );
