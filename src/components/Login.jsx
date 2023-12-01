@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const title = "login";
 const socialTitle = "Login with Social Media";
@@ -67,6 +68,23 @@ const Login = () => {
                   placeholder="Password here ..."
                   required
                 />
+              </div>
+              <div className="form-group">
+                <div
+                  className="flex justify-between flex-wrap
+                "
+                >
+                  <div className="checkgroup">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label htmlFor="remember">Remember me</label>
+                  </div>
+                  <Link to="/forpass">Forgot Password ?</Link>
+                </div>
+              </div>
+              <div className="form-group">
+                <button type="submit" className=" lab-btn">
+                  <span>{buttonTxt}</span>
+                </button>
               </div>
             </form>
           </div>
