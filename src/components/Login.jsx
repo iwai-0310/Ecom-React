@@ -42,6 +42,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {};
+  const handleRegister = () => {};
 
   const from = location.state?.from?.pathname || "/";
   return (
@@ -87,6 +88,33 @@ const Login = () => {
                 </button>
               </div>
             </form>
+
+            {/* account bottom */}
+            <div className="account-bottom">
+              <span className="cate pt-10">
+                Don't have an Account ? <Link to="/sign-up">Sign up</Link>
+              </span>
+              <span className="or">
+                <span>or</span>
+              </span>
+
+              {/* social login here */}
+              <h5 className="subtitle">{socialTitle}</h5>
+              <ul className="lab-ul social-icons justify-center">
+                {socialList.map((val, i) => (
+                  <li key={i}>
+                    <a href="/" className={val.className}>
+                      <i className={val.iconName}></i>
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <button className="github" onClick={handleRegister}>
+                    <i className="icofont-github"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
