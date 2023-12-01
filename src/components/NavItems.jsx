@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/nav-logo.png";
+import { AuthContext } from "../contexts/AuthProvider";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
+
+  //authinfo
+  const { user } = useContext(AuthContext);
 
   //event Listeners
   window.addEventListener("scroll", () => {
