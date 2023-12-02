@@ -34,9 +34,10 @@ const socialList = [
 ];
 
 const Signup = () => {
-  const { signupWithGmail, login } = useContext(AuthContext);
+  const { signupWithGmail, createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState("");
   const handleRegister = () => {
     signupWithGmail()
@@ -49,7 +50,30 @@ const Signup = () => {
         setError("Please provided valid email & password");
       });
   };
-  const handleSignup = (e) => {};
+  const handleSignup = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // console.log(form);
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+    // console.log(email, password, confirmPassword);
+    if (password !== confirmPassword) {
+      setError("Password doesnot match ! Please provide correct password");
+    } else {
+      setError("");
+      createUser(email, password)
+        .then((userCredentials) => {
+          const user = userCredentials.user;
+          alert("Account created successfully!");
+          navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          console.log(error.message);
+          alert(`${error.message}`);
+        });
+    }
+  };
   return (
     <div>
       <div className="login-section py-4 section-bg">
