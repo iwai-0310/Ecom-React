@@ -60,7 +60,17 @@ const Login = () => {
         setError("Please provided valid email & password");
       });
   };
-  const handleRegister = () => {};
+  const handleRegister = () => {
+    signupWithGmail()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        setError("Please provided valid email & password");
+      });
+  };
 
   const from = location.state?.from?.pathname || "/";
   return (
