@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
 import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const title = "Sign up";
 const socialTitle = "Sign up as new user";
 const buttonTxt = "Sign me up";
@@ -32,8 +34,21 @@ const socialList = [
 ];
 
 const Signup = () => {
+  const { signupWithGmail, login } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [error, setError] = useState("");
-  const handleRegister = () => {};
+  const handleRegister = () => {
+    signupWithGmail()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        setError("Please provided valid email & password");
+      });
+  };
   const handleSignup = (e) => {};
   return (
     <div>
