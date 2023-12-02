@@ -34,7 +34,7 @@ const NavItems = () => {
       <div className={`nav-top md:hidden  ${socialToggle ? "open " : ""}`}>
         <div className="nav-top-header">
           <div className="nav-top-header-area">
-            <Link to="/signup" className="nav-header-btn">
+            <Link to="/sign-up" className="nav-header-btn">
               <a
                 href="#_"
                 class="relative inline-block px-4 py-2 font-medium group"
@@ -47,6 +47,7 @@ const NavItems = () => {
               </a>
             </Link>
             <Link to="/login">
+              a
               <a
                 href="#_"
                 class="relative inline-block px-4 py-2 m-5 font-medium group"
@@ -162,7 +163,7 @@ const NavItems = () => {
               </div>
 
               {/* Sign-in and create account */}
-              <Link to="/signup" className="nav-header-btn hidden md:block">
+              <Link to="/sign-up" className="nav-header-btn hidden md:block">
                 <a
                   href="#_"
                   class="relative inline-block px-4 py-2 font-medium group"
