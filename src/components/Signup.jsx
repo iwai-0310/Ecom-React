@@ -44,6 +44,15 @@ const Signup = () => {
             <form className="account-form" onSubmit={handleSignup}>
               <div className="form-group">
                 <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="User name *"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
                   type="email"
                   name="email"
                   id="email"
@@ -57,6 +66,15 @@ const Signup = () => {
                   name="password"
                   id="password"
                   placeholder="Password here ..."
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Confirm Password ..."
                   required
                 />
               </div>
