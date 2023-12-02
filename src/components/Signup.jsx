@@ -72,8 +72,8 @@ const Signup = () => {
               <div className="form-group">
                 <input
                   type="password"
-                  name="password"
-                  id="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
                   placeholder="Confirm Password ..."
                   required
                 />
@@ -84,18 +84,7 @@ const Signup = () => {
                   <div className="error-message text-red-500">{error}</div>
                 )}
               </div>
-              <div className="form-group">
-                <div
-                  className="flex justify-between flex-wrap
-                "
-                >
-                  <div className="checkgroup">
-                    <input type="checkbox" name="remember" id="remember" />
-                    <label htmlFor="remember">Remember me</label>
-                  </div>
-                  <Link to="/forpass">Forgot Password ?</Link>
-                </div>
-              </div>
+
               <div className="form-group">
                 <button type="submit" className=" lab-btn">
                   <span>{buttonTxt}</span>
@@ -106,7 +95,7 @@ const Signup = () => {
             {/* account bottom */}
             <div className="account-bottom">
               <span className="cate pt-10">
-                Don't have an Account ? <Link to="/sign-up">Sign up</Link>
+                Already have an Account ? <Link to="/login">Log in</Link>
               </span>
               <span className="or">
                 <span>or</span>
