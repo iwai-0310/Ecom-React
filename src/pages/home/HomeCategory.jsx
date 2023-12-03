@@ -118,13 +118,20 @@ const HomeCategory = () => {
         <div className="category-card flex justify-center items-center w-screen">
           <div className="grid gap-4 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {categoryList.map((val, i) => (
-              <div key={i} className="col-span-1 w-85 h-90 m-8">
+              <div
+                key={i}
+                className="group shadow-sm col-span-1 w-85 h-90 m-8 hover:transform
+              hover:scale-105 transition duration-300 hover:shadow-xl"
+              >
                 <Link to="/shop" className="category-link">
                   <div className="category-inner  ">
                     {/* image thumbnail */}
-                    <div className="category-thumb ">
+                    <div
+                      className="category-thumb group-hover:transform
+                       group-hover:scale-120 transition duration-300 "
+                    >
                       <img
-                        className="border-solid border-2 border-gray-200 "
+                        className="border-solid border-2 border-gray-200   "
                         src={val.imgUrl}
                         alt={val.imgAlt}
                       />
@@ -132,8 +139,14 @@ const HomeCategory = () => {
 
                     {/* content */}
                     <div className="category-content flex justify-between items-center">
-                      <div className="cate-icon w-12 h-12 bg-gray-900 flex justify-center items-center m-2">
-                        <i className={`${val.iconName} text-gray-100`}></i>
+                      <div
+                        className="cate-icon w-12 h-12 bg-gray-900 flex justify-center items-center m-2 group-hover:transform
+                       group-hover:bg-gray-100 transition duration-300 "
+                      >
+                        <i
+                          className={`${val.iconName} text-gray-100 group-hover:transform
+                       group-hover:bg-gray-900 transition duration-300 `}
+                        ></i>
                       </div>
                       <Link>
                         <h5>{val.title}</h5>
