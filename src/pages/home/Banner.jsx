@@ -114,6 +114,18 @@ const Banner = () => {
                 <i className="icofont-search hover:transform hover:text-xl"></i>
               </button>
             </form>
+
+            {/* description */}
+            <p className="justify-center text-center text-gray-900">{desc}</p>
+            {/* show filtered products here */}
+            <ul className="lab-ul">
+              {searchInput &&
+                filterProducts.map((product, i) => (
+                  <li key={i}>
+                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
       </div>
