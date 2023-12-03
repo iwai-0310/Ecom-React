@@ -97,7 +97,7 @@ const Banner = () => {
           <div className="new-banner-title">
             {title}
             {/* search input */}
-            <form className="flex items-center m-6">
+            <form className="flex items-center m-6 ">
               <SelectedCategory select={"all"} />
               <input
                 name="search"
@@ -105,9 +105,13 @@ const Banner = () => {
                 placeholder="Search product"
                 value={searchInput}
                 onChange={handleSearch}
+                className="h-12"
               />
-              <button type="submit">
-                <i className="icofont-search "></i>
+              <button
+                type="submit"
+                className="bg-gray-300 h-12 w-14 pl-2 rounded-r-full hover:transform hover:bg-orange-700 hover:text-gray-900  "
+              >
+                <i className="icofont-search hover:transform hover:text-xl"></i>
               </button>
             </form>
           </div>
