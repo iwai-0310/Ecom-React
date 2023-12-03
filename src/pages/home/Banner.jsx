@@ -90,7 +90,7 @@ const Banner = () => {
       <img
         src="../../../public/forest-banner.jpg"
         className="new-banner bg-cover bg-center h-screen w-screen"
-        alt=""
+        alt="bg-forest-banner-img"
       />
     </div>
   );
