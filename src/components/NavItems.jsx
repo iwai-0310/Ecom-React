@@ -64,7 +64,7 @@ const NavItems = () => {
       </div>
 
       {/* nav bottom starts here */}
-      <div className="nav-bottom bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 ">
+      <div className="">
         <div className="nav-bottom-header">
           <div className="header-wrapper flex-auto ">
             {/* logo */}

@@ -32,4 +32,6 @@
   background: #0F9D58;
   color: #fff;
   }
-  
+  .bg-banner-forest{
+    background-image: url('../public/forest-banner.jpg');
+  }

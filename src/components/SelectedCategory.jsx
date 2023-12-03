@@ -2,7 +2,7 @@ import React from "react";
 
 const SelectedCategory = () => {
   return (
-    <select>
+    <select className="pl-4 w-40 h-12 rounded-l-full bg-gray-300 ">
       <option value="all">All Categories</option>
       <option value="electronics">Electronics</option>
       <option value="computer">Computer</option>
