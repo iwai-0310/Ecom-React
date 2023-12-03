@@ -5,8 +5,8 @@ import SelectedCategory from "../../components/SelectedCategory";
 
 // title for banner
 const title = (
-  <h2>
-    Search Your One From <span className="text-yellow-900">Thousands</span> of
+  <h2 className="text-orange-900">
+    Search Your One From <span className="text-gray-900">Thousands</span> of
     Products
   </h2>
 );
@@ -51,7 +51,7 @@ const Banner = () => {
   return (
     <div className="banner-section style-4">
       <div className="container">
-        <div className="banner-content">
+        <div className="banner-content text-orange-900">
           {/* title */}
           {title}
           {/* search input */}
