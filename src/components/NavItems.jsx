@@ -70,8 +70,11 @@ const NavItems = () => {
             {/* logo */}
             <div className="logo-search-acte">
               <div className="logo">
-                <Link to={"/"}>
-                  <img src={logo} alt="logo" className="w-12 h-12" />
+                <Link to={"/about"}>
+                  {/* <img src={logo} alt="logo" className="w-12 h-12 ml-4 " /> */}
+                  <div className="circle-for-logo w-12 h-12 bg-black rounded-full ml-4 items-center justify-center flex transition duration-300 ease-in-out hover:bg-white ">
+                    <i className="icofont-bag text-3xl transition duration-300 ease-in-out text-gray-100 hover:text-black"></i>
+                  </div>
                 </Link>
               </div>
             </div>
