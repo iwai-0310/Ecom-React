@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const subTitle = "Choose Any Products";
+const subTitle = "Choose any products";
 const title = "Buy Everything with Us";
 const btnText = "Get Started Now";
 
@@ -46,25 +46,88 @@ const categoryList = [
 
 const HomeCategory = () => {
   return (
-    <div className="category-section style-4 padding-tb">
-      <div className="container">
-        {/* section-header */}
-        <div className="section-header text-center">
-          <span className="subtitle">{subTitle}</span>
-          <h2 className="title">{title}</h2>
-        </div>
+    // <div className="category-section style-4 padding-tb">
+    //   <div className="container">
+    //     {/* section-header */}
+    //     <div className="section-header text-center">
+    //       {/* <span className="subtitle text-orange-700">{subTitle}</span> */}
+    //       <span className="text-orange-700">{subTitle}</span>
+    //       <h2 className="title">{title}</h2>
+    //     </div>
 
-        {/* section-card */}
-        <div className="section-wrapper">
+    //     {/* section-card */}
+    //     <div className="section-wrapper">
+    //       <div className="grid gap-4 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+    //         {categoryList.map((val, i) => (
+    //           <div key={i} className="col">
+    //             <Link to="/shop" className="category-item">
+    //               <div className="category-inner ">
+    //                 {/* image thumbnail */}
+    //                 <div className="category-thumb">
+    //                   <img
+    //                     className="border-solid border-2 border-gray-200  "
+    //                     src={val.imgUrl}
+    //                     alt={val.imgAlt}
+    //                   />
+    //                 </div>
+
+    //                 {/* content */}
+    //                 <div className="category-content">
+    //                   <div className="cate-icon">
+    //                     <i className={`${val.iconName}`}></i>
+    //                   </div>
+    //                   <Link>
+    //                     <h6>{val.title}</h6>
+    //                   </Link>
+    //                 </div>
+    //               </div>
+    //             </Link>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     <div className="text-center mt-8">
+    //       <Link to="/shop">
+    //         <a
+    //           href="#_"
+    //           class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
+    //         >
+    //           <span class="get-started-btn-span1"></span>
+    //           <span class="get-Started-btn-span2"></span>
+    //           <span class="get-Started-btn-span3">{btnText}</span>
+    //           <span class="get-Started-btn-span4"></span>
+    //         </a>
+    //       </Link>
+    //     </div>
+    //   </div>
+    // </div>
+    <div className="py-8">
+      <div className="container">
+        {/* header section starts */}
+        <div className="flex items-center justify-center w-screen">
+          <div className="text-center my-4">
+            <span className="tracking-widest text-2xl text-orange-700">
+              {subTitle.toUpperCase()}
+            </span>
+            <h2 className="title">{title}</h2>
+          </div>
+        </div>
+        {/* header section ends */}
+        {/* section card starts */}
+        <div className="section-wrapper mt-8">
           <div className="grid gap-4 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {categoryList.map((val, i) => (
-              <div key={i} className="col">
-                <Link to="/shop" className="category-item">
+              <div key={i} className="col-span-1">
+                <Link
+                  to="/shop"
+                  className="category-item hover:border-orange-700"
+                >
                   <div className="category-inner ">
                     {/* image thumbnail */}
-                    <div className="category-thumb">
+                    <div className="">
                       <img
-                        className="border-solid border-2 border-gray-200  "
+                        className="border-solid border-2 border-gray-200   "
                         src={val.imgUrl}
                         alt={val.imgAlt}
                       />
@@ -85,20 +148,7 @@ const HomeCategory = () => {
             ))}
           </div>
         </div>
-
-        <div className="text-center mt-8">
-          <Link to="/shop">
-            <a
-              href="#_"
-              class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
-            >
-              <span class="get-started-btn-span1"></span>
-              <span class="get-Started-btn-span2"></span>
-              <span class="get-Started-btn-span3">{btnText}</span>
-              <span class="get-Started-btn-span4"></span>
-            </a>
-          </Link>
-        </div>
+        {/* section card ends */}
       </div>
     </div>
   );
