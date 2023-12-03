@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
 import SelectedCategory from "../../components/SelectedCategory";
+import forest from "../../../public/forest-banner.jpg";
 
 // title for banner
 const title = (
@@ -49,39 +50,48 @@ const Banner = () => {
     setFilterProducts(filtered);
   };
   return (
-    <div className="banner-section style-4">
-      <div className="container">
-        <div className="banner-content">
-          {/* title */}
-          {title}
-          {/* search input */}
-          <form className="flex items-center">
-            <SelectedCategory select={"all"} />
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search product"
-              value={searchInput}
-              onChange={handleSearch}
-            />
-            <button type="submit">
-              <i className="icofont-search "></i>
-            </button>
-          </form>
-          {/* description */}
-          <p>{desc}</p>
-          {/* show filtered products here */}
-          <ul className="lab-ul">
-            {searchInput &&
-              filterProducts.map((product, i) => (
-                <li key={i}>
-                  <Link to={`/shop/${product.id}`}>{product.name}</Link>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
+    // <div className="banner-section style-4">
+    //   <div className="container">
+    //     <div className="banner-content">
+    //       {/* title */}
+    //       {title}
+    //       {/* search input */}
+    //       <form className="flex items-center">
+    //         <SelectedCategory select={"all"} />
+    //         <input
+    //           type="text"
+    //           name="search"
+    //           id="search"
+    //           placeholder="Search product"
+    //           value={searchInput}
+    //           onChange={handleSearch}
+    //         />
+    //         <button type="submit">
+    //           <i className="icofont-search "></i>
+    //         </button>
+    //       </form>
+    //       {/* description */}
+    //       <p>{desc}</p>
+    //       {/* show filtered products here */}
+    //       <ul className="lab-ul">
+    //         {searchInput &&
+    //           filterProducts.map((product, i) => (
+    //             <li key={i}>
+    //               <Link to={`/shop/${product.id}`}>{product.name}</Link>
+    //             </li>
+    //           ))}
+    //       </ul>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="new-banner">
+      {/* image for background for banner */}
+      <img
+        src="../../../public/forest-banner.jpg"
+        className="new-banner bg-cover bg-center h-screen w-screen"
+        alt=""
+      />
     </div>
   );
 };

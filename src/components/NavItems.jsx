@@ -64,7 +64,7 @@ const NavItems = () => {
       </div>
 
       {/* nav bottom starts here */}
-      <div className="nav-bottom">
+      <div className="">
         <div className="nav-bottom-header">
           <div className="header-wrapper flex-auto ">
             {/* logo */}

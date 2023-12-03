@@ -9,7 +9,10 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
-      textColor:{'yellow-900':'#FFD700'}
+      textColor:{'yellow-900':'#FFD700'},
+      backgroundImage: {
+        'forest-banner': "url/('public/forest-banner.jpg')",
+      }
     },
   },
   plugins: [],
