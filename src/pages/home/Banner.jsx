@@ -6,9 +6,9 @@ import forest from "../../../public/forest-banner.jpg";
 
 // title for banner
 const title = (
-  <h2>
-    Search Your One From <span className="text-yellow-900">Thousands</span> of
-    Products
+  <h2 className="flex items-center">
+    Search Your One From
+    <span className="text-orange-700 text-6xl "> Thousands </span> of Products
   </h2>
 );
 // description for banner
@@ -89,9 +89,30 @@ const Banner = () => {
       {/* image for background for banner */}
       <img
         src="../../../public/forest-banner.jpg"
-        className="new-banner bg-cover bg-center h-screen w-screen"
+        className="new-banner bg-cover bg-center h-screen w-screen -z-2"
         alt="bg-forest-banner-img"
       />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="contain-content">
+          <div className="new-banner-title">
+            {title}
+            {/* search input */}
+            <form className="flex items-center m-6">
+              <SelectedCategory select={"all"} />
+              <input
+                name="search"
+                id="search"
+                placeholder="Search product"
+                value={searchInput}
+                onChange={handleSearch}
+              />
+              <button type="submit">
+                <i className="icofont-search "></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
