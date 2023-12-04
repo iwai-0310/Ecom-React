@@ -89,71 +89,115 @@ const CategoryShowcase = () => {
     setItems(updateItems);
   };
   return (
-    <div className="course-section style-3 py-8">
-      {/* add shapes hexagon below */}
-      <div className="course-shape one">
-        <img src="/src/assets/images/shape-img/icon/01.png" alt="" />
-      </div>
-      <div className="course-shape two">
-        <img src="/src/assets/images/shape-img/icon/02.png" alt="" />
-      </div>
+    // <div className="course-section style-3 py-8">
+    //   {/* add shapes hexagon below */}
+    //   <div className="course-shape one">
+    //     <img src="/src/assets/images/shape-img/icon/01.png" alt="" />
+    //   </div>
+    //   <div className="course-shape two">
+    //     <img src="/src/assets/images/shape-img/icon/02.png" alt="" />
+    //   </div>
 
-      {/* main-section */}
-      <div className="container">
-        <div className="section-header">
-          <h2 className="title">{title}</h2>
-          <div className="course-filter-group">
-            <ul className="lab-ul">
-              <li onClick={() => setItems(ProductData)}>All</li>
-              <li onClick={() => filterItem("Shoes")}>Shoes</li>
-              <li onClick={() => filterItem("Bags")}>Bags</li>
-              <li onClick={() => filterItem("Phones")}>Phones</li>
-              <li onClick={() => filterItem("Beauty")}>Beauty</li>
+    //   {/* main-section */}
+    //   <div className="container">
+    //     <div className="section-header">
+    //       <h2 className="title">{title}</h2>
+    //       <div className="course-filter-group">
+    //         <ul className="lab-ul">
+    //           <li onClick={() => setItems(ProductData)}>All</li>
+    //           <li onClick={() => filterItem("Shoes")}>Shoes</li>
+    //           <li onClick={() => filterItem("Bags")}>Bags</li>
+    //           <li onClick={() => filterItem("Phones")}>Phones</li>
+    //           <li onClick={() => filterItem("Beauty")}>Beauty</li>
+    //         </ul>
+    //       </div>
+    //     </div>
+
+    //     {/* section-body */}
+    //     <div className="section-wrapper">
+    //       <div className="grid gap-4 justify-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
+    //         {items.map((product) => (
+    //           <div key={product.id} className="col">
+    //             <div className="course-item style-4">
+    //               <div className="course-inner">
+    //                 <div className="course-thumb">
+    //                   <img src={product.imgUrl} alt="" />
+    //                   <div className="course-category">
+    //                     <div className="course-cate">
+    //                       <a href="#">{product.cate}</a>
+    //                     </div>
+    //                     {/* add rating now */}
+    //                     <div className="course-review">
+    //                       <Rating />
+    //                     </div>
+    //                   </div>
+    //                 </div>
+
+    //                 {/* course Content */}
+    //                 <div className="course-content">
+    //                   <Link to={`/shop/${product.id}`}>
+    //                     <h5>{product.title}</h5>
+    //                   </Link>
+    //                   <div className="course-footer">
+    //                     <div className="course-author">
+    //                       <Link to="/" className="ca-name">
+    //                         {product.brand}
+    //                       </Link>
+    //                     </div>
+    //                     <div className="course-price">{product.price}</div>
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    <div className="products py-8  h-screen w-screen bg-gradient-to-b from-gray-400 via-gray-700 to-black ">
+      {/* add shapes  below */}
+      {/* section body starts  */}
+      <div className="product-header">
+        <div className="flex justify-between">
+          <h2>{title}</h2>
+          <div className="product-filter-group flex items-center">
+            <ul className="flex">
+              <li
+                className="product-list-item"
+                onClick={() => setItems(ProductData)}
+              >
+                All
+              </li>
+              <li
+                className="product-list-item"
+                onClick={() => filterItem("Shoes")}
+              >
+                Shoes
+              </li>
+              <li
+                className="product-list-item"
+                onClick={() => filterItem("Bags")}
+              >
+                Bags
+              </li>
+              <li
+                className="product-list-item"
+                onClick={() => filterItem("Phones")}
+              >
+                Phones
+              </li>
+              <li
+                className="product-list-item"
+                onClick={() => filterItem("Beauty")}
+              >
+                Beauty
+              </li>
             </ul>
           </div>
         </div>
-
-        {/* section-body */}
-        <div className="section-wrapper">
-          <div className="grid gap-4 justify-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
-            {items.map((product) => (
-              <div key={product.id} className="col">
-                <div className="course-item style-4">
-                  <div className="course-inner">
-                    <div className="course-thumb">
-                      <img src={product.imgUrl} alt="" />
-                      <div className="course-category">
-                        <div className="course-cate">
-                          <a href="#">{product.cate}</a>
-                        </div>
-                        {/* add rating now */}
-                        <div className="course-review">
-                          <Rating />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* course Content */}
-                    <div className="course-content">
-                      <Link to={`/shop/${product.id}`}>
-                        <h5>{product.title}</h5>
-                      </Link>
-                      <div className="course-footer">
-                        <div className="course-author">
-                          <Link to="/" className="ca-name">
-                            {product.brand}
-                          </Link>
-                        </div>
-                        <div className="course-price">{product.price}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
+      {/* section body ends */}
     </div>
   );
 };
