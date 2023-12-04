@@ -144,8 +144,8 @@ const HomeCategory = () => {
                        group-hover:bg-gray-100 transition duration-300 "
                       >
                         <i
-                          className={`${val.iconName} text-gray-100 group-hover:transform
-                       group-hover:bg-gray-900 transition duration-300 `}
+                          className="icofont-brand-windows text-gray-100 group-hover:transform
+                       group-hover:text-gray-900 transition duration-300"
                         ></i>
                       </div>
                       <Link>
