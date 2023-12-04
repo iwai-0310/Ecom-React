@@ -155,7 +155,7 @@ const CategoryShowcase = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="products py-8  h-screen w-screen bg-gradient-to-b from-gray-300 via-gray-500 to-gray-800 ">
+    <div className="products py-8  h-auto w-screen bg-gradient-to-b from-gray-300 via-gray-500 to-gray-800 ">
       {/* add shapes  below */}
       {/* section head starts  */}
       <div className="product">
@@ -202,27 +202,30 @@ const CategoryShowcase = () => {
             {items.map((product) => (
               <div
                 key={product.id}
-                className="group col-span-1 border-4 border-orange-700 bg-gray-900  hover:border-gray-700 h-80 rounded-lg"
+                className="mt-4 mb-8 group col-span-1 border-2 border-gray-400 bg-gray-900  hover:border-orange-700 h-80 rounded-lg hover:bg-gray-200"
               >
                 <div className="product-card style-4">
                   <div className="product-card-inner relative overflow-hidden">
                     <div className="product-card-thumb  ">
-                      <div className="product-card-thumb-img border-orange-700 rounded-lg">
+                      <div className="product-card-thumb-img border-gray-400 rounded-lg">
                         <img
                           src={product.imgUrl}
                           alt=""
-                          className="group-hover:scale-100 transition-transform duration-300 scale-90 rounded-lg border-orange-700 border-4"
+                          className="group-hover:scale-110 transition-transform duration-300 scale-95 rounded-lg border-orange-700 border-l-2 border-r-2"
                         />
                       </div>
                       <div className="product-cart-cate-rating">
                         <div className="product-card-category flex justify-between mx-4 mt-4 mb-2">
                           <div className="product-card-cate">
-                            <a className="text-white" href="#">
+                            <a
+                              className="text-white group-hover:text-black group-hover:translate-y-[10px]"
+                              href="#"
+                            >
                               {product.cate}
                             </a>
                           </div>
                           {/* add rating now */}
-                          <div className="product-card-review text-orange-700">
+                          <div className="product-card-review text-orange-700  transition-transform duration-500 group-hover:translate-x-[-20px] group-hover:translate-y-[10px] ">
                             <Rating />
                           </div>
                         </div>
@@ -232,16 +235,22 @@ const CategoryShowcase = () => {
                     {/* course Content */}
                     <div className="product-card-content mx-4 mt-4 mb-4">
                       <Link to={`/shop/${product.id}`}>
-                        <h5 className="text-white">{product.title}</h5>
+                        <h5 className="text-white group-hover:text-black">
+                          {product.title}
+                        </h5>
                       </Link>
                       <div className="product-card-footer">
                         <div className="product-card-author">
                           <Link to="/" className="ca-name ">
-                            <span className="text-white">{product.brand}</span>
+                            <span className="text-white group-hover:text-black">
+                              {product.brand}
+                            </span>
                           </Link>
                         </div>
                         <div className="product-card-price">
-                          <span className="text-white">{product.price}</span>
+                          <span className="text-white group-hover:text-black ">
+                            {product.price}
+                          </span>
                         </div>
                       </div>
                     </div>
