@@ -128,10 +128,10 @@ const HomeCategory = () => {
                     {/* image thumbnail */}
                     <div
                       className="category-thumb group-hover:transform
-                       group-hover:scale-120 transition duration-300 "
+                       group-hover:border-orange-700 transition duration-300 "
                     >
                       <img
-                        className="border-solid border-2 border-gray-200   "
+                        className="border-solid border-2 border-gray-200 group-hover:border-b-orange-700  "
                         src={val.imgUrl}
                         alt={val.imgAlt}
                       />
@@ -140,16 +140,18 @@ const HomeCategory = () => {
                     {/* content */}
                     <div className="category-content flex justify-between items-center">
                       <div
-                        className="cate-icon w-12 h-12 bg-gray-900 flex justify-center items-center m-2 group-hover:transform
-                       group-hover:bg-gray-100 transition duration-300 "
+                        className="cate-icon w-12 h-12 bg-gray-100 flex justify-center items-center m-2 group-hover:transform
+                       group-hover:bg-gray-900 transition duration-300 "
                       >
                         <i
-                          className="icofont-brand-windows text-gray-100 group-hover:transform
-                       group-hover:text-gray-900 transition duration-300"
+                          className="icofont-brand-windows text-gray-900 group-hover:transform
+                       group-hover:text-orange-700 transition duration-300"
                         ></i>
                       </div>
                       <Link>
-                        <h5>{val.title}</h5>
+                        <h5 className="group-hover:text-orange-700">
+                          {val.title}
+                        </h5>
                       </Link>
                     </div>
                   </div>
