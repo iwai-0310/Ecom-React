@@ -115,7 +115,7 @@ const HomeCategory = () => {
         </div>
         {/* header section ends */}
         {/* section card starts */}
-        <div className="category-card flex justify-center items-center w-screen">
+        <div className="category-card flex justify-center items-center w-screen mb-4">
           <div className="grid gap-4 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {categoryList.map((val, i) => (
               <div
@@ -161,6 +161,22 @@ const HomeCategory = () => {
           </div>
         </div>
         {/* section card ends */}
+        {/* button here for shop  */}
+        <div className="flex items-center justify-center w-screen">
+          <div className="mt-8">
+            <Link to="/shop">
+              <a
+                href="#_"
+                class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
+              >
+                <span class="get-started-btn-span1"></span>
+                <span class="get-Started-btn-span2"></span>
+                <span class="get-Started-btn-span3">{btnText}</span>
+                <span class="get-Started-btn-span4"></span>
+              </a>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
