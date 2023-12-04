@@ -36,11 +36,6 @@
  }
  /* product header list css for category showcase */
  .product-list-item{
-  @apply m-2 p-2 bg-black text-orange-700 border-solid border-2 border-gray-700 rounded-md
-   transition duration-300;
-
-  &:hover{
-    @apply transform text-black border-orange-700 bg-gray-400 ;
-  }
+  @apply m-2 p-2 bg-black text-orange-700 border-solid border-2 border-gray-700 rounded-md transition duration-300 hover:text-black hover:border-orange-700 hover:bg-gray-400;
  }
  
