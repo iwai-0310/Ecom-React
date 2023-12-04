@@ -155,7 +155,7 @@ const CategoryShowcase = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="products py-8  h-auto w-screen bg-gradient-to-b from-gray-300 via-gray-500 to-gray-800 ">
+    <div className="products py-8  h-auto w-screen bg-gradient-to-b from-white via-gray-400 to-gray-700 ">
       {/* add shapes  below */}
       {/* section head starts  */}
       <div className="product">
