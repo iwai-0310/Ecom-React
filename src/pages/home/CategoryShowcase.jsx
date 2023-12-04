@@ -161,8 +161,8 @@ const CategoryShowcase = () => {
       <div className="product-header">
         <div className="flex justify-between">
           <h2>{title}</h2>
-          <div className="product-filter-group flex items-center">
-            <ul className="flex">
+          <div className="product-filter-group flex items-center ml-9 ">
+            <ul className="flex ml-12 ">
               <li
                 className="product-list-item"
                 onClick={() => setItems(ProductData)}
