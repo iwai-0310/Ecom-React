@@ -138,18 +138,21 @@ const HomeCategory = () => {
                     </div>
 
                     {/* content */}
-                    <div className="category-content flex justify-between items-center">
+                    <div
+                      className="category-content flex justify-between items-center
+                    group-hover:tranform group-hover:bg-gray-900 transition duration-300"
+                    >
                       <div
-                        className="cate-icon w-12 h-12 bg-gray-100 flex justify-center items-center m-2 group-hover:transform
-                       group-hover:bg-gray-900 transition duration-300 "
+                        className="cate-icon w-12 h-12 bg-gray-900 flex justify-center items-center m-2 group-hover:transform
+                       group-hover:bg-gray-100 transition duration-300 "
                       >
                         <i
-                          className="icofont-brand-windows text-gray-900 group-hover:transform
+                          className="icofont-brand-windows text-gray-100 group-hover:transform
                        group-hover:text-orange-700 transition duration-300"
                         ></i>
                       </div>
                       <Link>
-                        <h5 className="group-hover:text-orange-700">
+                        <h5 className="transition-transform duration-500 transform group-hover:text-orange-700 group-hover:translate-x-[-30px]">
                           {val.title}
                         </h5>
                       </Link>
