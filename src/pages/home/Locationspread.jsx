@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const title = "More Then 10,000 Customers";
+// const title = "More Then 10,000 Customers";
+const title = (
+  <h3 className="font-bold flex items-center justify-center">
+    More than <span className="text-orange-700 text-6xl  ">10,000</span>{" "}
+    Customers
+  </h3>
+);
 
 const desc =
   "Buy products on your any device with our app & enjoy your time what you want. Just download & install & start to shopping";
@@ -45,15 +51,15 @@ const clientsList = [
 
 const Locationspread = () => {
   return (
-    <div className="clients-section style-2 py-5">
-      <div className="container">
+    <div className="clients-section style-2 py-5 flex justify-center ">
+      <div className="container ">
         <div className="section-header text-center">
           <h2 className="title">{title}</h2>
           <p>{desc}</p>
         </div>
 
         {/* main content */}
-        <div className="section-wrapper">
+        <div className="section-wrapper ">
           <div className="clients">
             {clientsList.map((val, i) => (
               <div key={i} className="client-list">
