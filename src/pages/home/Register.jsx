@@ -83,7 +83,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Username"
-                  className=" border-white rounded border-2 my-2 w-auto"
+                  className=" border-white rounded border-2 my-2 "
                 />
                 <input
                   type="email"
