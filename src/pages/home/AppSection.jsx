@@ -6,10 +6,14 @@ const desc = "Shop Or Learn. Download & install the app to grow";
 
 const AppSection = () => {
   return (
-    <div className="app-section py-8">
+    <div className="app-section py-8 flex justify-center">
       <div className="container">
         <div className="section-header text-center">
-          <Link to="/sign-up" className="lab-btn mb-4">
+          <Link
+            to="/sign-up"
+            className="border-2 border-orange-700 py-4 px-8 rounded-xl my-8
+            hover:bg-gray-900 hover:text-orange-700 transition duration-300"
+          >
             {btnText}
           </Link>
           <h2 className="title">{title}</h2>
