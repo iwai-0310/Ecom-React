@@ -27,7 +27,7 @@ const countList = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 style-2 py-12 ">
+    <div className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 style-2 py-12 flex justify-center">
       <div className="container">
         <div className="section-wrapper">
           <div className="flex flex-col justify-center items-center">
