@@ -202,7 +202,7 @@ const CategoryShowcase = () => {
             {items.map((product) => (
               <div
                 key={product.id}
-                className="mt-4 mb-8 group col-span-1 border-2 border-gray-400 bg-gray-900 hover:shadow-xl hover:border-orange-700 h-80 rounded-lg hover:bg-gray-200 "
+                className="mt-4 mb-8 group col-span-1 border-2 border-gray-400 bg-gray-900 hover:shadow-xl hover:border-orange-700  rounded-lg hover:bg-gray-200 h-auto "
               >
                 <div className="product-card style-4">
                   <div className="product-card-inner relative overflow-hidden">
