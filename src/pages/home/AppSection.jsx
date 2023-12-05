@@ -12,7 +12,7 @@ const AppSection = () => {
           <Link
             to="/sign-up"
             className="border-2 border-orange-700 py-4 px-8 rounded-xl my-8
-            hover:bg-gray-900 hover:text-orange-700 transition duration-300"
+            hover:bg-gray-900 hover:text-orange-700 transition duration-300 hover:font-bold"
           >
             {btnText}
           </Link>
