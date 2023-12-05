@@ -31,7 +31,7 @@ const sponsorList = [
 ];
 const Sponsor = () => {
   return (
-    <div className="sponsor-section section-bg">
+    <div className="sponsor-section section-bg flex justify-center">
       <div className="container">
         <div className="section-wrapper">
           <div className="sponsor-slider">
