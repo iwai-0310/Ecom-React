@@ -8,7 +8,12 @@ const Title = (
   </h2>
 );
 
-const desc = "Limited Time Offer! Hurry up";
+// const desc = "Limited Time Offer! Hurry up";
+const desc = (
+  <h4 className="font-semibold ">
+    Limited Time Offer ! <span className="text-orange-700">Hurry up</span>
+  </h4>
+);
 const Register = () => {
   return (
     // <div>
