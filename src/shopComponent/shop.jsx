@@ -7,6 +7,7 @@ import Search from "./Search";
 import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
+import NewPageHeader from "../components/NewPageHeader";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 
@@ -42,7 +43,8 @@ const shop = () => {
   };
   return (
     <div className="">
-      <PageHeader title="Our Shop page" curPage="Shop" />
+      {/* <PageHeader title="Our Shop page" curPage="Shop" /> */}
+      <NewPageHeader />
       {/* main shop content */}
       <div className="shop-page py-8 w-full flex justify-center">
         <div className="container">
