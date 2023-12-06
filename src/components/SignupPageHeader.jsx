@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "@material-tailwind/react";
 import img from "../assets/images/banner/shop-view-banner.jpg";
-const NewPageHeader = ({ title, curPage }) => {
+
+const SignupPageHeader = ({ title, curPage }) => {
   return (
     <div className="h-96 w-screen new-header ">
       <div
@@ -25,4 +26,4 @@ const NewPageHeader = ({ title, curPage }) => {
   );
 };
 
-export default NewPageHeader;
+export default SignupPageHeader;

@@ -4,6 +4,7 @@ import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
 import delImgUtl from "../assets/images/shop/del.png";
 import CheckoutPage from "./CheckoutPage";
+import SignupPageHeader from "../components/SignupPageHeader";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -58,7 +59,8 @@ const CartPage = () => {
   const orderTotal = cartSubTotal;
   return (
     <div>
-      <PageHeader title={"Shop cart"} curPage={"Cart Page"} />
+      {/* <PageHeader title={"Shop cart"} curPage={"Cart Page"} /> */}
+      <SignupPageHeader title={"Shop cart"} curPage={"Cart Page"} />
       <div className="shop-cart py-8">
         <div className="container">
           <div className="section-wrapper">

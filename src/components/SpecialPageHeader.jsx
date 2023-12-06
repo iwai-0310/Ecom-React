@@ -7,7 +7,7 @@ const SpecialPageHeader = ({ title, curPage }) => {
   return (
     <div className="h-96 w-screen new-header ">
       <div
-        className="h-96  bg-left bg-no-repeat  bg-contain flex justify-center items-center "
+        className="h-96  bg-left bg-no-repeat  bg-cover flex justify-center items-center "
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="new-header-content text-center  h-32 w-96">
