@@ -35,7 +35,7 @@ const SIngleProductView = () => {
         title={"OUR SHOP SINGLE"}
         curPage={"Shop/Single Product"}
       />
-      <div className="shop-single py-8 aside-bg">
+      <div className="shop-single py-8 aside-bg flex justify-center">
         <div className="container">
           <div className="flex justify-center">
             {/* left-side */}
