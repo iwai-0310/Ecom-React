@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
 import GoogleMaps from "../components/GoogleMaps";
+import SpecialPageHeader from "../components/SpecialPageHeader";
 
 const subTitle = "Get in touch with us";
 const title = "We're Always Eager To Hear From You!";
@@ -39,7 +40,8 @@ const contactList = [
 const Contact = () => {
   return (
     <div>
-      <PageHeader title={"Get in touch with us"} curPage={"Contact Us"} />
+      {/* <PageHeader title={"Get in touch with us"} curPage={"Contact Us"} /> */}
+      <SpecialPageHeader title={"Get in touch with us"} curPage={"About"} />
       <div className="map-address-section py-3 section-bg flex justify-center">
         <div className="container">
           <div className="section-header text-center">

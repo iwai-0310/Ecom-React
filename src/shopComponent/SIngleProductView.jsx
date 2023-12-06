@@ -4,6 +4,7 @@ import PageHeader from "../components/PageHeader";
 import Review from "./Review";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
+import NewSVPageHeader from "../components/NewSVPageHeader";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,7 +30,11 @@ const SIngleProductView = () => {
 
   return (
     <div>
-      <PageHeader title={"OUR SHOP SINGLE"} curPage={"Shop/Single Product"} />
+      {/* <PageHeader title={"OUR SHOP SINGLE"} curPage={"Shop/Single Product"} /> */}
+      <NewSVPageHeader
+        title={"OUR SHOP SINGLE"}
+        curPage={"Shop/Single Product"}
+      />
       <div className="shop-single py-8 aside-bg">
         <div className="container">
           <div className="flex justify-center">

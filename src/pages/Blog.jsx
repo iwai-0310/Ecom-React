@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
+import NewPageHeader from "../components/NewPageHeader";
 import blogList from "../utilis/blogdata";
 const Blog = () => {
   return (
     <div className="">
-      <PageHeader title="Blog page" curPage="Blogs" />
+      {/* <PageHeader title="Blog page" curPage="Blogs" /> */}
+      <NewPageHeader title="Blog page" curPage="Blogs" />
       <div className="blog-section py-3 section-bg w-screen flex justify-center">
         <div className="container ">
           <div className="section-wrapper">

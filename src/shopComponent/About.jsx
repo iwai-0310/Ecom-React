@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
+import SpecialPageHeader from "../components/SpecialPageHeader";
 
 const subTitle = "About Our Brand";
 const title = "Good Qualification Services And Better Expriences";
@@ -34,7 +35,8 @@ const aboutList = [
 const About = () => {
   return (
     <div>
-      <PageHeader title={"About Our Brand"} curPage={"About"} />
+      {/* <PageHeader title={"About Our Brand"} curPage={"About"} /> */}
+      <SpecialPageHeader title={"About Our Brand"} curPage={"About"} />
       <div className="about-section style-3 py-4 section-bg flex justify-center">
         <div className="container">
           <div className="grid justify-center lg:grid-cols-2 grid-cols-1 items-center">
