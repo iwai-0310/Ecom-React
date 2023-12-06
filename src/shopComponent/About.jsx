@@ -35,7 +35,7 @@ const About = () => {
   return (
     <div>
       <PageHeader title={"About Our Brand"} curPage={"About"} />
-      <div className="about-section style-3 py-4 section-bg">
+      <div className="about-section style-3 py-4 section-bg flex justify-center">
         <div className="container">
           <div className="grid justify-center lg:grid-cols-2 grid-cols-1 items-center">
             {/* img here */}
