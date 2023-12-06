@@ -6,8 +6,8 @@ const Blog = () => {
   return (
     <div className="">
       <PageHeader title="Blog page" curPage="Blogs" />
-      <div className="blog-section py-3 section-bg">
-        <div className="container">
+      <div className="blog-section py-3 section-bg w-screen flex justify-center">
+        <div className="container ">
           <div className="section-wrapper">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4">
               {blogList.map((data, i) => (

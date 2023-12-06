@@ -44,12 +44,12 @@ const shop = () => {
     <div className="">
       <PageHeader title="Our Shop page" curPage="Shop" />
       {/* main shop content */}
-      <div className="shop-page py-8">
+      <div className="shop-page py-8 w-full flex justify-center">
         <div className="container">
           <div className="flex justify-center">
             {/* left-section for items view */}
-            <div className="lg:w-8/12 w-full">
-              <article>
+            <div className="lg:w-9/12 w-full">
+              <article className="mr-8 my-8">
                 <div className="shop-title flex flex-wrap justify-between">
                   <p>{showResults}</p>
                   <div
@@ -57,7 +57,9 @@ const shop = () => {
                       GridList ? "gridActive" : "ListActive"
                     }`}
                   >
-                    <button
+                    {/* remove the options to setGridList */}
+
+                    {/* <button
                       className="grid"
                       onClick={() => setGridList(!GridList)}
                     >
@@ -68,7 +70,7 @@ const shop = () => {
                       onClick={() => setGridList(!GridList)}
                     >
                       <i className="icofont-listine-dots"></i>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 {/* product cards */}
