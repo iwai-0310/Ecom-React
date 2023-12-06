@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <div>
       <PageHeader title={"Get in touch with us"} curPage={"Contact Us"} />
-      <div className="map-address-section py-3 section-bg">
+      <div className="map-address-section py-3 section-bg flex justify-center">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">{subTitle}</span>
@@ -76,7 +76,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="contact-section py-4 mb=12">
+      <div className="contact-section py-4 mb-12 flex justify-center">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">{conSubTitle}</span>
