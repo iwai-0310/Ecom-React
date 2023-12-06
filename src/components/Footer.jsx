@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const title = "About ShopCart";
+const title = "About app";
 const desc =
-  "Eduaid theme number one world class university in the world There are student are studing always in this university for all time.";
+  "Pleased to present a sophisticated educational web application developed using  React and Tailwind CSS. This endeavor represents the culmination of my recent immersion in these frameworks.";
 const ItemTitle = "Categories";
 const quickTitle = "Quick Links";
 const tweetTitle = "Recent Tweets";
@@ -10,15 +10,15 @@ const tweetTitle = "Recent Tweets";
 const addressList = [
   {
     iconName: "icofont-google-map",
-    text: "New York, USA.",
+    text: "Haryana, India.",
   },
   {
     iconName: "icofont-phone",
-    text: "+880 123 456 789",
+    text: "+91 123 456 789",
   },
   {
     iconName: "icofont-envelope",
-    text: "info@shopcart.com",
+    text: "chazesingh@gmail.com",
   },
 ];
 
@@ -109,8 +109,9 @@ const tweetList = [
     iconName: "icofont-twitter",
     desc: (
       <p>
-        Aminur <a href="#">@ShopCart Greetings! #HTML_Template</a> Grab your
-        item, 50% Big Sale Offer !!
+        Chandresh singh <a href="#">React and Tailwind CSS! 💻✨</a> Combining
+        the declarative magic of React with the sleek styling of Tailwind, we're
+        turning code into poetry. 📜✨
       </p>
     ),
   },
@@ -118,8 +119,8 @@ const tweetList = [
     iconName: "icofont-twitter",
     desc: (
       <p>
-        Somrat <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your item, 50%
-        Big Sale Offer !!
+        Mayank singh <a href="#">Yo checkout this #app</a> I used to get all my
+        clothes from myntra but now I use this app for all my fashion choices.
       </p>
     ),
   },
@@ -148,7 +149,7 @@ const Footer = () => {
   return (
     <footer className="style-2">
       {/* footer top */}
-      <div className="footer-top dark-view py-8">
+      <div className="footer-top dark-view py-8 flex justify-center">
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 justify-center">
             {/* about section */}
@@ -164,7 +165,7 @@ const Footer = () => {
                       <ul className="lab-ul office-address">
                         {addressList.map((val, i) => (
                           <li key={i}>
-                            <i className={val.iconName}>{val.text}</i>
+                            <i className={val.iconName}> {val.text}</i>
                           </li>
                         ))}
                       </ul>
@@ -250,11 +251,11 @@ const Footer = () => {
         </div>
       </div>
       {/* footer bottom */}
-      <div className="footer-bottom">
+      <div className="footer-bottom flex justify-center">
         <div className="container">
           <div className="section-wrapper">
             <p>
-              &copy; 2023 <Link to="/">Shop Cart</Link> Designed By{" "}
+              &copy; 2023 <Link to="/">React/Tailwind ecom</Link> Designed By{" "}
               <a href="/" target="_blank">
                 Chaze
               </a>
