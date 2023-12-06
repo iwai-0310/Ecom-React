@@ -35,3 +35,10 @@
   .bg-banner-forest{
     background-image: url('../public/forest-banner.jpg');
   }
+
+  /* contain the img inside the div for footer header */
+  .half-height-image {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: 100%; /* Make the image take up the full height of its container */
+    object-fit: cover; /* Maintain the image's aspect ratio while covering its container */
+  }

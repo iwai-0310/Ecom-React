@@ -44,7 +44,7 @@ const shop = () => {
   return (
     <div className="">
       {/* <PageHeader title="Our Shop page" curPage="Shop" /> */}
-      <NewPageHeader />
+      <NewPageHeader title="Our Shop page" curPage="Shop" />
       {/* main shop content */}
       <div className="shop-page py-8 w-full flex justify-center">
         <div className="container">

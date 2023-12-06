@@ -1,9 +1,26 @@
 import React from "react";
-
-const NewPageHeader = () => {
+import { Link } from "react-router-dom";
+import { Breadcrumbs } from "@material-tailwind/react";
+import img from "../assets/images/banner/shop-view-banner.jpg";
+const NewPageHeader = ({ title, curPage }) => {
   return (
-    <div className="new-papeHeader">
-      <img src="../assets/images/banner/" alt="" />
+    <div className="h-96 w-screen new-header ">
+      <div
+        className="h-96  bg-left bg-no-repeat  bg-contain flex justify-center items-center "
+        style={{ backgroundImage: `url(${img})` }}
+      >
+        <div className="new-header-content text-center  h-32 w-96">
+          <h3 className="italic tracking-widest">{title}</h3>
+          <div className="flex justify-center items-center">
+            <Breadcrumbs>
+              <Link to="/" className="opacity-50">
+                Home
+              </Link>
+              <a href="#">{curPage}</a>
+            </Breadcrumbs>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
