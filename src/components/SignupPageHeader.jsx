@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "@material-tailwind/react";
-import img from "../assets/images/banner/shop-view-banner.jpg";
+import img from "../assets/images/banner/header-bg-cartpage.jpg";
 
 const SignupPageHeader = ({ title, curPage }) => {
   return (
