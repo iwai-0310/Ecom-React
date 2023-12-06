@@ -61,7 +61,7 @@ const CartPage = () => {
     <div>
       {/* <PageHeader title={"Shop cart"} curPage={"Cart Page"} /> */}
       <SignupPageHeader title={"Shop cart"} curPage={"Cart Page"} />
-      <div className="shop-cart py-8">
+      <div className="shop-cart py-8 flex justify-center">
         <div className="container">
           <div className="section-wrapper">
             {/* cart top */}
