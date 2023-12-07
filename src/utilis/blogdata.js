@@ -4,16 +4,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Business Ueporting Rouncil Them Could Plan.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '7',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: ' Ethan Thompson ',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Jan 08, 2023',
             },
         ],
     },
@@ -23,16 +23,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Financial Reporting Qouncil What Could More.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '12',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Olivia Rodriguez',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Mar 25, 2023',
             },
         ],
     },
@@ -42,16 +42,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Consulting Reporting Qounc Arei Could More.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '5',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Ava Williams',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'May 14, 2023',
             },
         ],
     },
@@ -61,16 +61,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Strategic Social Media and of visual design.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '15',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Emma Davis',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Jul 02, 2023',
             },
         ],
     },
@@ -80,16 +80,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Find the Right Path for your Group Course online.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '8',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Lucas Martinez',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Sep 19, 2023',
             },
         ],
     },
@@ -99,16 +99,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'Learn by doing with Real World Projects other countries.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '10',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Aiden Anderson',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Oct 11, 2023',
             },
         ],
     },
@@ -118,16 +118,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'The Importance Of Intrinsic for Students.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '11',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Aiden Anderson',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Dec 03, 2023',
             },
         ],
     },
@@ -137,16 +137,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'A Better Alternative To Grading Student Writing.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
+        commentCount: '7',
         btnText: 'Read More',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Amelia White',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Jun 23, 2022',
             },
         ],
     },
@@ -156,16 +156,16 @@ const blogList = [
         imgAlt: 'Blog Thumb',
         title: 'The Challenge Global Learning In Public Education.',
         desc: 'Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe',
-        commentCount: '3',
-        btnText: 'Read More',
+        commentCount: '12',
+        btnText: 'Sophia Wilson',
         metaList: [
             {
                 iconName: 'icofont-ui-user',
-                text: 'Rajib Raj',
+                text: 'Emma Davis',
             },
             {
                 iconName: 'icofont-calendar',
-                text: 'Jun 05,2022',
+                text: 'Jun 17, 2023',
             },
         ],
     },

@@ -80,7 +80,7 @@ const Blog = () => {
                         <ul className="lab-ul">
                           {data.metaList.map((val, i) => (
                             <li key={i} className="my-2">
-                              <i className={val.iconName}></i>
+                              <i className={`${val.iconName} mr-2`}></i>
                               {val.text}
                             </li>
                           ))}
