@@ -8,28 +8,28 @@ const postList = [
     imgUrl: "/src/assets/images/blog/10.jpg",
     imgAlt: "rajibraj91",
     title: "Poor People Campaign Our Resources",
-    date: "Jun 05,2022",
+    date: "Oct 11, 2023",
   },
   {
     id: 2,
     imgUrl: "/src/assets/images/blog/11.jpg",
     imgAlt: "rajibraj91",
     title: "Poor Peoples Campaign Our Resources",
-    date: "Jun 05,2022",
+    date: "Dec 03, 2023",
   },
   {
     id: 3,
     imgUrl: "/src/assets/images/blog/12.jpg",
     imgAlt: "rajibraj91",
     title: "Poor Peoples Campaign Our Resources",
-    date: "Jun 05,2022",
+    date: "Apr 08, 2023",
   },
   {
     id: 4,
     imgUrl: "/src/assets/images/blog/09.jpg",
     imgAlt: "rajibraj91",
     title: "Poor Peoples Campaign Our Resources",
-    date: "Jun 05,2022",
+    date: "Jun 05, 2023",
   },
 ];
 
@@ -51,7 +51,7 @@ const PopularPost = () => {
             {/* post data */}
             <div className="post-content">
               <Link to={`blog/${blog.id}`}>
-                <h5>{blog.title}</h5>
+                <h5 className="italic tracking-wide font-mono">{blog.title}</h5>
               </Link>
               <p>{blog.date}</p>
             </div>
