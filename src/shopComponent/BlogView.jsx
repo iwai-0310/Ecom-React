@@ -3,6 +3,7 @@ import blogList from "../utilis/blogdata";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import PopularPost from "./PopularPost";
+import SignupPageHeader from "../components/SignupPageHeader";
 import Tags from "./Tags";
 
 const socialList = [
@@ -42,8 +43,12 @@ const BlogView = () => {
   const result = blog.filter((b) => b.id === Number(id));
   return (
     <div>
-      <PageHeader title={"Single Blog Page"} curPage={"Blog/Blog Details"} />
-      <div className="blog-section blog-single py-4 section-bg">
+      {/* <PageHeader title={"Single Blog Page"} curPage={"Blog/Blog Details"} /> */}
+      <SignupPageHeader
+        title={"Single Blog Page"}
+        curPage={"Blog/Blog Details"}
+      />
+      <div className="blog-section blog-single py-4 section-bg flex justify-center">
         <div className="container">
           <div className="flex justify-center">
             {/* Left side starts */}
