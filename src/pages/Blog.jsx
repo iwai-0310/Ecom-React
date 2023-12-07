@@ -15,7 +15,7 @@ const Blog = () => {
               {blogList.map((data, i) => (
                 <div key={i} className="col-span-1">
                   <div className="post-item">
-                    <div className="post-inner">
+                    <div className="post-inner bg-gray-900">
                       <div className="post-thumb">
                         <Link to={`/blog/${data.id}`}>
                           <img src={data.imgUrl} alt="" />

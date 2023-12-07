@@ -12,7 +12,7 @@ const ProductCard = ({ GridList, product }) => {
       }`}
     >
       {product.map((product, i) => (
-        <div className="lg:w-11/12 md:w-10/12 w-full">
+        <div className="lg:w-11/12 md:w-10/12 w-full ">
           <div className="product-item group hover:bg-gray-900">
             {/* product images here */}
             <div className="product-thumb">

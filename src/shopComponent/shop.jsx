@@ -52,7 +52,7 @@ const shop = () => {
             {/* left-section for items view */}
             <div className="lg:w-9/12 w-full">
               <article className="mr-8 my-8">
-                <div className="shop-title flex flex-wrap justify-between">
+                <div className="shop-title flex flex-wrap justify-between  ">
                   <p>{showResults}</p>
                   <div
                     className={`flex items-center product-view-mode ${
