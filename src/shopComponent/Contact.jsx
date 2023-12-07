@@ -54,7 +54,7 @@ const Contact = () => {
               <div className="col-span-12 lg:col-span-5 xl:col-span-4">
                 <div className="contact-wrapper">
                   {contactList.map((val, i) => (
-                    <div key={i} className="contact-item">
+                    <div key={i} className="contact-item w-96 h-auto">
                       <div className="contact-thumb">
                         <img src={val.imgUrl} alt="" />
                       </div>
@@ -69,7 +69,7 @@ const Contact = () => {
 
               {/* intergration google map */}
               {/* map starts here */}
-              <div className="xl:col-span-8 lg:col-span-7 col-12">
+              <div className="w-8/12 lg:col-span-7 col-12">
                 <GoogleMaps />
               </div>
               {/* map ends here */}
