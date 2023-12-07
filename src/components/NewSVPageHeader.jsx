@@ -12,7 +12,7 @@ const NewSVPageHeader = ({ title, curPage }) => {
         <div className="new-header-content text-center  h-32 w-96">
           <h3 className="italic tracking-widest">{title}</h3>
           <div className="flex justify-center items-center">
-            <Breadcrumbs>
+            <Breadcrumbs className="my-4">
               <Link to="/" className="opacity-50">
                 Home
               </Link>
