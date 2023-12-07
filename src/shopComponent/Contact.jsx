@@ -127,12 +127,12 @@ const Contact = () => {
                   placeholder="Your Message ..."
                 ></textarea>
               </div>
-              <div className="form-group w-full text-center">
-                <button className="lab-btn">
-                  <span>{btnText}</span>
-                </button>
-              </div>
             </form>
+            <div className="form-group w-full text-center">
+              <button className="lab-btn my-8">
+                <span>{btnText}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
