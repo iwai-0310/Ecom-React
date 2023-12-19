@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import NewPageHeader from "../components/NewPageHeader";
-import blogList from "../utilis/blogdata";
+import blogList from "../blogdata";
 import { Badge, Button, IconButton } from "@material-tailwind/react";
 const Blog = () => {
   return (

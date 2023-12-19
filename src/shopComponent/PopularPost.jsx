@@ -5,30 +5,32 @@ const title = "Most popular posts";
 const postList = [
   {
     id: 1,
-    imgUrl: "/src/assets/images/blog/10.jpg",
+    imgUrl: "../assets/images/blog/10.jpg",
     imgAlt: "rajibraj91",
-    title: "Poor People Campaign Our Resources",
+    title: "Integrating Java Web Sockets with Spring Framework",
     date: "Oct 11, 2023",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/blog/11.jpg",
+    imgUrl: "../assets/images/blog/11.jpg",
     imgAlt: "rajibraj91",
-    title: "Poor Peoples Campaign Our Resources",
+    title:
+      "As a Front-End Engineer, 4 React Traps And TipsYou Should Know About",
     date: "Dec 03, 2023",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/blog/12.jpg",
+    imgUrl: "../assets/images/blog/12.jpg",
     imgAlt: "rajibraj91",
-    title: "Poor Peoples Campaign Our Resources",
+    title:
+      "How to Get a React Component’s Height or Width Before Render its Content?",
     date: "Apr 08, 2023",
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/blog/09.jpg",
+    imgUrl: "../assets/images/blog/09.jpg",
     imgAlt: "rajibraj91",
-    title: "Poor Peoples Campaign Our Resources",
+    title: "How to dynamically build tailwind class names",
     date: "Jun 05, 2023",
   },
 ];

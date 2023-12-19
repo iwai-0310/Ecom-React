@@ -40,7 +40,11 @@ const ProductDisplay = ({ item }) => {
       color: color,
       coupon: coupon,
     };
-    // console.log(product);
+
+    console.log("//////////////////////////");
+    console.log(item);
+    console.log("//////////////////////////");
+
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingProjectIndex = existingCart.findIndex(
       (item) => item.id === id

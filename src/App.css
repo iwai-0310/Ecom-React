@@ -33,7 +33,7 @@
   color: #fff;
   }
   .bg-banner-forest{
-    background-image: url('../public/forest-banner.jpg');
+    background-image: url('assets/images/banner/forest-banner.jpg');
   }
 
   /* contain the img inside the div for footer header */

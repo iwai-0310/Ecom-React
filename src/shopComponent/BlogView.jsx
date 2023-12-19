@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import blogList from "../utilis/blogdata";
+import blogList from "../blogdata";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import PopularPost from "./PopularPost";
@@ -131,7 +131,7 @@ const BlogView = () => {
                                   Voluptates.
                                 </p>
                                 <img
-                                  src="/src/assets/images/blog/single/01.jpg"
+                                  src="../assets/images/blog/single/01.jpg"
                                   alt=""
                                 />
                                 <p>
@@ -150,7 +150,7 @@ const BlogView = () => {
                                 </p>
                                 <div className="video-thumb">
                                   <img
-                                    src="/src/assets/images/blog/single/02.jpg"
+                                    src="../assets/images/blog/single/02.jpg"
                                     alt=""
                                   />
                                   <a

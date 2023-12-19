@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
 import SelectedCategory from "../../components/SelectedCategory";
-import forest from "../../../public/forest-banner.jpg";
+import forest from "../../assets/images/banner/forest-banner.jpg"
 
 // title for banner
 const title = (
@@ -88,7 +88,9 @@ const Banner = () => {
     <div className="new-banner">
       {/* image for background for banner */}
       <img
-        src="../../../public/forest-banner.jpg"
+        // src="../../../public/forest-banner.jpg"
+       // src="../../../public/images/banner/forest-banner.jpg"
+       src={forest}
         className="new-banner bg-cover bg-center h-screen w-screen -z-2"
         alt="bg-forest-banner-img"
       />

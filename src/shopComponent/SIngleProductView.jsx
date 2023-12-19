@@ -5,7 +5,7 @@ import Review from "./Review";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 import NewSVPageHeader from "../components/NewSVPageHeader";
-
+import dataj from "./products.json";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,14 +19,27 @@ const SIngleProductView = () => {
   //access the product id
   const { id } = useParams();
   //access all the products data
+  // useEffect(() => {
+  //   fetch("/products.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setProduct(data));
+  // }, []);
   useEffect(() => {
-    fetch("/src/products.json")
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
+    fetch("/products.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Network response was not ok: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setProduct(data))
+      .catch((error) => console.error("Fetch error:", error));
   }, []);
+
   //filter out the data with product.id
   const result = product.filter((p) => p.id === id);
-  // console.log(result);
+  console.log(`These are all the prodcuts from fetch ${product}`);
+  console.log(`This is the item i clicked on ${result}`);
 
   return (
     <div>
