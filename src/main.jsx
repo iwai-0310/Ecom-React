@@ -22,6 +22,7 @@ import Contact from "./shopComponent/Contact.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
+import AddNewItem from "./pages/addNewItem.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/shop", element: <Shop /> },
       { path: "/shop/:id", element: <SingleProductView /> },
       { path: "/blog/:id", element: <BlogView /> },
+      { path: "/add/newItem", element: <AddNewItem /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       {
