@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   Input,
@@ -7,10 +7,40 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import NewPageHeader from "../components/NewPageHeader";
-
+const APIurl = "http://localhost:3000/api/v1/products/";
 const addNewItem = () => {
+  //create a useState to store default value of some properties
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    seller: "",
+    price: 0,
+    stock: 0,
+    imageUrl: [],
+  });
+
+  //submit opertaion
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch(APIurl, {
+        method: "POST",
+        header: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log("Product created successfully");
+      } else {
+        console.log("Error creating product:", response.statusText);
+      }
+    } catch (error) {
+      console.log("Error creating product:", error.message);
+    }
+  };
+
   return (
-    <div className="bg-gray-300">
+    <div className="bg-gray-100">
       <NewPageHeader title="Insert item page" curPage="Shop" />
       <Card color="transparent" shadow={false}>
         <div className="moveTitleToMiddle flex justify-center items-center h-full">
@@ -142,7 +172,11 @@ const addNewItem = () => {
               containerProps={{ className: "-ml-2.5" }}
             /> */}
             <div className="flex item-center justify-center">
-              <Button className="mt-6 mb-6 w-3/5 " fullWidth>
+              <Button
+                className="mt-6 mb-6 w-3/5 "
+                fullWidth
+                onClick={handleSubmit}
+              >
                 Submit
               </Button>
             </div>
