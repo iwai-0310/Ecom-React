@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageHeader from "../components/PageHeader";
 import Data from "../products.json";
 import ProductCard from "./ProductCard";
@@ -8,12 +8,30 @@ import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 import NewPageHeader from "../components/NewPageHeader";
+import checkboxColors from "@material-tailwind/react/theme/components/checkbox/checkboxColors";
 
 const showResults = "Showing 01 - 12 of 139 Results";
-
+const apiUrl = "http://localhost:3000/api/v1/products/";
 const shop = () => {
   const [GridList, setGridList] = useState(true);
-  const [product, setproducts] = useState(Data);
+
+  const [product, setproducts] = useState([]);
+  console.log("the default data in product is", typeof Data);
+  console.log("and the value of data is", Data);
+  let apiData;
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        apiData = data.products;
+        console.log("the default data in apiData is", typeof apiData);
+        console.log("and the value of apiData is", apiData);
+        setproducts(apiData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +42,8 @@ const shop = () => {
     indexOfFirstProduct,
     indexOfLastProduct
   );
-
+  // console.log("the current products are");
+  // console.log(product);
   //function to change the current page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
