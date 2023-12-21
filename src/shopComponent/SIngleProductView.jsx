@@ -14,32 +14,42 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import ProductDisplay from "./ProductDisplay";
 
+//api endpoint to recive all the products
+const apiUrl = "http://localhost:3000/api/v1/products/";
+
 const SIngleProductView = () => {
   const [product, setProduct] = useState([]);
   //access the product id
   const { id } = useParams();
   //access all the products data
-  // useEffect(() => {
-  //   fetch("/products.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setProduct(data));
-  // }, []);
+  //now try and fetch all the products
+  // let apiData;
   useEffect(() => {
-    fetch("/products.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Network response was not ok: ${res.status}`);
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
         }
-        return res.json();
+        return response.json();
       })
-      .then((data) => setProduct(data))
-      .catch((error) => console.error("Fetch error:", error));
+      .then((data) => {
+        const apiData = data.products;
+        console.log("this default data is apiData is", typeof apiData);
+        console.log("and the value of the apiData is", apiData);
+        setProduct(apiData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   //filter out the data with product.id
-  const result = product.filter((p) => p.id === id);
+  const result = product.length > 0 ? product.filter((p) => p._id === id) : [];
+  console.log("the id that i m getting", id);
   console.log(`These are all the prodcuts from fetch ${product}`);
   console.log(`This is the item i clicked on ${result}`);
+  console.log(result);
+  console.log("This is the value of item i clicked on", typeof result);
 
   return (
     <div>

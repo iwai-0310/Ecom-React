@@ -16,8 +16,8 @@ const shop = () => {
   const [GridList, setGridList] = useState(true);
 
   const [product, setproducts] = useState([]);
-  console.log("the default data in product is", typeof Data);
-  console.log("and the value of data is", Data);
+  // console.log("the default data in product is", typeof Data);
+  // console.log("and the value of data is", Data);
   let apiData;
   useEffect(() => {
     fetch(apiUrl)

@@ -21,7 +21,7 @@ const ProductCard = ({ GridList, product }) => {
               </div>
               {/* product action link */}
               <div className="product-action-link">
-                <Link to={`/shop/${product.id}`}>
+                <Link to={`/shop/${product._id}`}>
                   <i className="icofont-eye"></i>
                 </Link>
                 <a href="#">
