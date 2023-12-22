@@ -60,12 +60,16 @@ const Banner = () => {
     const searchTerm = event.target.value;
     setSearchInput(searchTerm);
 
-    //filtering product based on search
-    const filtered = filterProducts.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    if (!searchTerm.trim()) {
+      setFilterProducts(allProducts);
+    } else {
+      //filtering product based on search
+      const filtered = filterProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
-    setFilterProducts(filtered);
+      setFilterProducts(filtered);
+    }
   };
   return (
     // <div className="banner-section style-4">
