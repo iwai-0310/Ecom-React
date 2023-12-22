@@ -16,23 +16,42 @@ const addNewItem = () => {
     seller: "",
     price: 0,
     stock: 0,
-    imageUrl: [],
+    img: [],
   });
+  //create method to handle changes to form
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "img") {
+      const updatedImg = [...formData.img];
+      updatedImg[0] = value;
+      setFormData((prevData) => ({
+        ...prevData,
+        img: updatedImg,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
 
   //submit opertaion
   const handleSubmit = async () => {
     try {
       const response = await fetch(APIurl, {
         method: "POST",
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
       if (response.ok) {
         console.log("Product created successfully");
+        console.log("so this the formData we are sending", formData);
       } else {
         console.log("Error creating product:", response.statusText);
+        console.log("so this the formData we are sending", formData);
       }
     } catch (error) {
       console.log("Error creating product:", error.message);
@@ -66,6 +85,9 @@ const addNewItem = () => {
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
               />
               <div className="halfSize flex flex-col md:flex-row gap-6 ">
                 <div className="flex flex-col flex-grow">
@@ -83,6 +105,9 @@ const addNewItem = () => {
                     labelProps={{
                       className: "before:content-none after:content-none",
                     }}
+                    name="category"
+                    value={formData.category}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
@@ -100,6 +125,9 @@ const addNewItem = () => {
                     labelProps={{
                       className: "before:content-none after:content-none",
                     }}
+                    name="seller"
+                    value={formData.seller}
+                    onChange={handleInputChange}
                   />
                 </div>
               </div>
@@ -120,6 +148,9 @@ const addNewItem = () => {
                     labelProps={{
                       className: "before:content-none after:content-none",
                     }}
+                    name="price"
+                    value={formData.price}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
@@ -138,6 +169,9 @@ const addNewItem = () => {
                     labelProps={{
                       className: "before:content-none after:content-none",
                     }}
+                    name="stock"
+                    value={formData.stock}
+                    onChange={handleInputChange}
                   />
                 </div>
               </div>
@@ -151,6 +185,9 @@ const addNewItem = () => {
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
+                name="img"
+                value={formData.img.length > 0 ? formData.img[0] : ""}
+                onChange={handleInputChange}
               />
             </div>
             {/* <Checkbox
