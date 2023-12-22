@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
 import SelectedCategory from "../../components/SelectedCategory";
-import forest from "../../assets/images/banner/forest-banner.jpg"
+import forest from "../../assets/images/banner/forest-banner.jpg";
 
 // title for banner
 const title = (
@@ -89,8 +89,8 @@ const Banner = () => {
       {/* image for background for banner */}
       <img
         // src="../../../public/forest-banner.jpg"
-       // src="../../../public/images/banner/forest-banner.jpg"
-       src={forest}
+        // src="../../../public/images/banner/forest-banner.jpg"
+        src={forest}
         className="new-banner bg-cover bg-center h-screen w-screen -z-2"
         alt="bg-forest-banner-img"
       />
@@ -120,14 +120,19 @@ const Banner = () => {
             {/* description */}
             <p className="justify-center text-center text-gray-900">{desc}</p>
             {/* show filtered products here */}
-            {/* <ul className="lab-ul">
+            <ul className="flex flex-wrap ">
               {searchInput &&
                 filterProducts.map((product, i) => (
-                  <li key={i}>
-                    <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                  <li key={i} className="bg-transparent mx-4 my-2">
+                    <Link
+                      className="text-gray-900 hover:scale-110 hover:text-orange-700 hover:font-bold"
+                      to={`/shop/${product.id}`}
+                    >
+                      {product.name.toUpperCase()}
+                    </Link>
                   </li>
                 ))}
-            </ul> */}
+            </ul>
           </div>
         </div>
       </div>
