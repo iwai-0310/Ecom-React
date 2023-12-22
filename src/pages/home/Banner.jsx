@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
+const apiUrl = "http://localhost:3000/api/v1/products/";
 import SelectedCategory from "../../components/SelectedCategory";
 import forest from "../../assets/images/banner/forest-banner.jpg";
 
@@ -33,7 +34,24 @@ const bannerList = [
 const Banner = () => {
   //use states for the banner
   const [searchInput, setSearchInput] = useState("");
-  const [filterProducts, setFilterProducts] = useState(productData);
+  const [allProducts, setAllProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const apiData = data.products;
+        console.log("the default data in apiData is", typeof apiData);
+        console.log("and the value of apiData is", apiData);
+        setAllProducts(apiData);
+        setFilterProducts(apiData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   // console.log(productData);
 
   //function handleSearch
@@ -43,7 +61,7 @@ const Banner = () => {
     setSearchInput(searchTerm);
 
     //filtering product based on search
-    const filtered = productData.filter((product) =>
+    const filtered = filterProducts.filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -126,7 +144,7 @@ const Banner = () => {
                   <li key={i} className="bg-transparent mx-4 my-2">
                     <Link
                       className="text-gray-900 hover:scale-110 hover:text-orange-700 hover:font-bold"
-                      to={`/shop/${product.id}`}
+                      to={`/shop/${product._id}`}
                     >
                       {product.name.toUpperCase()}
                     </Link>
