@@ -111,7 +111,7 @@ const shop = () => {
             <div className="lg:w-4/12 w-full">
               <aside>
                 {/* add filter by section here */}
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center my-4 ">
                   <FilterBy product={product} GridList={GridList} />
                 </div>
                 {/* <Search product={product} GridList={GridList} /> */}

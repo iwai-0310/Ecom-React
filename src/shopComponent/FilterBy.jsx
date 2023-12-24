@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   Button,
   Typography,
   IconButton,
+  Slider,
 } from "@material-tailwind/react";
 import Search from "./Search";
 
@@ -45,11 +46,64 @@ const FilterBy = ({ product, GridList }) => {
           written with Tailwind CSS classes and Material Design guidelines.
         </Typography> */}
         <Search product={product} GridList={GridList} />
-        <div className="flex gap-2">
-          <Button size="sm" variant="outlined">
-            Documentation
+        <hr />
+        {/* sorting by seller */}
+        <Typography color="black" className="my-2 font-bold">
+          Sort seller by
+        </Typography>
+        <div className="flex gap-2 my-2 justify-between">
+          <Button
+            size="sm"
+            variant="outlined"
+            className="hover:text-orange-700 "
+          >
+            Asc
           </Button>
-          <Button size="sm">Get Started</Button>
+          <Button size="sm" className="hover:text-orange-700">
+            desc
+          </Button>
+        </div>
+        <hr />
+        {/* sorting by name */}
+        <Typography color="black" className="my-2 font-bold">
+          Sort name by
+        </Typography>
+        <div className="flex gap-2 my-2 justify-between">
+          <Button
+            size="sm"
+            variant="outlined"
+            className="hover:text-orange-700 "
+          >
+            Asc
+          </Button>
+          <Button size="sm" className="hover:text-orange-700">
+            desc
+          </Button>
+        </div>
+        <hr />
+        <div>
+          {/* sorting by price */}
+          <div>
+            <Typography color="black" className="mt-2 mb-2 font-bold">
+              Select price range
+            </Typography>
+            <Slider size="sm" defaultValue={50} className="mb-12" />
+          </div>
+          <hr />
+          {/* sorting by stock */}
+          <div>
+            <Typography color="black" className="mt-2 mb-2 font-bold">
+              Select stock range
+            </Typography>
+            <Slider size="sm" defaultValue={50} className="mb-12" />
+          </div>
+          {/* sorting by shipping */}
+          <div>
+            <Typography color="black" className="mt-2 mb-2 font-bold">
+              Select shipping range
+            </Typography>
+            <Slider size="sm" defaultValue={50} className="mb-8" />
+          </div>
         </div>
       </Drawer>
     </React.Fragment>
