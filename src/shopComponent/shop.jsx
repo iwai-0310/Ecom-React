@@ -112,9 +112,9 @@ const shop = () => {
               <aside>
                 {/* add filter by section here */}
                 <div className="flex justify-center items-center">
-                  <FilterBy />
+                  <FilterBy product={product} GridList={GridList} />
                 </div>
-                <Search product={product} GridList={GridList} />
+                {/* <Search product={product} GridList={GridList} /> */}
                 <ShopCategory
                   filterItem={filterItem}
                   setItem={setproducts}

@@ -27,7 +27,7 @@ const Search = ({ product, GridList }) => {
       <div>
         {searchTerm &&
           filteredProducts.map((item) => (
-            <Link key={item.id} to={`/shop/${item.id}`}>
+            <Link key={item._id} to={`/shop/${item._id}`}>
               <div className="flex gap-3 p-2">
                 <div className="pro-thumb h-24">
                   <img
@@ -39,7 +39,7 @@ const Search = ({ product, GridList }) => {
                 </div>
                 <div className="product-content">
                   <p>
-                    <Link to={`/shop/${item.id}`}>{item.name}</Link>
+                    <Link to={`/shop/${item._id}`}>{item.name}</Link>
                   </p>
                   <h6>$ {item.price}</h6>
                 </div>

@@ -5,8 +5,9 @@ import {
   Typography,
   IconButton,
 } from "@material-tailwind/react";
+import Search from "./Search";
 
-const FilterBy = () => {
+const FilterBy = ({ product, GridList }) => {
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
@@ -39,10 +40,11 @@ const FilterBy = () => {
             </svg>
           </IconButton>
         </div>
-        <Typography color="gray" className="mb-8 pr-4 font-normal">
+        {/* <Typography color="gray" className="mb-8 pr-4 font-normal">
           Material Tailwind features multiple React and HTML components, all
           written with Tailwind CSS classes and Material Design guidelines.
-        </Typography>
+        </Typography> */}
+        <Search product={product} GridList={GridList} />
         <div className="flex gap-2">
           <Button size="sm" variant="outlined">
             Documentation
