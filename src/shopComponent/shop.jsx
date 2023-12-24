@@ -9,6 +9,7 @@ import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 import NewPageHeader from "../components/NewPageHeader";
 import checkboxColors from "@material-tailwind/react/theme/components/checkbox/checkboxColors";
+import FilterBy from "./FilterBy";
 
 const showResults = "Showing 01 - 12 of 139 Results";
 const apiUrl = "http://localhost:3000/api/v1/products/";
@@ -109,6 +110,10 @@ const shop = () => {
             {/* right-section for sort and other functionalities */}
             <div className="lg:w-4/12 w-full">
               <aside>
+                {/* add filter by section here */}
+                <div className="flex justify-center items-center">
+                  <FilterBy />
+                </div>
                 <Search product={product} GridList={GridList} />
                 <ShopCategory
                   filterItem={filterItem}
