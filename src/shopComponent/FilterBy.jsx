@@ -13,10 +13,8 @@ import Search from "./Search";
 
 const FilterBy = ({ product, GridList }) => {
   const [open, setOpen] = React.useState(false);
-
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
-
   const checkButtonWorks = () => {
     console.log("the desc button should work like thsi");
   };
