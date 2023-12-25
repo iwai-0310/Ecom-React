@@ -8,7 +8,7 @@ import {
 //adding imports for rc-slider
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-
+import NullableRangeSlider from "../components/NullableRangeSlider";
 import Search from "./Search";
 
 const FilterBy = ({ product, GridList }) => {
@@ -90,35 +90,20 @@ const FilterBy = ({ product, GridList }) => {
           </Button>
         </div>
         <hr />
-        <div>
-          {/* sorting by price */}
-          <div>
-            <Typography color="black" className="mt-2 mb-2 font-bold">
-              Select price range
-            </Typography>
-            {/*Adds rc slider component here*/}
-            <Slider />
-          </div>
-          <hr />
-          {/* sorting by stock */}
-          <div>
-            <Typography color="black" className="mt-2 mb-2 font-bold">
-              Select stock range
-            </Typography>
-            {/*Adds rc slider component here*/}
-            <Slider />
-          </div>
-          <hr />
-          {/* sorting by shipping */}
-          <div>
-            <Typography color="black" className="mt-2 mb-2 font-bold">
-              Select shipping range
-            </Typography>
-            {/*Adds rc slider component here*/}
-            <Slider />
-          </div>
-          <hr />
+
+        {/* sorting by price */}
+        <div className="mb-12">
+          <Typography color="black" className="mt-2 mb-2 font-bold">
+            Select price range
+          </Typography>
+          {/*Adds rc slider component here*/}
+
+          <NullableRangeSlider />
         </div>
+        <hr />
+        {/* sorting by stock */}
+
+        {/* sorting by shipping */}
         <Button fullWidth> block level button </Button>
       </Drawer>
     </React.Fragment>
