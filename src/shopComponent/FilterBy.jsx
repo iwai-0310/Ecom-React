@@ -14,6 +14,9 @@ const FilterBy = ({ product, GridList }) => {
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
 
+  const checkButtonWorks = () => {
+    console.log("the desc button should work like thsi");
+  };
   return (
     <React.Fragment>
       <Button className="w-5/6" onClick={openDrawer}>
@@ -73,10 +76,15 @@ const FilterBy = ({ product, GridList }) => {
             size="sm"
             variant="outlined"
             className="hover:text-orange-700 "
+            onClick={checkButtonWorks}
           >
             Asc
           </Button>
-          <Button size="sm" className="hover:text-orange-700">
+          <Button
+            size="sm"
+            className="hover:text-orange-700"
+            onClick={checkButtonWorks}
+          >
             desc
           </Button>
         </div>
@@ -105,6 +113,7 @@ const FilterBy = ({ product, GridList }) => {
             <Slider size="sm" defaultValue={50} className="mb-8" />
           </div>
         </div>
+        <Button fullWidth> block level button </Button>
       </Drawer>
     </React.Fragment>
   );
