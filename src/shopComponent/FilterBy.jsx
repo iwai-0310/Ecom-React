@@ -4,8 +4,11 @@ import {
   Button,
   Typography,
   IconButton,
-  Slider,
 } from "@material-tailwind/react";
+//adding imports for rc-slider
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+
 import Search from "./Search";
 
 const FilterBy = ({ product, GridList }) => {
@@ -95,7 +98,8 @@ const FilterBy = ({ product, GridList }) => {
             <Typography color="black" className="mt-2 mb-2 font-bold">
               Select price range
             </Typography>
-            <Slider size="sm" defaultValue={50} className="mb-12" />
+            {/*Adds rc slider component here*/}
+            <Slider />
           </div>
           <hr />
           {/* sorting by stock */}
@@ -103,15 +107,19 @@ const FilterBy = ({ product, GridList }) => {
             <Typography color="black" className="mt-2 mb-2 font-bold">
               Select stock range
             </Typography>
-            <Slider size="sm" defaultValue={50} className="mb-12" />
+            {/*Adds rc slider component here*/}
+            <Slider />
           </div>
+          <hr />
           {/* sorting by shipping */}
           <div>
             <Typography color="black" className="mt-2 mb-2 font-bold">
               Select shipping range
             </Typography>
-            <Slider size="sm" defaultValue={50} className="mb-8" />
+            {/*Adds rc slider component here*/}
+            <Slider />
           </div>
+          <hr />
         </div>
         <Button fullWidth> block level button </Button>
       </Drawer>
