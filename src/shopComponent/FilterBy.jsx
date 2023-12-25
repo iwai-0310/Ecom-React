@@ -18,6 +18,12 @@ const FilterBy = ({ product, GridList }) => {
   const checkButtonWorks = () => {
     console.log("the desc button should work like thsi");
   };
+
+  //fetch these value from api data.
+  const cur_value = 1,
+    min_price = 10,
+    max_price = 20,
+    steps_formula = 10;
   return (
     <React.Fragment>
       <Button className="w-5/6" onClick={openDrawer}>
@@ -98,7 +104,12 @@ const FilterBy = ({ product, GridList }) => {
           </Typography>
           {/*Adds rc slider component here*/}
 
-          <NullableRangeSlider />
+          <NullableRangeSlider
+            min={min_price}
+            max={max_price}
+            step={steps_formula}
+            value={cur_value}
+          />
         </div>
         <hr />
         {/* sorting by stock */}

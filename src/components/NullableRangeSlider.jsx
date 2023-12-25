@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import Slider from "rc-slider";
-import Button from "@material-tailwind/react";
+import { button } from "@material-tailwind/react";
 
-const NullableRangeSlider = () => {
-  const [value, setValue] = useState(null);
-  return <Slider range value={value} onChange={setValue} />;
+const NullableRangeSlider = ({ min, max, step, value }) => {
+  //create state for each prop.
+  const [minValue, setMinValue] = useState(min);
+  const [maxValue, setMaxValue] = useState(max);
+  const [stepValue, setStepValue] = useState(step);
+  const [sliderValue, setSliderValue] = useState(value);
 
-  <Button onClick={() => setValue(null)}>Reset</Button>;
+  return <div></div>;
 };
 
 export default NullableRangeSlider;
