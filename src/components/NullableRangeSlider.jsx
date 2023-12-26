@@ -16,7 +16,11 @@ const NullableRangeSlider = ({title,min,max,onRangeChange }) => {
       <Typography color="black" className="mt-2 mb-2 font-bold">
             Select {title} range
           </Typography>
-      <div className="mt-1 mb-4">{title} range: ${priceRange[0]} - ${priceRange[1]}</div>
+          <div className="mt-1 mb-4">
+        {title === "price"
+          ? `${title} range: $${priceRange[0]} - $${priceRange[1]}`
+          : `${title} range: ${priceRange[0]} - ${priceRange[1]}`}
+      </div>
       <Slider
         range
         min={min}
