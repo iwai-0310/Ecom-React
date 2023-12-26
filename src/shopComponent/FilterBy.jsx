@@ -107,15 +107,19 @@ const FilterBy = ({ product, GridList }) => {
         <hr />
 
         {/* sorting by price */}
-        <div className="mb-12">
+        <div className="mb-4">
           {/*Adds rc slider component here*/}
           <NullableRangeSlider title="price" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
           
         </div>
-        <hr />
         {/* sorting by stock */}
-
+        <div className="mb-4">
+        <NullableRangeSlider title="stock" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+        </div>
         {/* sorting by shipping */}
+        <div className="mb-4">
+        <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+        </div>
         <Button fullWidth> block level button </Button>
       </Drawer>
     </React.Fragment>
