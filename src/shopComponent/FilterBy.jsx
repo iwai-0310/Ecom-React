@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Drawer,
   Button,
@@ -33,17 +33,34 @@ const FilterBy = ({ product, GridList }) => {
   const [stockMax,setStockMax]=useState(100);
   const [shipMax,setShipMax]=useState(100);
   
-  //acessing API endpoint to values for
+  //acessing API endpoint to values for'
   let apiData;
   let size;
+  let maxPricedProduct;
+  let minPricedProduct;
+  let sizeFromPriceAPI;
   useEffect(()=>{
-    fetch()
+    fetch(apiUrlForPrice)
     .then((response)=>response.json())
     .then((data)=>{
       apiData=data.products;
       size=data.ngHits;
+
+      //Find the  product with max price
+      maxPricedProduct=apiData.reduce((maxProduct,currentProduct)=>{
+        return currentProduct.price>maxProduct.price ? currentProduct:maxProduct;
+      },apiData[0]);
+      //Find the product with min price
+      minPricedProduct=apiData.reduce((minProduct,currentProduct)=>{
+        return currentProduct.price<minProduct.price ? currentProduct:minProduct;
+      },apiData[0]);
+
+      sizeFromPriceAPI=size;
       console.log("the value of apiData is ",apiData);
       console.log("the value of size is ",size);
+      console.log("the value of minpriceItem is",minPricedProduct);
+      console.log("the value of maxpriceITem is",maxPricedProduct);
+      
     })
     .catch((error)=>{
       console.log(error);
