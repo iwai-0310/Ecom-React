@@ -11,6 +11,8 @@ import {
 //adding imports for rc-slider
 // import Slider from "rc-slider";
 
+// api url to fetch data in desc order for price
+const apiUrlForPrice="http://localhost:3000/api/v1/products/?sort=-price"
 
 import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
@@ -20,9 +22,34 @@ const FilterBy = ({ product, GridList }) => {
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
-  const checkButtonWorks = () => {
-    console.log("the desc button should work like thsi");
-  };
+ 
+  //use States to set min values
+  const [priceMin,setPriceMin]=useState(0);
+  const [stocklMin,setStockMin]=useState(0);
+  const [shipMin,setShipMin]=useState(0);
+
+  //useStates to set max values
+  const [priceMax,setPriceMax]=useState(100);
+  const [stockMax,setStockMax]=useState(100);
+  const [shipMax,setShipMax]=useState(100);
+  
+  //acessing API endpoint to values for
+  let apiData;
+  let size;
+  useEffect(()=>{
+    fetch()
+    .then((response)=>response.json())
+    .then((data)=>{
+      apiData=data.products;
+      size=data.ngHits;
+      console.log("the value of apiData is ",apiData);
+      console.log("the value of size is ",size);
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
+  },[]);
+
   //adding State for slider
   const [priceRange,setPriceRange]=useState([0,100]);
   const handlePriceRangeChange=(range)=>{
