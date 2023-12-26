@@ -5,8 +5,13 @@ import {
   Typography,
   IconButton,
 } from "@material-tailwind/react";
+//adding  import to ReactSlider
+// import ReactSlider from 'react-slider';
+//import NullableRangeSlider from "../components/NullableRangeSlider";
 //adding imports for rc-slider
-import Slider from "rc-slider";
+// import Slider from "rc-slider";
+
+
 import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
 import Search from "./Search";
@@ -18,7 +23,11 @@ const FilterBy = ({ product, GridList }) => {
   const checkButtonWorks = () => {
     console.log("the desc button should work like thsi");
   };
-
+  //adding State for slider
+  const [priceRange,setPriceRange]=useState([0,100]);
+  const handlePriceRangeChange=(range)=>{
+    setPriceRange(range);
+  }
   //fetch these value from api data.
   const cur_value = 1,
     min_price = 10,
@@ -99,17 +108,9 @@ const FilterBy = ({ product, GridList }) => {
 
         {/* sorting by price */}
         <div className="mb-12">
-          <Typography color="black" className="mt-2 mb-2 font-bold">
-            Select price range
-          </Typography>
           {/*Adds rc slider component here*/}
-
-          <NullableRangeSlider
-            min={min_price}
-            max={max_price}
-            step={steps_formula}
-            value={cur_value}
-          />
+          <NullableRangeSlider title="price" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+          
         </div>
         <hr />
         {/* sorting by stock */}
