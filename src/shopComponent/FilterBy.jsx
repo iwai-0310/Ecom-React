@@ -3,7 +3,7 @@ import {
   Drawer,
   Button,
   Typography,
-  IconButton,
+  IconButton,Checkbox
 } from "@material-tailwind/react";
 //adding  import to ReactSlider
 // import ReactSlider from 'react-slider';
@@ -70,39 +70,30 @@ const FilterBy = ({ product, GridList }) => {
         <Typography color="black" className="my-2 font-bold">
           Sort seller by
         </Typography>
-        <div className="flex gap-2 my-2 justify-between">
-          <Button
-            size="sm"
-            variant="outlined"
-            className="hover:text-orange-700 "
-          >
-            Asc
-          </Button>
-          <Button size="sm" className="hover:text-orange-700">
-            desc
-          </Button>
+        <div className="flex px-3 justify-between gap-2 my-2 justify-between">
+          <div className=" flex items-center text-black">
+            <div className="font-medium">Asc</div>
+            <Checkbox/>
+          </div>
+          <div className=" flex items-center text-black">
+            <Checkbox defaultChecked/>
+            <div className="font-medium">Desc</div>
+          </div>
         </div>
         <hr />
         {/* sorting by name */}
         <Typography color="black" className="my-2 font-bold">
           Sort name by
         </Typography>
-        <div className="flex gap-2 my-2 justify-between">
-          <Button
-            size="sm"
-            variant="outlined"
-            className="hover:text-orange-700 "
-            onClick={checkButtonWorks}
-          >
-            Asc
-          </Button>
-          <Button
-            size="sm"
-            className="hover:text-orange-700"
-            onClick={checkButtonWorks}
-          >
-            desc
-          </Button>
+        <div className="flex px-3 justify-between gap-2 my-2 justify-between">
+          <div className=" flex items-center text-black">
+            <div className="font-medium">Asc</div>
+            <Checkbox defaultChecked/>
+          </div>
+          <div className=" flex items-center text-black">
+            <Checkbox />
+            <div className="font-medium">Desc</div>
+          </div>
         </div>
         <hr />
 
