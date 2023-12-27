@@ -13,8 +13,10 @@ import {
 
 // api url to fetch data in desc order for price
 const apiUrlForPrice="http://localhost:3000/api/v1/products/?sort=-price"
-//api  utl to fetch data in desc order for stock
+//api url to fetch data in desc order for stock
 const apiUrlForStock="http://localhost:3000/api/v1/products/?sort=-stock"
+//api url to fetch data in desc order for shipping
+const apiUrlForShipping="http://localhost:3000/api/v1/products/?sort=-shipping"
 
 import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
@@ -38,7 +40,7 @@ const FilterBy = ({ product, GridList }) => {
   //useState to set data loaded or not
   const [priceDataLoaded,setPriceDataLoaded]=useState(false);
   const [stockDataLoaded,setStockDataLoaded]=useState(false);
-  
+  const [shippingDataLoaded,setShippingDataLoaded]=useState(false);
   //acessing API endpoint to values for'
   let apiData;
   let size;
@@ -105,13 +107,37 @@ const FilterBy = ({ product, GridList }) => {
         console.log(error);
       });
     },[]);
+    let maxShippingProduct;
+    let minShippingProduct;
+    useEffect(()=>{
+      fetch(apiUrlForShipping)
+      .then((response)=>response.json())
+      .then((data)=>{
+        apiData=data.products;
+        //Find the products with max shipping
+        maxShippingProduct=apiData.reduce((maxProduct,currentProduct)=>{
+          return currentProduct.shipping>maxProduct.shipping?currentProduct:maxProduct;
+        },apiData[0]);
+        //Find the product with min shipping
+        minShippingProduct=apiData.reduce((minProduct,currentProduct)=>{
+          return currentProduct.shipping<minProduct.shipping?currentProduct:minProduct;
+        },apiData[0]);
+        console.log("max shipping product is",maxShippingProduct);
+        setShipMax(maxShippingProduct.shipping);
+        console.log("min Shipping product is",minShippingProduct);
+        setShipMin(minShippingProduct.shipping);
+        setShippingDataLoaded(true);
+      })
+    })
     //fetch the minPrice and maxPrice
     useEffect(()=>{
       console.log("the value for minPrice is ",priceMin);
       console.log("the value for maxPrice is ",priceMax);
       console.log("the value for minStock is ",stockMin);
       console.log("the value for maxStock is ",stockMax);
-    },[priceMin,priceMax]);
+      console.log("the value for minShip is",shipMin);
+      console.log("the value for maxShip is ",shipMax);
+    },[priceMin,priceMax,stockMin,stockMax,shipMin,shipMax]);
 
   //adding State for slider
   const [priceRange,setPriceRange]=useState([0,100]);
@@ -193,7 +219,7 @@ const FilterBy = ({ product, GridList }) => {
              <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
           )}
           {/*Adds rc slider component here*/}
-          <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
+          {/* <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/> */}
           
         </div>
         {/* sorting by stock */}
@@ -201,10 +227,13 @@ const FilterBy = ({ product, GridList }) => {
           {stockDataLoaded && (
             <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/>
           )}
-        <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/>
+        {/* <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/> */}
         </div>
         {/* sorting by shipping */}
         <div className="mb-4">
+          {shippingDataLoaded && (
+            <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handlePriceRangeChange}/>
+          )}
         <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
         </div>
         <Button fullWidth> block level button </Button>
