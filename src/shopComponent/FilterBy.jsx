@@ -13,6 +13,8 @@ import {
 
 // api url to fetch data in desc order for price
 const apiUrlForPrice="http://localhost:3000/api/v1/products/?sort=-price"
+//api  utl to fetch data in desc order for stock
+const apiUrlForStock="http://localhost:3000/api/v1/products/?sort=-stock"
 
 import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
@@ -25,13 +27,17 @@ const FilterBy = ({ product, GridList }) => {
  
   //use States to set min values
   const [priceMin,setPriceMin]=useState(0);
-  const [stocklMin,setStockMin]=useState(0);
+  const [stockMin,setStockMin]=useState(0);
   const [shipMin,setShipMin]=useState(0);
 
   //useStates to set max values
   const [priceMax,setPriceMax]=useState(100);
   const [stockMax,setStockMax]=useState(100);
   const [shipMax,setShipMax]=useState(100);
+
+  //useState to set data loaded or not
+  const [priceDataLoaded,setPriceDataLoaded]=useState(false);
+  const [stockDataLoaded,setStockDataLoaded]=useState(false);
   
   //acessing API endpoint to values for'
   let apiData;
@@ -64,17 +70,47 @@ const FilterBy = ({ product, GridList }) => {
       console.log('the value we get from minPriceItem price',minPricedProduct.price);
       setPriceMax(maxPricedProduct.price);
       console.log('the value we get from maxpricedItem price',maxPricedProduct.price);
-      
+      setPriceDataLoaded(true);
     })
     .catch((error)=>{
       console.log(error);
     });
   },[]);
+      let maxStockedProduct;
+      let minStockedProduct;
+    //hook to fetch the stock max and min
+    useEffect(()=>{
+      fetch(apiUrlForStock)
+      .then((response)=>response.json())
+      .then((data)=>{
+        apiData=data.products;
 
+        //Find the products with max stock
+        maxStockedProduct=apiData.reduce((maxProduct,currentProduct)=>{
+          return currentProduct.stock>maxProduct.stock? currentProduct:maxProduct;
+        },apiData[0]);
+        //Find the product with min stock
+        minStockedProduct=apiData.reduce((minProduct,currentProduct)=>{
+          return currentProduct.stock<minProduct.stock?currentProduct:minProduct;
+        },apiData[0]);
+
+        //using useState to set the value of stock min and max
+        console.log("max stocked product is",maxStockedProduct);
+        setStockMax(maxStockedProduct.stock);
+        console.log("min stocked product is ",minStockedProduct);
+        setStockMin(minStockedProduct.stock);
+        setStockDataLoaded(true);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+    },[]);
     //fetch the minPrice and maxPrice
     useEffect(()=>{
       console.log("the value for minPrice is ",priceMin);
       console.log("the value for maxPrice is ",priceMax);
+      console.log("the value for minStock is ",stockMin);
+      console.log("the value for maxStock is ",stockMax);
     },[priceMin,priceMax]);
 
   //adding State for slider
@@ -153,13 +189,19 @@ const FilterBy = ({ product, GridList }) => {
 
         {/* sorting by price */}
         <div className="mb-4">
+          {priceDataLoaded && (
+             <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
+          )}
           {/*Adds rc slider component here*/}
           <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
           
         </div>
         {/* sorting by stock */}
         <div className="mb-4">
-        <NullableRangeSlider title="stock" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+          {stockDataLoaded && (
+            <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/>
+          )}
+        <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/>
         </div>
         {/* sorting by shipping */}
         <div className="mb-4">
