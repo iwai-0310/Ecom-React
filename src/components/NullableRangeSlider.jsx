@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "rc-slider";
 import 'rc-slider/assets/index.css'
 import { Typography } from "@material-tailwind/react";
@@ -6,6 +6,11 @@ import { Typography } from "@material-tailwind/react";
 const NullableRangeSlider = ({title,min,max,onRangeChange }) => {
   //create state for each prop.
   const [priceRange,setPriceRange]=useState([min,max]);
+
+  //updating value when min or max changes
+  // useEffect(()=>{
+  //   setPriceRange([min,max]);
+  // },[min,max]);
   const handleSliderChange=(value)=>{
     setPriceRange(value);
     onRangeChange(value)

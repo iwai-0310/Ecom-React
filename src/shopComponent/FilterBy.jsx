@@ -60,12 +60,22 @@ const FilterBy = ({ product, GridList }) => {
       console.log("the value of size is ",size);
       console.log("the value of minpriceItem is",minPricedProduct);
       console.log("the value of maxpriceITem is",maxPricedProduct);
+      setPriceMin(minPricedProduct.price);
+      console.log('the value we get from minPriceItem price',minPricedProduct.price);
+      setPriceMax(maxPricedProduct.price);
+      console.log('the value we get from maxpricedItem price',maxPricedProduct.price);
       
     })
     .catch((error)=>{
       console.log(error);
     });
   },[]);
+
+    //fetch the minPrice and maxPrice
+    useEffect(()=>{
+      console.log("the value for minPrice is ",priceMin);
+      console.log("the value for maxPrice is ",priceMax);
+    },[priceMin,priceMax]);
 
   //adding State for slider
   const [priceRange,setPriceRange]=useState([0,100]);
@@ -144,7 +154,7 @@ const FilterBy = ({ product, GridList }) => {
         {/* sorting by price */}
         <div className="mb-4">
           {/*Adds rc slider component here*/}
-          <NullableRangeSlider title="price" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+          <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
           
         </div>
         {/* sorting by stock */}
