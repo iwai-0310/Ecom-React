@@ -154,8 +154,8 @@ const FilterBy = ({ product, GridList }) => {
       <Button className="w-5/6" onClick={openDrawer}>
         Filter by ...
       </Button>
-      <Drawer open={open} onClose={closeDrawer} className="p-4">
-        <div className="mb-6 flex items-center justify-between">
+      <Drawer open={open} onClose={closeDrawer} className="p-4 overflow-auto" >
+        <div className="px-3 flex items-center gap-2 my-2 justify-between">
           <Typography variant="h5" color="blue-gray">
             Filter by
           </Typography>
@@ -234,9 +234,9 @@ const FilterBy = ({ product, GridList }) => {
           {shippingDataLoaded && (
             <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handlePriceRangeChange}/>
           )}
-        <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/>
+        {/* <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/> */}
         </div>
-        <Button fullWidth> block level button </Button>
+        <Button fullWidth> Apply </Button>
       </Drawer>
     </React.Fragment>
   );
