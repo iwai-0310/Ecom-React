@@ -41,6 +41,41 @@ const FilterBy = ({ product, GridList }) => {
   const [priceDataLoaded,setPriceDataLoaded]=useState(false);
   const [stockDataLoaded,setStockDataLoaded]=useState(false);
   const [shippingDataLoaded,setShippingDataLoaded]=useState(false);
+
+  //useStates for controlling the checkboxes
+  const [sellerAsc,setSellerAsc]=useState(true);
+  const [sellerDsc,setSellerDsc]=useState(false);
+  const [nameAsc,setNameAsc]=useState(false);
+  const [nameDsc,setNameDsc]=useState(false);
+
+  //method to handle seller asc checkbox
+  const handleSellerAscChange=()=>{
+    setSellerAsc(true);
+    setSellerDsc(false);
+    setNameAsc(false);
+    setNameDsc(false);
+  }
+  //method to handle seller dsc checkbox
+  const handleSellerDscChange=()=>{
+    setSellerAsc(false);
+    setSellerDsc(true);
+    setNameAsc(false);
+    setNameDsc(false);
+  }
+  //method to handle name asc checkbox
+  const handleNameAscChange=()=>{
+    setSellerAsc(false);
+    setSellerDsc(false);
+    setNameAsc(true);
+    setNameDsc(false);
+  }
+  //method to handle name dsc checkbox
+  const handleNameDscChange=()=>{
+    setSellerAsc(false);
+    setSellerDsc(false);
+    setNameAsc(false);
+    setNameDsc(true);
+  }
   //acessing API endpoint to values for'
   let apiData;
   let size;
@@ -189,10 +224,10 @@ const FilterBy = ({ product, GridList }) => {
         <div className="flex px-3 justify-between gap-2 my-2 justify-between">
           <div className=" flex items-center text-black">
             <div className="font-medium">Asc</div>
-            <Checkbox />
+            <Checkbox checked={sellerAsc} onChange={handleSellerAscChange} />
           </div>
           <div className=" flex items-center text-black">
-            <Checkbox />
+            <Checkbox checked={sellerDsc} onChange={handleSellerDscChange} />
             <div className="font-medium">Desc</div>
           </div>
         </div>
@@ -204,10 +239,10 @@ const FilterBy = ({ product, GridList }) => {
         <div className="flex px-3 justify-between gap-2 my-2 justify-between">
           <div className=" flex items-center text-black">
             <div className="font-medium">Asc</div>
-            <Checkbox defaultChecked/>
+            <Checkbox checked={nameAsc} onChange={handleNameAscChange}/>
           </div>
           <div className=" flex items-center text-black">
-            <Checkbox />
+            <Checkbox checked={nameDsc} onChange={handleNameDscChange}/>
             <div className="font-medium">Desc</div>
           </div>
         </div>
