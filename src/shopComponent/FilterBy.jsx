@@ -80,6 +80,11 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     setNameDsc(true);
     setFilters({...filters,sellerAsc: false,sellerDsc: false, nameAsc:false,nameDsc:true})
   }
+
+  //method to handle slider for price range
+  const handlePriceSliderChange=()=>{
+
+  }
   //acessing API endpoint to values for'
   let apiData;
   let size;
@@ -176,12 +181,26 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
       // console.log("the value for maxStock is ",stockMax);
       // console.log("the value for minShip is",shipMin);
       // console.log("the value for maxShip is ",shipMax);
+      console.log(" the min value for price range is",priceRange);
+    
+      console.log("the min value for stock range is ",stockRange);
+
     },[priceMin,priceMax,stockMin,stockMax,shipMin,shipMax]);
 
-  //adding State for slider
+  //adding State for  price slider
   const [priceRange,setPriceRange]=useState([0,100]);
   const handlePriceRangeChange=(range)=>{
     setPriceRange(range);
+  }
+  //adding state for stock slider
+  const [stockRange,setStockRange]=useState([0,100]);
+  const handleStockRangeChange=(range)=>{
+    setStockRange(range);
+  }
+  //adding state for shipping slider
+  const [shippingRange,setShippingRange]=useState([0,100]);
+  const handleShippingRangeChange=(range)=>{
+    setShippingRange(range);
   }
   //fetch these value from api data.
   const cur_value = 1,
@@ -269,14 +288,14 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
         {/* sorting by stock */}
         <div className="mb-4">
           {stockDataLoaded && (
-            <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/>
+            <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handleStockRangeChange}/>
           )}
         {/* <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/> */}
         </div>
         {/* sorting by shipping */}
         <div className="mb-4">
           {shippingDataLoaded && (
-            <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handlePriceRangeChange}/>
+            <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handleShippingRangeChange}/>
           )}
         {/* <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/> */}
         </div>
