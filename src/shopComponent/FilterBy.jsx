@@ -189,10 +189,10 @@ const FilterBy = ({ product, GridList }) => {
         <div className="flex px-3 justify-between gap-2 my-2 justify-between">
           <div className=" flex items-center text-black">
             <div className="font-medium">Asc</div>
-            <Checkbox/>
+            <Checkbox />
           </div>
           <div className=" flex items-center text-black">
-            <Checkbox defaultChecked/>
+            <Checkbox />
             <div className="font-medium">Desc</div>
           </div>
         </div>
