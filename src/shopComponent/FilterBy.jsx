@@ -22,7 +22,7 @@ import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
 import Search from "./Search";
 
-const FilterBy = ({ product, GridList }) => {
+const FilterBy = ({ product, GridList,filters,setFilters}) => {
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);

@@ -61,6 +61,24 @@ const shop = () => {
     setSelectedCategory(curcat);
     setproducts(newItem);
   };
+
+  const [filters,setFilters]=useState({
+    sellerAsc: false,
+    sellerDsc: false,
+    nameAsc: false,
+    nameDsc: false,
+    priceRangeMin: 0,
+    priceRangeMax: 100,
+    stockRangeMin: 0,
+    stockRangeMax: 100,
+    shippingRangeMin: 0,
+    shippingRangeMax: 100,
+  });
+
+  //method to handle filters
+  const handleApplyFilters=()=>{
+    console.log('Filters are',filters);
+  };
   return (
     <div className="">
       {/* <PageHeader title="Our Shop page" curPage="Shop" /> */}
@@ -112,7 +130,7 @@ const shop = () => {
               <aside>
                 {/* add filter by section here */}
                 <div className="flex justify-center items-center my-4 ">
-                  <FilterBy product={product} GridList={GridList}/>
+                  <FilterBy product={product} GridList={GridList} filters={filters} setFilters={setFilters}/>
                 </div>
                 {/* <Search product={product} GridList={GridList} /> */}
                 <ShopCategory
