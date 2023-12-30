@@ -22,7 +22,7 @@ import "rc-slider/assets/index.css";
 import NullableRangeSlider from "../components/NullableRangeSlider";
 import Search from "./Search";
 
-const FilterBy = ({ product, GridList,filters,setFilters}) => {
+const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -54,6 +54,7 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
     setSellerDsc(false);
     setNameAsc(false);
     setNameDsc(false);
+    setFilters({...filters,sellerAsc: true,sellerDsc: false, nameAsc:false,nameDsc:false})
   }
   //method to handle seller dsc checkbox
   const handleSellerDscChange=()=>{
@@ -99,14 +100,14 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
       },apiData[0]);
 
       sizeFromPriceAPI=size;
-      console.log("the value of apiData is ",apiData);
-      console.log("the value of size is ",size);
-      console.log("the value of minpriceItem is",minPricedProduct);
-      console.log("the value of maxpriceITem is",maxPricedProduct);
+    //  console.log("the value of apiData is ",apiData);
+    //  console.log("the value of size is ",size);
+    //  console.log("the value of minpriceItem is",minPricedProduct);
+    //  console.log("the value of maxpriceITem is",maxPricedProduct);
       setPriceMin(minPricedProduct.price);
-      console.log('the value we get from minPriceItem price',minPricedProduct.price);
+    //  console.log('the value we get from minPriceItem price',minPricedProduct.price);
       setPriceMax(maxPricedProduct.price);
-      console.log('the value we get from maxpricedItem price',maxPricedProduct.price);
+    //  console.log('the value we get from maxpricedItem price',maxPricedProduct.price);
       setPriceDataLoaded(true);
     })
     .catch((error)=>{
@@ -132,9 +133,9 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
         },apiData[0]);
 
         //using useState to set the value of stock min and max
-        console.log("max stocked product is",maxStockedProduct);
+      //  console.log("max stocked product is",maxStockedProduct);
         setStockMax(maxStockedProduct.stock);
-        console.log("min stocked product is ",minStockedProduct);
+      //  console.log("min stocked product is ",minStockedProduct);
         setStockMin(minStockedProduct.stock);
         setStockDataLoaded(true);
       })
@@ -157,21 +158,21 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
         minShippingProduct=apiData.reduce((minProduct,currentProduct)=>{
           return currentProduct.shipping<minProduct.shipping?currentProduct:minProduct;
         },apiData[0]);
-        console.log("max shipping product is",maxShippingProduct);
+      //  console.log("max shipping product is",maxShippingProduct);
         setShipMax(maxShippingProduct.shipping);
-        console.log("min Shipping product is",minShippingProduct);
+      //  console.log("min Shipping product is",minShippingProduct);
         setShipMin(minShippingProduct.shipping);
         setShippingDataLoaded(true);
       })
     })
     //fetch the minPrice and maxPrice
     useEffect(()=>{
-      console.log("the value for minPrice is ",priceMin);
-      console.log("the value for maxPrice is ",priceMax);
-      console.log("the value for minStock is ",stockMin);
-      console.log("the value for maxStock is ",stockMax);
-      console.log("the value for minShip is",shipMin);
-      console.log("the value for maxShip is ",shipMax);
+      // console.log("the value for minPrice is ",priceMin);
+      // console.log("the value for maxPrice is ",priceMax);
+      // console.log("the value for minStock is ",stockMin);
+      // console.log("the value for maxStock is ",stockMax);
+      // console.log("the value for minShip is",shipMin);
+      // console.log("the value for maxShip is ",shipMax);
     },[priceMin,priceMax,stockMin,stockMax,shipMin,shipMax]);
 
   //adding State for slider
@@ -184,6 +185,11 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
     min_price = 10,
     max_price = 20,
     steps_formula = 10;
+
+  //method to handle the apply button functionallilty
+  const handleApplyClick=()=>{
+    onApplyFilters();
+  }  
   return (
     <React.Fragment>
       <Button className="w-5/6" onClick={openDrawer}>
@@ -271,7 +277,7 @@ const FilterBy = ({ product, GridList,filters,setFilters}) => {
           )}
         {/* <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/> */}
         </div>
-        <Button fullWidth> Apply </Button>
+        <Button fullWidth onClick={handleApplyClick}> Apply </Button>
       </Drawer>
     </React.Fragment>
   );
