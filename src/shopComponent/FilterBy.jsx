@@ -54,7 +54,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     setSellerDsc(false);
     setNameAsc(false);
     setNameDsc(false);
-    setFilters({...filters,sellerAsc: true,sellerDsc: false, nameAsc:false,nameDsc:false})
+    setFilters({...filters,sellerAsc: true,sellerDsc: false, nameAsc:false,nameDsc:false});
   }
   //method to handle seller dsc checkbox
   const handleSellerDscChange=()=>{
@@ -62,6 +62,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     setSellerDsc(true);
     setNameAsc(false);
     setNameDsc(false);
+    setFilters({...filters,sellerAsc: false,sellerDsc: true, nameAsc:false,nameDsc:false})
   }
   //method to handle name asc checkbox
   const handleNameAscChange=()=>{
@@ -69,6 +70,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     setSellerDsc(false);
     setNameAsc(true);
     setNameDsc(false);
+    setFilters({...filters,sellerAsc: false,sellerDsc: false, nameAsc:true,nameDsc:false})
   }
   //method to handle name dsc checkbox
   const handleNameDscChange=()=>{
@@ -76,6 +78,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     setSellerDsc(false);
     setNameAsc(false);
     setNameDsc(true);
+    setFilters({...filters,sellerAsc: false,sellerDsc: false, nameAsc:false,nameDsc:true})
   }
   //acessing API endpoint to values for'
   let apiData;
