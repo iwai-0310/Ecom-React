@@ -63,7 +63,7 @@ const shop = () => {
   };
 
   const [filters,setFilters]=useState({
-    sellerAsc: false,
+    sellerAsc: true,
     sellerDsc: false,
     nameAsc: false,
     nameDsc: false,

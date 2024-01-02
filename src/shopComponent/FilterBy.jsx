@@ -82,8 +82,9 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
   }
 
   //method to handle slider for price range
-  const handlePriceSliderChange=()=>{
-
+  const handlePriceSliderChange=(range)=>{
+    setPriceRange(range);
+    setFilters({...filters,priceRangeMin:priceRange[0],priceRangeMax:priceRange[1]})
   }
   //acessing API endpoint to values for'
   let apiData;
@@ -173,6 +174,26 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
         setShippingDataLoaded(true);
       })
     })
+
+//adding State for  price slider
+const [priceRange,setPriceRange]=useState([0,100]);
+const handlePriceRangeChange=(range)=>{
+  setPriceRange(range);
+  console.log(priceRange)
+  console.log(priceRange[0]);
+  console.log(priceRange[1])
+}
+//adding state for stock slider
+const [stockRange,setStockRange]=useState([0,100]);
+const handleStockRangeChange=(range)=>{
+  setStockRange(range);
+}
+//adding state for shipping slider
+const [shippingRange,setShippingRange]=useState([0,100]);
+const handleShippingRangeChange=(range)=>{
+  setShippingRange(range);
+}
+
     //fetch the minPrice and maxPrice
     useEffect(()=>{
       // console.log("the value for minPrice is ",priceMin);
@@ -185,23 +206,9 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
     
       console.log("the min value for stock range is ",stockRange);
 
-    },[priceMin,priceMax,stockMin,stockMax,shipMin,shipMax]);
+    },[]);
 
-  //adding State for  price slider
-  const [priceRange,setPriceRange]=useState([0,100]);
-  const handlePriceRangeChange=(range)=>{
-    setPriceRange(range);
-  }
-  //adding state for stock slider
-  const [stockRange,setStockRange]=useState([0,100]);
-  const handleStockRangeChange=(range)=>{
-    setStockRange(range);
-  }
-  //adding state for shipping slider
-  const [shippingRange,setShippingRange]=useState([0,100]);
-  const handleShippingRangeChange=(range)=>{
-    setShippingRange(range);
-  }
+  
   //fetch these value from api data.
   const cur_value = 1,
     min_price = 10,
@@ -279,7 +286,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
         {/* sorting by price */}
         <div className="mb-4">
           {priceDataLoaded && (
-             <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/>
+             <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceSliderChange}/>
           )}
           {/*Adds rc slider component here*/}
           {/* <NullableRangeSlider title="price" max={priceMax} min={priceMin} onRangeChange={handlePriceRangeChange}/> */}
