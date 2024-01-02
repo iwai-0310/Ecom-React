@@ -84,8 +84,19 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
   //method to handle slider for price range
   const handlePriceSliderChange=(range)=>{
     setPriceRange(range);
-    setFilters({...filters,priceRangeMin:priceRange[0],priceRangeMax:priceRange[1]})
+    setFilters({...filters,priceRangeMin:priceRange[0],priceRangeMax:priceRange[1]});
   }
+  //method to handle slider for stock range
+  const handleStockSliderChange=(range)=>{
+    setStockRange(range);
+    setFilters({...filters,stockRangeMin:stockRange[0],stockRangeMax:stockRange[1]});
+  }
+  //method to handle slider for shipping range
+  const handleShippingSliderChange=(range)=>{
+    setShippingRange(range);
+    setFilters({...filters,shippingRangeMin:shippingRange[0],shippingRangeMax:shippingRange[1]});
+  }
+
   //acessing API endpoint to values for'
   let apiData;
   let size;
@@ -177,6 +188,7 @@ const FilterBy = ({ product, GridList,filters,setFilters,onApplyFilters}) => {
 
 //adding State for  price slider
 const [priceRange,setPriceRange]=useState([0,100]);
+
 const handlePriceRangeChange=(range)=>{
   setPriceRange(range);
   console.log(priceRange)
@@ -295,14 +307,14 @@ const handleShippingRangeChange=(range)=>{
         {/* sorting by stock */}
         <div className="mb-4">
           {stockDataLoaded && (
-            <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handleStockRangeChange}/>
+            <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handleStockSliderChange}/>
           )}
         {/* <NullableRangeSlider title="stock" max={stockMax} min={stockMin} onRangeChange={handlePriceRangeChange}/> */}
         </div>
         {/* sorting by shipping */}
         <div className="mb-4">
           {shippingDataLoaded && (
-            <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handleShippingRangeChange}/>
+            <NullableRangeSlider title="shipping" max={shipMax} min={shipMin} onRangeChange={handleShippingSliderChange}/>
           )}
         {/* <NullableRangeSlider title="shipping" max={100} min={0} onRangeChange={handlePriceRangeChange}/> */}
         </div>
