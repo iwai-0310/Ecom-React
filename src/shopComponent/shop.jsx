@@ -80,32 +80,40 @@ const shop = () => {
     console.log('Filters are',filters);
   };
 
-  //Function to convert the params object into a query string
+  //Function to convert the filters object into a query string
   function objectToQueryString(obj){
     const keyValuePairs=[];
     for(const key in obj){
       if(obj.hasOwnProperty(key) && obj[key]!==false){
         if(key==='priceRangeMax'){
-          keyValuePairs.push(`price>${obj[key]}`)
-        }
-        if(key==='priceRangeMin'){
           keyValuePairs.push(`price<${obj[key]}`)
         }
-        if(key==='stockRangeMax')
-        if(key==='stockRangeMin')
-        if(key==='shippingRangeMax')
-        if(key==='shippingRangeMin')
-        keyValuePairs.push(encodeURIComponent(key)+'='+encodeURIComponent(obj[key]));
+        if(key==='priceRangeMin'){
+          keyValuePairs.push(`numericFilters=price>${obj[key]}`)
+        }
+        if(key==='stockRangeMax'){
+          keyValuePairs.push(`stock<${obj[key]}`)
+        }
+        if(key==='stockRangeMin'){
+          keyValuePairs.push(`stock>${obj[key]}`)
+        }
+        if(key==='shippingRangeMax'){
+          keyValuePairs.push(`shipping<${obj[key]}`)
+        }
+        if(key==='shippingRangeMin'){
+          keyValuePairs.push(`shipping>${obj[key]}`)
+        }
+       // keyValuePairs.push(encodeURIComponent(key)+'='+encodeURIComponent(obj[key]));
       }
     }
-    return keyValuePairs.join('&');
+    return keyValuePairs.join(',');
   }
 
   //Constructing the URL with the parameters
   const  baseUrl='http://localhost:3000/api/v1/products/'
   const queryString=objectToQueryString(filters);
   const url=`${baseUrl}?${queryString}`;
-  console.log("and the value of the url after clicking on the filter we get",url);
+  console.log("and the value of the url after changing the filter we get",url);
 
   return (
     <div className="">
