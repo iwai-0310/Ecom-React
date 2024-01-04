@@ -16,12 +16,15 @@ const apiUrl = "http://localhost:3000/api/v1/products/";
 const shop = () => {
   const [GridList, setGridList] = useState(true);
 
+  //using useState to store the api for changes with filterby object
+  const [currApiUrl,setCurrApiUrl]=useState('http://localhost:3000/api/v1/products/');
+
   const [product, setproducts] = useState([]);
   // console.log("the default data in product is", typeof Data);
   // console.log("and the value of data is", Data);
   let apiData;
   useEffect(() => {
-    fetch(apiUrl)
+    fetch(currApiUrl)
       .then((response) => response.json())
       .then((data) => {
         apiData = data.products;
@@ -32,7 +35,7 @@ const shop = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [currApiUrl]);
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -78,6 +81,12 @@ const shop = () => {
   //method to handle filters
   const handleApplyFilters=()=>{
     console.log('Filters are',filters);
+     //Constructing the URL with the parameters
+  const  baseUrl='http://localhost:3000/api/v1/products/'
+  const queryString=objectToQueryString(filters);
+  const url=`${baseUrl}?${queryString}`;
+  setCurrApiUrl(url);
+  console.log("and the value of the url after changing the filter we get",url);
   };
 
   //Function to convert the filters object into a query string
@@ -109,12 +118,10 @@ const shop = () => {
     return keyValuePairs.join(',');
   }
 
-  //Constructing the URL with the parameters
-  const  baseUrl='http://localhost:3000/api/v1/products/'
-  const queryString=objectToQueryString(filters);
-  const url=`${baseUrl}?${queryString}`;
-  console.log("and the value of the url after changing the filter we get",url);
-
+ 
+  // useEffect(()=>{
+  //   setCurrApiUrl=url;
+  // })
   return (
     <div className="">
       {/* <PageHeader title="Our Shop page" curPage="Shop" /> */}

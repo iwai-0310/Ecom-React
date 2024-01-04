@@ -230,6 +230,7 @@ const handleShippingRangeChange=(range)=>{
   //method to handle the apply button functionallilty
   const handleApplyClick=()=>{
     onApplyFilters();
+    setOpen(false);
   }  
   return (
     <React.Fragment>
