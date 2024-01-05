@@ -90,34 +90,127 @@ const shop = () => {
   };
 
   //Function to convert the filters object into a query string
-  function objectToQueryString(obj){
-    const keyValuePairs=[];
-    for(const key in obj){
-      if(obj.hasOwnProperty(key) && obj[key]!==false){
-        if(key==='priceRangeMax'){
-          keyValuePairs.push(`price<${obj[key]}`)
+  // function objectToQueryString(obj){
+  //   const keyValuePairs=[];
+  //   for(const key in obj){
+  //     if(obj.hasOwnProperty(key) && obj[key]!==false){
+  //       if(key==='priceRangeMax'){
+  //         keyValuePairs.push(`price<${obj[key]}`)
+  //       }
+  //       if(key==='priceRangeMin'){
+  //         keyValuePairs.push(`numericFilters=price>${obj[key]}`)
+  //       }
+  //       if(key==='stockRangeMax'){
+  //         keyValuePairs.push(`stock<${obj[key]}`)
+  //       }
+  //       if(key==='stockRangeMin'){
+  //         keyValuePairs.push(`stock>${obj[key]}`)
+  //       }
+  //       if(key==='shippingRangeMax'){
+  //         keyValuePairs.push(`shipping<${obj[key]}`)
+  //       }
+  //       if(key==='shippingRangeMin'){
+  //         keyValuePairs.push(`shipping>${obj[key]}`)
+  //       }
+  //      // keyValuePairs.push(encodeURIComponent(key)+'='+encodeURIComponent(obj[key]));
+  //     }
+  //   }
+  //   return keyValuePairs.join(',');
+  // }
+
+  //new querytoString generator function
+  // function objectToQueryString(obj) {
+  //   const keyValuePairs = [];
+  //   let numericFilters = '';
+  
+  //   for (const key in obj) {
+  //     if (obj.hasOwnProperty(key) && obj[key] !== false) {
+  //       let query;
+  
+  //       if (key === 'priceRangeMax') {
+  //         query = `,price<${obj[key]}`;
+  //       } else if (key === 'priceRangeMin') {
+  //         numericFilters = `numericFilters=price>${obj[key]}`;
+  //       } else if (key === 'stockRangeMax') {
+  //         query = `,stock<${obj[key]}`;
+  //       } else if (key === 'stockRangeMin') {
+  //         query = `,stock>${obj[key]}`;
+  //       } else if (key === 'shippingRangeMax') {
+  //         query = `,shipping<${obj[key]}`;
+  //       } else if (key === 'shippingRangeMin') {
+  //         query = `,shipping>${obj[key]}`;
+  //       } else {
+  //         // For additional queries
+  //         //query = `${key}=${obj[key]}`;
+  //       }
+  
+  //       keyValuePairs.push(query);
+  //     }
+  //   }
+  
+  //   // Place numericFilters at the beginning, if present
+  //   if (numericFilters) {
+  //     keyValuePairs.unshift(numericFilters);
+  //   }
+  
+  //   return keyValuePairs.join();
+  // }
+
+  //checking out the new query generator
+  function objectToQueryString(obj) {
+    const keyValuePairs = [];
+    let numericFilters = '';
+    let checkedValues = [];
+  
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key] !== false) {
+        let query;
+  
+        if (key === 'priceRangeMax') {
+          query = `price<${obj[key]}`;
+        } else if (key === 'priceRangeMin') {
+          numericFilters = `numericFilters=price>${obj[key]}`;
+        } else if (key === 'stockRangeMax') {
+          query = `stock<${obj[key]}`;
+        } else if (key === 'stockRangeMin') {
+          query = `stock>${obj[key]}`;
+        } else if (key === 'shippingRangeMax') {
+          query = `shipping<${obj[key]}`;
+        } else if (key === 'shippingRangeMin') {
+          query = `shipping>${obj[key]}`;
         }
-        if(key==='priceRangeMin'){
-          keyValuePairs.push(`numericFilters=price>${obj[key]}`)
-        }
-        if(key==='stockRangeMax'){
-          keyValuePairs.push(`stock<${obj[key]}`)
-        }
-        if(key==='stockRangeMin'){
-          keyValuePairs.push(`stock>${obj[key]}`)
-        }
-        if(key==='shippingRangeMax'){
-          keyValuePairs.push(`shipping<${obj[key]}`)
-        }
-        if(key==='shippingRangeMin'){
-          keyValuePairs.push(`shipping>${obj[key]}`)
-        }
-       // keyValuePairs.push(encodeURIComponent(key)+'='+encodeURIComponent(obj[key]));
+        keyValuePairs.push(query);
       }
     }
-    return keyValuePairs.join(',');
+  
+    // Add sorting based on true values
+    if (obj.nameAsc) {
+      checkedValues.push('sort=name');
+    } else if (obj.nameDsc) {
+      checkedValues.push('sort=-name');
+    } else if (obj.sellerAsc) {
+      checkedValues.push('sort=seller');
+    } else if (obj.sellerDsc) {
+      checkedValues.push('sort=-seller');
+    }
+  
+    // Place numericFilters at the beginning, if present
+    if (numericFilters) {
+      keyValuePairs.unshift(numericFilters);
+    }
+  
+    // Combine keyValuePairs with '&', except for the last value
+    const queryString = keyValuePairs.join(',') + (checkedValues.length > 0 ? '&' + checkedValues.join('&') : '');
+  
+    return queryString ? '' + queryString : '';
   }
-
+  
+  
+  
+  
+  
+  
+  
  
   // useEffect(()=>{
   //   setCurrApiUrl=url;
