@@ -64,7 +64,7 @@ const Blog = () => {
                     <div className="border-2 h-auto w-11/12 border-blue-gray-700 overflow-hidden rounded-lg group-hover:border-orange-700 m-4 group-hover:border-4 ">
                       <Link to={`/blog/${data.id}`}>
                         <img
-                          className="group-hover:scale-110"
+                          className="inline-block group-hover:scale-110"
                           src={data.imgUrl}
                           alt=""
                         />

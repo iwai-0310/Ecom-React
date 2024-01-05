@@ -46,13 +46,13 @@ const PopularPost = () => {
           <li key={i} className="flex flex-wrap justify-between">
             {/* post images */}
             <div className="post-thumb">
-              <Link to={`/blog/${blog.id}`}>
+              <Link to={`/blog`}>
                 <img src={blog.imgUrl} alt="" />
               </Link>
             </div>
             {/* post data */}
             <div className="post-content">
-              <Link to={`blog/${blog.id}`}>
+              <Link to={`/blog`}>
                 <h5 className="italic tracking-wide font-mono">{blog.title}</h5>
               </Link>
               <p>{blog.date}</p>
