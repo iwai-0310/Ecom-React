@@ -234,7 +234,7 @@ const CategoryShowcase = () => {
 
                     {/* course Content */}
                     <div className="product-card-content mx-4 mt-4 mb-4">
-                      <Link to={`/shop/${product.id}`}>
+                      <Link to={`/shop`}>
                         <h5 className="text-white group-hover:text-black">
                           {product.title}
                         </h5>

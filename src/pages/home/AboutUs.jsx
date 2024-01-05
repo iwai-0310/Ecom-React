@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 const subTitle = "Why Choose Us";
-const title = "Become a Marchant";
+const title = "Become a Merchant";
 const desc =
   "Take courses on your any device with our app & learn all about business what you want. Just download & install & start to learn";
 const btnText = "Apply Now";
@@ -58,7 +58,7 @@ const AboutUs = () => {
                 <span className="subtitle">{subTitle}</span>
                 <h2>{title}</h2>
                 <p>{desc}</p>
-                <Link to="/signup" className="lab-btn">
+                <Link to="/sign-up" className="lab-btn">
                   {btnText}
                 </Link>
               </div>
