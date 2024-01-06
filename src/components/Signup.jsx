@@ -76,44 +76,75 @@ const Signup = () => {
   };
   return (
     <div>
-      <div className="login-section py-4 section-bg">
+      <div className="login-section py-16   ">
         <div className="container">
           <div className="account-wrapper">
-            <h3 className="title">{title}</h3>
+            <h3 className="text-2xl uppercase font-medium mb-2">{title}</h3>
+            <p class="text-gray-600 mb-6 text-sm mb-4">
+              Become a part of our family !
+            </p>
             <form className="account-form" onSubmit={handleSignup}>
               <div className="form-group">
+                <label
+                  htmlFor="name"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Username
+                </label>
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="User name *"
+                  placeholder="Full name "
                   required
                 />
               </div>
               <div className="form-group">
+                <label
+                  htmlFor="name"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Email Address
+                </label>
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Email Address *"
+                  placeholder="youremail.@domain.com"
                   required
                 />
               </div>
               <div className="form-group">
+                <label
+                  htmlFor="name"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Password
+                </label>
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Password here ..."
+                  placeholder="password"
                   required
                 />
               </div>
               <div className="form-group">
+                <label
+                  htmlFor="name"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Re-enter Password
+                </label>
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
-                  placeholder="Confirm Password ..."
+                  placeholder="Confirm password "
                   required
                 />
               </div>
@@ -125,7 +156,10 @@ const Signup = () => {
               </div>
 
               <div className="form-group">
-                <button type="submit" className=" lab-btn">
+                <button
+                  type="submit"
+                  className="bg-orange-700 text-gray-900 hover:bg-gray-900  hover:text-orange-700 hover:font-bold"
+                >
                   <span>{buttonTxt}</span>
                 </button>
               </div>
