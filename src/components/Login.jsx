@@ -84,8 +84,13 @@ const Login = () => {
             </p>
             <form className="account-form" onSubmit={handleLogin}>
               <div className="form-group">
-                <label for="email" class="text-gray-600 mb-2 block"></label>{" "}
-                Email Address
+                <label
+                  htmlFor="email"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Email Address
+                </label>
+
                 <input
                   className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="email"
@@ -96,8 +101,13 @@ const Login = () => {
                 />
               </div>
               <div className="form-group">
-                <label for="password" class="text-gray-600 mb-2 block"></label>
-                Password
+                <label
+                  htmlFor="password"
+                  className="text-gray-600 mb-2 block text-left"
+                >
+                  Password
+                </label>
+
                 <input
                   className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="password"
