@@ -75,30 +75,39 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   return (
     <div>
-      <div className="login-section py-4 section-bg">
+      <div className="login-section py-16 ">
         <div className="container">
           <div className="account-wrapper">
-            <h3 className="title">{title}</h3>
+            <h3 className="text-2xl uppercase font-medium mb-2">{title}</h3>
+            <p class="text-gray-600 mb-6 text-sm mb-4">
+              Welcome! So good to have you back!
+            </p>
             <form className="account-form" onSubmit={handleLogin}>
               <div className="form-group">
+                <label for="email" class="text-gray-600 mb-2 block"></label>{" "}
+                Email Address
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Email Address *"
+                  placeholder="youremail.@domain.com"
                   required
                 />
               </div>
               <div className="form-group">
+                <label for="password" class="text-gray-600 mb-2 block"></label>
+                Password
                 <input
+                  className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Password here ..."
+                  placeholder="***********"
                   required
                 />
               </div>
-              {/* showing messages here */}
+
               <div>
                 {error && (
                   <div className="error-message text-red-500">{error}</div>
@@ -117,13 +126,15 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-group">
-                <button type="submit" className=" lab-btn">
+                <button
+                  type="submit"
+                  className=" bg-gray-900 text-orange-700 hover:bg-orange-700  hover:text-gray-900 hover:font-bold"
+                >
                   <span>{buttonTxt}</span>
                 </button>
               </div>
             </form>
 
-            {/* account bottom */}
             <div className="account-bottom">
               <span className="cate pt-10">
                 Don't have an Account ? <Link to="/sign-up">Sign up</Link>
@@ -132,7 +143,6 @@ const Login = () => {
                 <span>or</span>
               </span>
 
-              {/* social login here */}
               <h5 className="subtitle">{socialTitle}</h5>
               <ul className="lab-ul social-icons justify-center">
                 {socialList.map((val, i) => (
