@@ -102,7 +102,7 @@ const HomeCategory = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="py-8">
+    <div className="py-8 spacer layer1">
       <div className="container">
         {/* header section starts */}
         <div className="flex items-center justify-center w-screen">
