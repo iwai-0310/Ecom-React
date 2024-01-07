@@ -71,24 +71,24 @@ const Login = () => {
         setError("Please provided valid email & password");
       });
   };
-  useEffect(() => {
-    const tween = KUTE.fromTo(
-      "#blob1",
-      {
-        path: "#blob1",
-      },
-      {
-        path: "#blob2",
-      },
+  // useEffect(() => {
+  //   const tween = KUTE.fromTo(
+  //     "#blob1",
+  //     {
+  //       path: "#blob1",
+  //     },
+  //     {
+  //       path: "#blob2",
+  //     },
 
-      {
-        repeat: 999,
-        duration: 2000,
-        yoyo: true,
-      }
-    );
-    tween.start();
-  });
+  //     {
+  //       repeat: 999,
+  //       duration: 2000,
+  //       yoyo: true,
+  //     }
+  //   );
+  //   tween.start();
+  // });
 
   const from = location.state?.from?.pathname || "/";
   return (
