@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import NewPageHeader from "../components/NewPageHeader";
-const APIurl = "http://localhost:3000/api/v1/products/";
+const APIurl = "https://ecome-be-noex.onrender.com/api/v1/products/";
 const addNewItem = () => {
   //create a useState to store default value of some properties
   const [formData, setFormData] = useState({

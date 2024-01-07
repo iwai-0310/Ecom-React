@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import productData from "../../products.json";
-const apiUrl = "http://localhost:3000/api/v1/products/";
+const apiUrl = "https://ecome-be-noex.onrender.com/api/v1/products/";
 import SelectedCategory from "../../components/SelectedCategory";
 import forest from "../../assets/images/banner/forest-banner.jpg";
 

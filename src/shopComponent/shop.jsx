@@ -12,12 +12,14 @@ import checkboxColors from "@material-tailwind/react/theme/components/checkbox/c
 import FilterBy from "./FilterBy";
 
 const showResults = "Showing 01 - 12 of 139 Results";
-const apiUrl = "http://localhost:3000/api/v1/products/";
+const apiUrl = "https://ecome-be-noex.onrender.com/api/v1/products/";
 const shop = () => {
   const [GridList, setGridList] = useState(true);
 
   //using useState to store the api for changes with filterby object
-  const [currApiUrl,setCurrApiUrl]=useState('http://localhost:3000/api/v1/products/');
+  const [currApiUrl, setCurrApiUrl] = useState(
+    "https://ecome-be-noex.onrender.com/api/v1/products/"
+  );
 
   const [product, setproducts] = useState([]);
   // console.log("the default data in product is", typeof Data);
@@ -65,7 +67,7 @@ const shop = () => {
     setproducts(newItem);
   };
 
-  const [filters,setFilters]=useState({
+  const [filters, setFilters] = useState({
     sellerAsc: true,
     sellerDsc: false,
     nameAsc: false,
@@ -79,14 +81,17 @@ const shop = () => {
   });
 
   //method to handle filters
-  const handleApplyFilters=()=>{
-    console.log('Filters are',filters);
-     //Constructing the URL with the parameters
-  const  baseUrl='http://localhost:3000/api/v1/products/'
-  const queryString=objectToQueryString(filters);
-  const url=`${baseUrl}?${queryString}`;
-  setCurrApiUrl(url);
-  console.log("and the value of the url after changing the filter we get",url);
+  const handleApplyFilters = () => {
+    console.log("Filters are", filters);
+    //Constructing the URL with the parameters
+    const baseUrl = "https://ecome-be-noex.onrender.com/api/v1/products/";
+    const queryString = objectToQueryString(filters);
+    const url = `${baseUrl}?${queryString}`;
+    setCurrApiUrl(url);
+    console.log(
+      "and the value of the url after changing the filter we get",
+      url
+    );
   };
 
   //Function to convert the filters object into a query string
@@ -122,11 +127,11 @@ const shop = () => {
   // function objectToQueryString(obj) {
   //   const keyValuePairs = [];
   //   let numericFilters = '';
-  
+
   //   for (const key in obj) {
   //     if (obj.hasOwnProperty(key) && obj[key] !== false) {
   //       let query;
-  
+
   //       if (key === 'priceRangeMax') {
   //         query = `,price<${obj[key]}`;
   //       } else if (key === 'priceRangeMin') {
@@ -143,75 +148,70 @@ const shop = () => {
   //         // For additional queries
   //         //query = `${key}=${obj[key]}`;
   //       }
-  
+
   //       keyValuePairs.push(query);
   //     }
   //   }
-  
+
   //   // Place numericFilters at the beginning, if present
   //   if (numericFilters) {
   //     keyValuePairs.unshift(numericFilters);
   //   }
-  
+
   //   return keyValuePairs.join();
   // }
 
   //checking out the new query generator
   function objectToQueryString(obj) {
     const keyValuePairs = [];
-    let numericFilters = '';
+    let numericFilters = "";
     let checkedValues = [];
-  
+
     for (const key in obj) {
       if (obj.hasOwnProperty(key) && obj[key] !== false) {
         let query;
-  
-        if (key === 'priceRangeMax') {
+
+        if (key === "priceRangeMax") {
           query = `price<${obj[key]}`;
-        } else if (key === 'priceRangeMin') {
+        } else if (key === "priceRangeMin") {
           numericFilters = `numericFilters=price>${obj[key]}`;
-        } else if (key === 'stockRangeMax') {
+        } else if (key === "stockRangeMax") {
           query = `stock<${obj[key]}`;
-        } else if (key === 'stockRangeMin') {
+        } else if (key === "stockRangeMin") {
           query = `stock>${obj[key]}`;
-        } else if (key === 'shippingRangeMax') {
+        } else if (key === "shippingRangeMax") {
           query = `shipping<${obj[key]}`;
-        } else if (key === 'shippingRangeMin') {
+        } else if (key === "shippingRangeMin") {
           query = `shipping>${obj[key]}`;
         }
         keyValuePairs.push(query);
       }
     }
-  
+
     // Add sorting based on true values
     if (obj.nameAsc) {
-      checkedValues.push('sort=name');
+      checkedValues.push("sort=name");
     } else if (obj.nameDsc) {
-      checkedValues.push('sort=-name');
+      checkedValues.push("sort=-name");
     } else if (obj.sellerAsc) {
-      checkedValues.push('sort=seller');
+      checkedValues.push("sort=seller");
     } else if (obj.sellerDsc) {
-      checkedValues.push('sort=-seller');
+      checkedValues.push("sort=-seller");
     }
-  
+
     // Place numericFilters at the beginning, if present
     if (numericFilters) {
       keyValuePairs.unshift(numericFilters);
     }
-  
+
     // Combine keyValuePairs with '&', except for the last value
-    const queryString = keyValuePairs.join(',') + (checkedValues.length > 0 ? '&' + checkedValues.join('&') : '');
-  
-    return queryString ? '' + queryString : '';
+    const queryString =
+      keyValuePairs.join(",") +
+      (checkedValues.length > 0 ? "&" + checkedValues.join("&") : "");
+
+    return queryString ? "" + queryString : "";
   }
-  
-  
-  
-  
-  
-  
-  
- 
+
   // useEffect(()=>{
   //   setCurrApiUrl=url;
   // })
@@ -266,7 +266,13 @@ const shop = () => {
               <aside>
                 {/* add filter by section here */}
                 <div className="flex justify-center items-center my-4 ">
-                  <FilterBy product={product} GridList={GridList} filters={filters} setFilters={setFilters} onApplyFilters={handleApplyFilters}/>
+                  <FilterBy
+                    product={product}
+                    GridList={GridList}
+                    filters={filters}
+                    setFilters={setFilters}
+                    onApplyFilters={handleApplyFilters}
+                  />
                 </div>
                 {/* <Search product={product} GridList={GridList} /> */}
                 <ShopCategory

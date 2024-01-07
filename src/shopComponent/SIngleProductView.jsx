@@ -15,7 +15,7 @@ import { Autoplay } from "swiper/modules";
 import ProductDisplay from "./ProductDisplay";
 
 //api endpoint to recive all the products
-const apiUrl = "http://localhost:3000/api/v1/products/";
+const apiUrl = "https://ecome-be-noex.onrender.com/api/v1/products/";
 
 const SIngleProductView = () => {
   const [product, setProduct] = useState([]);
